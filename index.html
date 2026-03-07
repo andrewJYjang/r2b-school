@@ -25,16 +25,74 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
+  /* ── ARBOR DAY BADGE ── */
+  .arbor-badge {
+    margin-top: 32px;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(245,240,232,0.4);
+    color: rgba(245,240,232,0.9);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    padding: 12px 28px;
+    font-style: italic;
+    animation: fadeUp 1.2s ease both;
+    animation-delay: 0.6s;
+    cursor: default;
+    transition: all 0.3s ease;
   }
+
+  .arbor-badge:hover {
+    background: rgba(245,240,232,0.95);
+    color: #0e0e0e;
+    border-color: rgba(245,240,232,0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+
+  /* ── LANG TOGGLE ── */
+  .lang-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: none;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .lang-btn:hover:not(.active) {
+    background: var(--line);
+  }
+
+  [data-ko], [data-en] { transition: opacity 0.2s; }
+  .en-mode [data-ko] { display: none; }
+  .ko-mode [data-en] { display: none; }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  /* body::before noise texture removed — too prominent on mobile */
 
   .page {
     max-width: 780px;
@@ -324,6 +382,34 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .classics-tag {
+    background: #1a1a2e;
+    color: #e8d5b0 !important;
+    border-color: #2d2d4e !important;
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  .classics-tag:hover {
+    background: #2d2d4e !important;
+    transform: translateY(-2px);
+  }
+
+  .classics-question {
+    background: transparent;
+    color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .classics-question:hover {
+    background: var(--gold) !important;
+    color: white !important;
+    transform: translateY(-2px);
   }
 
   .premium-tag {
@@ -779,12 +865,96 @@
     .promise { padding: 32px 24px; }
     .apply-section { padding: 40px 28px; }
   }
+
+  /* ── CODE OF CONDUCT ── */
+  .coc-block {
+    border: 1px solid var(--line);
+    padding: 40px;
+  }
+
+  .coc-intro {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .coc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .coc-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+  }
+
+  .coc-item:hover {
+    border-color: var(--line);
+    background: white;
+  }
+
+  .coc-icon {
+    color: var(--red);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .coc-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .coc-text strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  .coc-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .coc-footer em {
+    color: var(--red);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .coc-grid { grid-template-columns: 1fr; }
+    .coc-block { padding: 28px 20px; }
+  }
+
 </style>
 </head>
 <body>
 <div class="page">
 
   <!-- MASTHEAD -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('ko')">KO</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+
   <div class="masthead">
     <div class="masthead-left">
       R2B School &nbsp;·&nbsp; Seoul, Korea
@@ -806,8 +976,11 @@
     <div class="hero-divider"><span>✦</span></div>
 
     <div class="hero-tagline">
-      한국에서 <em>언어, 문화, 기술, 사람</em>을 함께 얻고<br>
-      자신의 길을 찾아가는 12명의 이야기
+      <span data-ko>한국에서 <em>언어, 문화, 기술, 사람</em>을 함께 얻고<br>자신의 길을 찾아가는 12명의 이야기</span><span data-en>Language · Culture · Skills · People —<br>A journey of <em>12</em> in Seoul, Korea</span>
+    </div>
+
+    <div class="arbor-badge">
+      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span><span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span>
     </div>
   </div>
 
@@ -815,13 +988,13 @@
   <div class="twelve-block">
     <div class="twelve-label">Why 12?</div>
     <div class="twelve-text">
-      예수님도 12명으로 시작하셨습니다.<br>
-      12명이 세상을 바꿉니다.
+      <span data-ko>예수님도 12명으로 시작하셨습니다.<br>12명이 세상을 바꿉니다.</span>
+      <span data-en>Jesus started with 12.<br>12 people can change the world.</span>
     </div>
     <div class="twelve-sub">
-      R2B는 매 기수 단 12명만 함께합니다.<br>
-      공간이 작아서가 아니라, 진짜 관계를 만들기 위해서입니다.<br>
-      <em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
+      <span data-ko>R2B는 매 기수 단 12명만 함께합니다.<br>공간이 작아서가 아니라, 진짜 관계를 만들기 위해서입니다.</span>
+      <span data-en>Every cohort, only 12.<br>Not because the space is small —<br>but because real relationships need room to grow.</span>
+      <br><em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
     </div>
   </div>
 
@@ -831,30 +1004,30 @@
     <div class="who-grid">
       <div class="who-card">
         <div class="flag">🌏</div>
-        <h4>영어권 교환학생</h4>
-        <p>한국에서 진짜 경험을 원하는 외국인 청년. 언어뿐 아니라 삶을 배우고 싶은 사람.</p>
+        <h4><span data-ko>영어 가능 외국인 청년</span><span data-en>International Youth (English OK)</span></h4>
+        <p><span data-ko>일본·러시아·중국·유럽·아프리카 어디서 왔든 영어로 소통할 수 있다면 OK.<br>한국어는 여기서 배우면 됩니다.</span><span data-en>From Japan, Russia, Europe, Africa — anywhere. If you can communicate in English, you belong here. Korean? We'll learn together.</span></p>
       </div>
       <div class="who-card">
-        <div class="flag">🇰🇷</div>
-        <h4>한국 청년</h4>
-        <p>글로벌 친구를 사귀고 싶고, 자신의 길을 찾는 중인 한국 대학생·청년.</p>
+        <div class="flag">✈️</div>
+        <h4><span data-ko>워킹홀리데이 · 유학생</span><span data-en>Working Holiday · Students</span></h4>
+        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. R2B is your home base.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">📸</div>
-        <h4>크리에이터 청년</h4>
-        <p>사진, 미디어, 예술로 한국에서 자립하고 싶은 외국인 크리에이터.</p>
+        <h4><span data-ko>크리에이터 · 아티스트</span><span data-en>Creators · Artists</span></h4>
+        <p><span data-ko>사진·영상·연기·글쓰기로 한국에서 자립하고 싶은 외국인 크리에이터.</span><span data-en>Photographers, filmmakers, actors, writers — build your portfolio and career in Seoul.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">🌱</div>
-        <h4>방향을 찾는 청년</h4>
-        <p>어디로 가야 할지 모르지만 성장하고 싶은 마음 하나만 있는 사람.</p>
+        <h4><span data-ko>방향을 찾는 청년</span><span data-en>Finding Your Way</span></h4>
+        <p><span data-ko>어디로 가야 할지 모르지만 성장하고 싶은 마음 하나면 충분합니다.</span><span data-en>You don't need to have it figured out. Just bring the desire to grow — R2B will do the rest.</span></p>
       </div>
     </div>
   </div>
 
   <!-- CURRICULUM -->
   <div class="section">
-    <div class="section-label">3개월 커리큘럼</div>
+    <div class="section-label"><span data-ko>3개월 커리큘럼</span><span data-en>3-Month Curriculum</span></div>
     <div class="curriculum">
       <div class="month-row">
         <div class="month-num">
@@ -870,6 +1043,8 @@
             <span class="tag">김치찌개 · 비빔밥</span>
             <span class="tag">캠핑 1회</span>
             <span class="tag highlight-tag">✦ 서로 알아가기 · Getting to Know</span>
+            <span class="tag classics-tag">📖 소크라테스의 변명 + 요한복음</span>
+            <span class="tag classics-question">"나는 누구인가?"</span>
           </div>
         </div>
       </div>
@@ -887,6 +1062,8 @@
             <span class="tag">사진·영상으로 담기</span>
             <span class="tag">한국 요리 Class 2</span>
             <span class="tag">야외 쿡 캠핑</span>
+            <span class="tag classics-tag">📖 데미안 + 시편</span>
+            <span class="tag classics-question">"어떻게 살 것인가?"</span>
             <span class="tag premium-tag">✦ Premium — 나를 표현하는 법</span>
           </div>
         </div>
@@ -903,6 +1080,9 @@
             <span class="tag">AI 툴 활용</span>
             <span class="tag">한국 자립 생존 키트</span>
             <span class="tag">서울시 지원 프로그램</span>
+            <span class="tag classics-tag">📖 이방인 · 죽음의 수용소에서 + 산상수훈</span>
+            <span class="tag classics-question">"나는 무엇을 남길 것인가?"</span>
+            <span class="tag highlight-tag">✍️ 나만의 희곡 완성</span>
             <span class="tag">수료 공연 🎭</span>
             <span class="tag">삼겹살 수료 파티 🎉</span>
             <span class="tag premium-tag">✦ Secret Project (Premium Only)</span>
@@ -914,7 +1094,7 @@
 
   <!-- PRICE -->
   <div class="section">
-    <div class="section-label">참가 비용</div>
+    <div class="section-label"><span data-ko>참가 비용</span><span data-en>Pricing</span></div>
     <div class="price-grid">
       <div class="price-card">
         <div class="price-tier">Basic</div>
@@ -961,10 +1141,10 @@
 
   <!-- APPLY -->
   <div class="apply-section">
-    <h3>지금 신청하세요</h3>
+    <h3><span data-ko>지금 신청하세요</span><span data-en>Apply Now</span></h3>
     <p>
-      1기는 단 12명입니다. 선발 과정이 있습니다.<br>
-      지원서 제출 → 간단한 인터뷰 → 최종 선발
+      <span data-ko>1기는 단 12명입니다. 선발 과정이 있습니다.<br>지원서 제출 → 간단한 인터뷰 → 최종 선발</span>
+      <span data-en>Only 12 spots available. Submit your application → Short interview → Final selection</span>
     </p>
     <div class="apply-details">
       <div class="apply-detail">
@@ -973,7 +1153,7 @@
       </div>
       <div class="apply-detail">
         <div class="label">시작일</div>
-        <div class="value">4월 · 5월 · 6월</div>
+        <div class="value">4월 5일 · 식목일 🌱</div>
       </div>
       <div class="apply-detail">
         <div class="label">기간</div>
@@ -984,7 +1164,7 @@
         <div class="value">Seoul, Korea<br><small style="font-size:11px;opacity:0.7">(고려대 인근 · 선발 후 정확한 장소 안내)</small></div>
       </div>
     </div>
-    <button class="apply-btn" onclick="window.open('https://forms.gle/Q8z41Q3WnUBBMFvd6','_blank')">🔴 1기 지원하기 · Apply Now (4월)</button>
+    <button class="apply-btn" onclick="window.open('https://forms.gle/Q8z41Q3WnUBBMFvd6','_blank')">🔴 🌱 1기 지원하기 · April 5th</button>
     <div style="height:12px"></div>
     <button class="apply-btn-wait" onclick="window.open('https://forms.gle/U7EQwWAtmjLnmENK7','_blank')">⚪ 2기 대기자 등록 (5월 예정)</button>
     <div style="height:12px"></div>
@@ -1001,7 +1181,7 @@
         <div class="modal-title">지원하기</div>
         <div class="modal-sub">
           1기는 단 12명입니다. 간단한 지원서를 작성해주세요.<br>
-          재용님이 직접 검토 후 연락드립니다.
+          2026년 4월 5일 식목일, 12개의 씨앗을 심습니다.<br>재용님이 직접 검토 후 연락드립니다.
         </div>
 
         <form id="applyForm" action="https://formspree.io/f/xbjnkwlp" method="POST">
@@ -1073,6 +1253,74 @@
     </div>
   </div>
 
+
+  <!-- CODE OF CONDUCT -->
+  <div class="section">
+    <div class="section-label">Community Guidelines</div>
+    <div class="coc-block">
+      <div class="coc-intro">
+        <span data-ko>R2B는 12명이 함께 만드는 공간입니다.<br>우리는 서로 다르기 때문에 모였고,<br>그 다름이 R2B의 힘입니다.</span>
+        <span data-en>R2B is a space built by 12 people together.<br>We came because we are different —<br>and that difference is our strength.</span>
+      </div>
+
+      <div class="coc-grid">
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>다름을 환영합니다</span><span data-en>Embrace Difference</span></strong><br>
+            <span data-ko>국적·언어·문화·배경 — 모두 OK.<br>틀린 한국어도, 서툰 영어도 여기선 용기입니다.</span>
+            <span data-en>Nationality · language · culture · background — all welcome.<br>Broken Korean or imperfect English? That's courage here.</span>
+          </div>
+        </div>
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>먼저 듣습니다</span><span data-en>Listen First</span></strong><br>
+            <span data-ko>말하기 전에 경청합니다.<br>12명 모두의 이야기가 소중합니다.</span>
+            <span data-en>Before you speak, listen.<br>Every one of the 12 has a story worth hearing.</span>
+          </div>
+        </div>
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>공간을 나눕니다</span><span data-en>Share the Space</span></strong><br>
+            <span data-ko>이곳은 한 사람의 무대가 아닙니다.<br>12명 모두의 공간입니다.</span>
+            <span data-en>This is not one person's stage.<br>It belongs to all 12 of us.</span>
+          </div>
+        </div>
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>프라이버시를 지킵니다</span><span data-en>Protect Privacy</span></strong><br>
+            <span data-ko>참가자 개인 사진·영상·정보는 외부에 게시하지 않습니다.<br>R2B 홍보 콘텐츠는 개인을 특정할 수 없는 방식으로만 제작됩니다.<br>본인이 원할 때만, 본인이 직접 공유합니다.</span>
+            <span data-en>No personal photos, videos, or information will be shared externally.<br>R2B content is created without identifying individuals.<br>You share your own story, on your own terms.</span>
+          </div>
+        </div>
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>판단하지 않습니다</span><span data-en>No Judgment</span></strong><br>
+            <span data-ko>종교·정치·문화적 차이로<br>서로를 평가하지 않습니다.</span>
+            <span data-en>We do not judge each other<br>based on religion, politics, or culture.</span>
+          </div>
+        </div>
+        <div class="coc-item">
+          <div class="coc-icon">✦</div>
+          <div class="coc-text">
+            <strong><span data-ko>언제든 말할 수 있습니다</span><span data-en>Speak Up Anytime</span></strong><br>
+            <span data-ko>불편함을 느끼면 Andrew에게<br>언제든 조용히 말해주세요.</span>
+            <span data-en>If something feels wrong,<br>quietly reach out to Andrew anytime.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="coc-footer">
+        <span data-ko>이 가이드라인은 모든 참가자에게 적용됩니다.<br><em>지키지 않을 경우 참가가 취소될 수 있습니다.</em></span>
+        <span data-en>These guidelines apply to all participants.<br><em>Failure to follow them may result in removal from the program.</em></span>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-brand"><span>R</span>2<span>B</span> School</div>
@@ -1087,6 +1335,24 @@
   const applyForm = document.getElementById('applyForm');
   const formScreen = document.getElementById('formScreen');
   const successScreen = document.getElementById('successScreen');
+
+  // Language toggle
+  function setLang(lang) {
+    const page = document.querySelector('.page');
+    const btns = document.querySelectorAll('.lang-btn');
+    if (lang === 'en') {
+      page.classList.remove('ko-mode');
+      page.classList.add('en-mode');
+    } else {
+      page.classList.remove('en-mode');
+      page.classList.add('ko-mode');
+    }
+    btns.forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  }
+
+  // Default KO
+  document.querySelector('.page').classList.add('ko-mode');
 
   // Open Google Form
   document.querySelector('.apply-btn').addEventListener('click', () => {
