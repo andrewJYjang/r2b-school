@@ -44,7 +44,118 @@ We believe:
 
 ---
 
-## Our Journey — Short · Mid · Long
+## Our Philosophy — 우리의 철학
+
+---
+
+### 작은 시작, 깊은 뿌리
+
+We don't build big churches.  
+We don't chase big numbers.  
+We build **healthy people.**
+
+```
+건강한 사람
+→ 건강한 가정
+→ 건강한 기업
+→ 건강한 공동체
+→ 건강한 세상
+```
+
+This is how Jesus started.  
+12 people. No building. No budget.  
+**Just truth, relationship, and love.**
+
+---
+
+### 영육간의 자립 — Body, Soul & Self-Reliance
+
+R2B believes in the whole person.
+
+```
+영 (Spirit)   → 예수님을 닮는 삶
+육 (Body)     → 건강하게 사는 삶
+자립 (Self)   → 스스로 서는 삶
+```
+
+We don't create dependency.  
+We create people who **stand on their own**  
+— and then reach back to lift others up.
+
+---
+
+### 텐트메이커 DNA — Tentmaker Spirit
+
+Rooted in UBF since 1961,  
+we carry the spirit of **Paul the Tentmaker.**
+
+```
+일하면서 선교하고
+벌면서 나누고
+살면서 가르치고
+성장하면서 파송한다
+```
+
+No one is paid to be here.  
+Everyone is here because they **chose to be.**  
+That is the difference.
+
+---
+
+### Born — Creative Changer — Dead
+
+Every person is born.  
+Every person dies.  
+**What you do in between is everything.**
+
+```
+Born
+    ↓
+Creative Changer
+— 문제를 발견하고
+— 아름답게 해결하고
+— 사람을 살리고
+— 세상을 바꾸는 사람
+    ↓
+Dead
+```
+
+R2B exists for that middle part.
+
+---
+
+### 우리가 하지 않는 것
+
+```
+❌ 십일조로 큰 건물 짓지 않아요
+❌ 숫자로 성공을 측정하지 않아요
+❌ 화려한 프로그램으로 유혹하지 않아요
+❌ 의존하게 만들지 않아요
+❌ 한쪽만 좋아지게 하지 않아요
+```
+
+---
+
+### 우리가 하는 것
+
+```
+✅ 작게 시작해요 — 12명
+✅ 깊게 뿌리내려요 — 4년
+✅ 건강하게 자립시켜요
+✅ 세상으로 파송해요
+✅ 다음 사람을 살리게 해요
+```
+
+---
+
+> *"We don't want your money.*  
+> *We want your growth.*  
+> *We want you to become*  
+> *someone who changes the world."*
+
+---
+
+
 
 R2B is not a 3-month program.  
 **R2B is a lifetime.**
@@ -89,17 +200,108 @@ This is what we do.
 
 ---
 
-## Our Team
+## Our Team & Expert Support
 
-| | |
-|---|---|
-| 🎭 | **Jang Yong-cheol** — Master Actor · Drama Director (20+ years) |
-| 💡 | **Andrew Jang** — Founder · Author of *Coding Era* · Patent Professional · AI/Robotics Researcher |
-| 🍲 | **Head Chef** — 30 years of authentic Korean cuisine |
-| 🌱 | **R2B Family** — Internal Korean hosts & mentors |
+R2B is backed by a team you cannot replicate.  
+Each person brings **decades of real-life mastery.**
 
-**Rooted in:** UBF (University Bible Fellowship) — since 1961,  
-a self-supporting tentmaker mission that has served Korean youth for over 60 years.
+---
+
+### 🎭 Drama & Arts Expert — 30+ Years on Stage
+
+- Started performing since university · Now in his 60s
+- Seoul Mayor Award recipient
+- Leads drama workshops: voice, expression, presence
+- Classic play-reading group leader for 20+ years
+- *"He doesn't just teach acting. He teaches how to be human."*
+
+---
+
+### 🍲 Korean Culinary Expert — 40+ Years of Korean Soul Food
+
+- A lifetime dedicated to authentic Korean cuisine
+- Teaches authentic home recipes passed through generations
+- Monthly Korean cooking classes at R2B
+- *"Food is the first language of relationship."*
+
+---
+
+### 💡 Andrew Jang — Founder · AI/Robotics · Patent · IT
+
+- Author of *Coding Era* (선정: 세종도서 국가 문학 선정)
+- Patent professional (trademarks, designs, inventions)
+- 20+ years in IT: search engines, information security, AI/robotics
+- LeRobot SO-ARM101 ACT model trainer (50,000 steps)
+- Developing "Robo" — a programming language for Physical AI
+- Preparing for Korean Patent Attorney exam (2027)
+- Founder: Genius Network · LTLABS · A3Group · AJX Strategic Partners
+- *"Technology is a tool. People are the answer."*
+
+---
+
+### 🌍 Global Network Support
+
+- 80+ country diplomatic & community network
+- Fluent in Korean · English · Chinese · Japanese
+- Connections to C-level executives across Korean IT industry
+- Startup mentoring · patent strategy · career placement support
+- *"Your next opportunity is one introduction away."*
+
+---
+
+### ✝️ Rooted in UBF — Since 1961
+
+**University Bible Fellowship** is Korea's most unique mission movement:
+- Founded 1961, right after the Korean War
+- Self-supporting **tentmaker** missionaries — working professionals who serve
+- Active in 100+ countries worldwide
+- 60+ years of raising Korean youth through faith, study, and community
+- Intergenerational collaboration: senior wisdom meets young energy
+
+*R2B carries this DNA — faith, self-reliance, and genuine care for people.*
+
+---
+
+## Professional Advisory Network
+
+R2B is quietly supported by an informal network of professionals  
+who volunteer their expertise for R2B members.
+
+```
+🏥 Medicine & Healthcare
+   Medical professors · Health professionals
+
+⚙️ Engineering & Technology
+   Engineering professors · IT executives (C-level)
+   AI · Robotics · Software specialists
+
+📊 Business & Management
+   Business school professors · Startup mentors
+   Entrepreneurship advisors
+
+⚖️ Law & Intellectual Property
+   Attorneys · Patent attorneys
+   IP strategy consultants
+
+🎓 Academia & Research
+   University professors across disciplines
+   Researchers & scholars
+
+🎬 Arts · Performance · Literature · Media
+   Professional stage & screen actors
+   Film & broadcast industry veterans
+   Published authors & literary figures
+   Directors · Producers · Content creators
+   Korean drama & entertainment network
+```
+
+These advisors do not advertise.  
+They show up when you need them.  
+**That is the R2B difference.**
+
+> *"The most valuable network is the one*  
+> *you didn't know you needed —*  
+> *until the moment you did."*
 
 ---
 
