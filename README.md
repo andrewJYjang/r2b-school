@@ -233,7 +233,6 @@ Each person brings **decades of real-life mastery.**
 - 20+ years in IT: search engines, information security, AI/robotics
 - LeRobot SO-ARM101 ACT model trainer (50,000 steps)
 - Developing "Robo" — a programming language for Physical AI
-- Preparing for Korean Patent Attorney exam (2027)
 - Founder: Genius Network · LTLABS · A3Group · AJX Strategic Partners
 - *"Technology is a tool. People are the answer."*
 
@@ -241,7 +240,7 @@ Each person brings **decades of real-life mastery.**
 
 ### 🌍 Global Network Support
 
-- 80+ country diplomatic & community network
+- 91+ country diplomatic & community network
 - Fluent in Korean · English · Chinese · Japanese
 - Connections to C-level executives across Korean IT industry
 - Startup mentoring · patent strategy · career placement support
@@ -254,8 +253,8 @@ Each person brings **decades of real-life mastery.**
 **University Bible Fellowship** is Korea's most unique mission movement:
 - Founded 1961, right after the Korean War
 - Self-supporting **tentmaker** missionaries — working professionals who serve
-- Active in 100+ countries worldwide
-- 60+ years of raising Korean youth through faith, study, and community
+- Active in 91+ countries worldwide
+- 65+ years of raising Korean youth through faith, study, and community
 - Intergenerational collaboration: senior wisdom meets young energy
 
 *R2B carries this DNA — faith, self-reliance, and genuine care for people.*
