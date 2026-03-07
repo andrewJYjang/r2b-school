@@ -228,7 +228,7 @@ Each person brings **decades of real-life mastery.**
 
 ### 💡 Andrew Jang — Founder · AI/Robotics · Patent · IT
 
-- Author of *Coding Era* (선정: 세종도서 국가 문학 선정)
+- Author of *Coding Era* (세종도서 선정)
 - Patent professional (trademarks, designs, inventions)
 - 20+ years in IT: search engines, information security, AI/robotics
 - LeRobot SO-ARM101 ACT model trainer (50,000 steps)
