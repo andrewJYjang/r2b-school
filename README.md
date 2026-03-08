@@ -361,6 +361,6 @@ Depending on your gifts and calling:
 
 
 <img src="images/Women_professinals.jpg" width="49%">
-
+<img src="images/Seattle_developers.jpg" width="49%">
 <img src="images/after_pycon.jpg" width="49%">
 <img src="images/Developers.jpg" width="49%">
