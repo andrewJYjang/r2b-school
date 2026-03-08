@@ -357,7 +357,7 @@ Depending on your gifts and calling:
 <img src="images/Korean_class_students.jpg" width="49%">
 <img src="images/Newyorker_Artist.jpg" width="49%">
 <img src="images/Preparing_some.jpg" width="49%">
-<img src="images/Women_professinals.jpg" width="49%">
+<img src="images/Women_professionals.jpg" width="49%">
 <img src="images/Seattle_developers.jpg" width="49%">
 <img src="images/after_pycon.jpg" width="49%">
 <img src="images/Developers.jpg" width="49%">
