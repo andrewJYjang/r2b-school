@@ -222,7 +222,7 @@ Each person brings **decades of real-life mastery.**
 
 ---
 
-### 💡 Andrew Jang — Founder · AI/Robotics · Patent · IT
+### 💡 Andrew Jang — Co-Founder · AI/Robotics · Patent · IT
 
 - Author of *Coding Era* (세종도서 선정)
 - Patent professional (trademarks, designs, inventions)
