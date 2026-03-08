@@ -316,8 +316,8 @@ Depending on your gifts and calling:
 ```
 🎨 Arts & Media    → YouTube, performance, 1-person media, Korean arts scene
 💻 Tech & Startup  → Korean IT companies, startup founding, AI career
-🌍 Mission         → Tentmaker missionary, global Creative Changer
-🧠 Counseling      → Community care, mental health support
+🌍 Mission         → Tentmaker missionary, global creative changer
+🧠 Counseling      → Community care, health support
 ```
 
 ---
