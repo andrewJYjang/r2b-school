@@ -352,3 +352,13 @@ Depending on your gifts and calling:
 
 *R2B School · Seoul, Korea · 2026*  
 *"사람으로, 사람과 함께, 사람이 되는 곳"*
+
+![한국어 선생님과 함께](images/Korean_class_activities.jpg)
+![한국어 배우는 학생들과 함께](images/Korean_class_students.jpg)
+![뉴욕커 아티스트와 함께](images/Newyorker_Artist.jpg)
+![1인 창업 준비생 @ 구글 캠퍼스](images/Preparing_some.jpg)
+![미국 시애틀 정착하고 열일하는 개발자, 기획자, 디자이너](images/Seattle_developers.jpg)
+![전문 개발자 모임](images/Women_professinals.jpg)
+![파이컨 행사 후](images/after_pycon.jpg)
+![한국에 정착한 개발자들](images/Developers.jpg)
+![한국에서 경력을 이어가는 전문가들](images/Google Campus.jpg)
