@@ -828,8 +828,9 @@
     padding-top: 24px;
     border-top: 1px solid var(--line);
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 0.08em;
@@ -976,7 +977,7 @@
     <div class="hero-divider"><span>✦</span></div>
 
     <div class="hero-tagline">
-      <span data-ko>한국에서 <em>언어, 문화, 기술, 사람</em>을 함께 얻고<br>자신의 길을 찾아가는 12명의 이야기</span><span data-en>Language · Culture · Skills · People —<br>A journey of <em>12</em> in Seoul, Korea</span>
+      <span data-ko>나는 누구인가, 어떻게 살 것인가<br>한국에서 <em>함께</em> 찾아가는 12명의 이야기</span><span data-en>Who am I? How shall I live?<br>A journey of <em>12</em> seeking answers in Seoul, Korea</span>
     </div>
 
     <div class="arbor-badge">
@@ -988,18 +989,18 @@
   <div class="twelve-block">
     <div class="twelve-label">Why 12?</div>
     <div class="twelve-text">
-      <span data-ko>예수님도 12명으로 시작하셨습니다.<br>12명이 세상을 바꿉니다.</span>
-      <span data-en>Jesus started with 12.<br>12 people can change the world.</span>
+      <span data-ko>역사를 바꾼 건<br>항상 소수였습니다.</span>
+      <span data-en>Throughout history,<br>it was always a small group that changed everything.</span>
     </div>
     <div class="twelve-sub">
-      <span data-ko>R2B는 매 기수 단 12명만 함께합니다.<br>공간이 작아서가 아니라, 진짜 관계를 만들기 위해서입니다.</span>
-      <span data-en>Every cohort, only 12.<br>Not because the space is small —<br>but because real relationships need room to grow.</span>
+      <span data-ko>R2B는 단 12명<br>깊이가 넓이를 이깁니다<br>작은 시작, 진짜 관계, 진짜 변화</span>
+      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span>
       <br><em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
     </div>
   </div>
 
   <!-- WHO -->
-  <div class="section">
+    <div class="section">
     <div class="section-label">함께할 사람들</div>
     <div class="who-grid">
       <div class="who-card">
@@ -1025,7 +1026,8 @@
       </div>
     </div>
   </div>
-
+ 
+ 
   <!-- CURRICULUM -->
   <div class="section">
     <div class="section-label"><span data-ko>3개월 커리큘럼</span><span data-en>3-Month Curriculum</span></div>
@@ -1036,7 +1038,7 @@
           <span>01</span>
         </div>
         <div class="month-content">
-          <div class="month-theme">Language + Life — 살아가는 법</div>
+          <div class="month-theme">Play + Open — 함께 놀며 마음을 열어요</div>
           <div class="month-items">
             <span class="tag">한국어 생존회화</span>
             <span class="tag">서울 탐방</span>
@@ -1107,15 +1109,15 @@
   <div class="section">
     <div class="section-label"><span data-ko>참가 비용</span><span data-en>Pricing</span></div>
 
-    <div style="text-align:center; margin-bottom:20px; padding:12px 20px; background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); border-radius:8px;">
-      <div style="font-size:12px; letter-spacing:0.15em; color:var(--gold); font-weight:700; margin-bottom:6px;">
+    <div style="text-align:center; margin-bottom:20px; padding:14px 20px; background:rgba(212,175,55,0.12); border:1px solid rgba(212,175,55,0.5); border-radius:8px;">
+      <div style="font-size:12px; letter-spacing:0.15em; color:#8B6914; font-weight:700; margin-bottom:6px;">
         🌱 1기 창립멤버 특별가
       </div>
-      <div style="font-size:13px; color:rgba(245,240,232,0.7); line-height:1.6;">
+      <div style="font-size:13px; color:#444444; line-height:1.8;">
         <span data-ko>함께 시작하는 사람에게 드리는 감사의 마음입니다<br>
-        * 2기 모집 조건은 1기 운영 후 별도 공지됩니다</span>
+        <span style="font-size:11px; color:#888888;">* 2기 모집 조건은 1기 운영 후 별도 공지됩니다</span></span>
         <span data-en>A special thank-you to those who begin with us<br>
-        * 2nd cohort pricing will be announced after 1st cohort</span>
+        <span style="font-size:11px; color:#888888;">* 2nd cohort pricing will be announced after 1st cohort</span></span>
       </div>
     </div>
 
@@ -1165,14 +1167,40 @@
   <!-- PROMISE -->
   <div class="promise">
     <blockquote>
-      "이곳은 학교이면서 교회이고, 문화센터이면서 가족입니다.<br>
-      딱 하나로 정의되지 않지만, 변하지 않는 것은 하나입니다.<br>
-      오늘, 바로 지금, 당신 곁에 있는 것."
+      "이곳은 교실이 되기도 하고,<br>
+      식탁이 되기도 하고,<br>
+      무대가 되기도 합니다.<br><br>
+      하지만 변하지 않는 것은 하나입니다.<br>
+      오늘, 바로 지금, 당신 곁에 있다는 것."
     </blockquote>
     <cite>— Andrew Jang · R2B Founder</cite>
+    <div style="margin-top:20px; font-size:11px; color:var(--muted); letter-spacing:0.12em; opacity:0.6;">
+      "너는 복이 될지라" — 창세기 12:3
+    </div>
   </div>
 
   <!-- APPLY -->
+  <!-- R2B FUND -->
+  <div class="section" style="text-align:center;">
+    <div class="section-label">R2B Fund</div>
+    <div style="max-width:520px; margin:0 auto; line-height:2; font-size:13px; color:var(--muted);">
+      <span data-ko>
+        R2B 참가비의 일부는 두 곳으로 향합니다<br><br>
+        ❤️ <strong>나눔</strong> — 환자·장애인·어려운 환경의 이웃을 위해<br>
+        매 기수 수료 후 투명하게 공개 사용됩니다<br><br>
+        🌱 <strong>씨앗</strong> — 미래 창업가를 위한 공동 예비 저축<br>
+        받은 것을 흘려보내는 것, 그것이 R2B입니다
+      </span>
+      <span data-en>
+        A portion of R2B fees goes to two places<br><br>
+        ❤️ <strong>Giving</strong> — For those facing illness, disability, or hardship<br>
+        Shared transparently after each cohort<br><br>
+        🌱 <strong>Seeds</strong> — A shared fund for future entrepreneurs<br>
+        What we receive, we pass on — that is R2B
+      </span>
+    </div>
+  </div>
+
   <div class="apply-section">
     <h3><span data-ko>지금 신청하세요</span><span data-en>Apply Now</span></h3>
     <p>
@@ -1362,14 +1390,17 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-brand"><span>R</span>2<span>B</span> School</div>
-    <div>Seoul, Korea · 2026</div>
-    <div>Reborn. Reconnected. Real.</div>
-    <div style="margin-top:12px;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div class="footer-brand"><span>R</span>2<span>B</span> School</div>
       <a href="https://github.com/andrewJYjang/r2b-school" target="_blank"
-         style="color:rgba(245,240,232,0.4); font-size:12px; text-decoration:none; letter-spacing:0.08em;">
+         style="color:var(--muted); font-size:12px; text-decoration:none; letter-spacing:0.08em; transition:color 0.3s;"
+         onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">
         Read Our Story → GitHub
       </a>
+    </div>
+    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+      <div>Seoul, Korea · 2026</div>
+      <div>Reborn. Reconnected. Real.</div>
     </div>
   </div>
 
@@ -1444,4 +1475,3 @@
 </script>
 </body>
 </html>
-
