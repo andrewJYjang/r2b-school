@@ -73,9 +73,9 @@ This is how Jesus started.
 R2B believes in the whole person.
 
 ```
-영 (Spirit)   → 예수님을 닮는 삶
-육 (Body)     → 건강하게 사는 삶
-자립 (Self)   → 스스로 서는 삶
+예수님을 닮는 삶
+건강하게 사는 삶
+스스로 서는 삶
 ```
 
 We don't create dependency.  
@@ -91,9 +91,8 @@ we carry the spirit of **Paul the Tentmaker.**
 
 ```
 일하면서 선교하고
-벌면서 나누고
-살면서 가르치고
-성장하면서 파송한다
+겸손하게 배우고
+함께 성장한다
 ```
 
 No one is paid to be here.  
@@ -127,7 +126,6 @@ R2B exists for that middle part.
 ### 우리가 하지 않는 것
 
 ```
-❌ 십일조로 큰 건물 짓지 않아요
 ❌ 숫자로 성공을 측정하지 않아요
 ❌ 화려한 프로그램으로 유혹하지 않아요
 ❌ 의존하게 만들지 않아요
@@ -142,8 +140,6 @@ R2B exists for that middle part.
 ✅ 작게 시작해요 — 12명
 ✅ 깊게 뿌리내려요 — 4년
 ✅ 건강하게 자립시켜요
-✅ 세상으로 파송해요
-✅ 다음 사람을 살리게 해요
 ```
 
 ---
