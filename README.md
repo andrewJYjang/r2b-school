@@ -330,9 +330,8 @@ Depending on your gifts and calling:
 
 | Cohort | Status | Link |
 |---|---|---|
-| 1기 (April 2026) | 🔴 Open | [Apply Now](https://forms.gle/Q8z41Q3WnUBBMFvd6) |
-| 2기 (August 2026) | 🟡 Waitlist | [Join Waitlist](https://forms.gle/U7EQwWAtmjLnmENK7) |
-| 3기 (December 2026) | 🟡 Waitlist | [Join Waitlist](https://forms.gle/CogLyt5jsdjPs5fx9) |
+| 1기 (April 5th 2026) | 🔴 Open | [Apply Now](https://forms.gle/Q8z41Q3WnUBBMFvd6) |
+| 2기 (Details coming soon) | 🟡 Waitlist | [Join Waitlist](https://forms.gle/U7EQwWAtmjLnmENK7) |
 
 ---
 
