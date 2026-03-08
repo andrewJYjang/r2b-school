@@ -338,9 +338,7 @@ Depending on your gifts and calling:
 ## Contact
 
 - 🌐 Website: [r2b.kr](https://r2b.kr)
-- 📷 Instagram: [@r2b.school](https://instagram.com/r2b.school)
-- 📧 Email: hello@r2b.kr
-- 👤 Founder: [Andrew Jang](https://github.com/andrewJYjang)
+- 👤 Co-Founder: [Andrew Jang, Email addr] andrewjangs@kakao.com
 
 ---
 
