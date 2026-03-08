@@ -361,4 +361,4 @@ Depending on your gifts and calling:
 ![전문 개발자 모임](images/Women_professinals.jpg)
 ![파이컨 행사 후](images/after_pycon.jpg)
 ![한국에 정착한 개발자들](images/Developers.jpg)
-![한국에서 경력을 이어가는 전문가들](images/Google Campus.jpg)
+
