@@ -60,9 +60,13 @@
     border: 1px solid var(--line);
     overflow: hidden;
     border-radius: 2px;
-    margin-bottom: 16px;
     width: fit-content;
-    margin-left: auto;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    background: var(--paper);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
 
   .lang-btn {
@@ -952,8 +956,8 @@
 
   <!-- MASTHEAD -->
   <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('ko')">KO</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ko')">KO</button>
   </div>
 
   <div class="masthead">
@@ -1619,8 +1623,8 @@
     document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
   }
 
-  // Default KO
-  document.querySelector('.page').classList.add('ko-mode');
+  // Default EN
+  document.querySelector('.page').classList.add('en-mode');
 
   // Open Google Form
   document.querySelector('.apply-btn').addEventListener('click', () => {
