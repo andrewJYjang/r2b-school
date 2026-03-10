@@ -91,9 +91,14 @@
     background: var(--line);
   }
 
-  [data-ko], [data-en] { transition: opacity 0.2s; }
-  .en-mode [data-ko] { display: none; }
-  .ko-mode [data-en] { display: none; }
+  [data-ko],[data-en],[data-ja],[data-zh],[data-fr],[data-es] { transition: opacity 0.2s; }
+  body.en-mode [data-ko],body.en-mode [data-ja],body.en-mode [data-zh],body.en-mode [data-fr],body.en-mode [data-es] { display: none; }
+  body.ko-mode [data-en],body.ko-mode [data-ja],body.ko-mode [data-zh],body.ko-mode [data-fr],body.ko-mode [data-es] { display: none; }
+  body.ja-mode [data-ko],body.ja-mode [data-en],body.ja-mode [data-zh],body.ja-mode [data-fr],body.ja-mode [data-es] { display: none; }
+  body.zh-mode [data-ko],body.zh-mode [data-en],body.zh-mode [data-ja],body.zh-mode [data-fr],body.zh-mode [data-es] { display: none; }
+  body.fr-mode [data-ko],body.fr-mode [data-en],body.fr-mode [data-ja],body.fr-mode [data-zh],body.fr-mode [data-es] { display: none; }
+  body.es-mode [data-ko],body.es-mode [data-en],body.es-mode [data-ja],body.es-mode [data-zh],body.es-mode [data-fr] { display: none; }
+  [data-en],[data-ja],[data-zh],[data-fr],[data-es] { display: none; }
 
   /* ── NOISE TEXTURE OVERLAY ── */
   /* body::before noise texture removed — too prominent on mobile */
@@ -956,8 +961,12 @@
 
   <!-- MASTHEAD -->
   <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('ko')">KO</button>
+    <button class="lang-btn" onclick="setLang('ja')">JA</button>
+    <button class="lang-btn" onclick="setLang('zh')">ZH</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
   </div>
 
   <div class="masthead">
@@ -981,11 +990,11 @@
     <div class="hero-divider"><span>✦</span></div>
 
     <div class="hero-tagline">
-      <span data-en>You came to Korea for a reason.<br>Let's find it — <em>together.</em></span><span data-ko>한국에 온 데는 이유가 있어요.<br><em>함께</em> 찾아가요.</span>
+      <span data-en>You came to Korea for a reason.<br>Let's find it — <em>together.</em></span><span data-ko>한국에 온 데는 이유가 있어요.<br><em>함께</em> 찾아가요.</span><span data-ja>韓国に来たのには理由がある。<br><em>一緒に</em>見つけよう。</span><span data-zh>你来韩国是有原因的。<br>让我们<em>一起</em>去发现吧。</span><span data-fr>Tu es venu en Corée pour une raison.<br>Trouvons-la — <em>ensemble.</em></span><span data-es>Viniste a Corea por una razón.<br>Encontrémosla — <em>juntos.</em></span>
     </div>
 
     <div class="arbor-badge">
-      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span><span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span>
+      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span><span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span><span data-ja>🌱 2026年4月5日 植樹の日 — 12粒の種を植えます</span><span data-zh>🌱 2026年4月5日 植树节 — 我们种下12颗种子</span><span data-fr>🌱 5 Avril 2026 — Jour de l'Arbre. Nous plantons 12 graines.</span><span data-es>🌱 5 de Abril 2026 — Día del Árbol. Plantamos 12 semillas.</span>
     </div>
   </div>
 
@@ -994,11 +1003,11 @@
     <div class="twelve-label">Why 12?</div>
     <div class="twelve-text">
       <span data-ko>작은 씨앗이<br>아름드리 큰 나무가 됩니다.</span>
-      <span data-en>From a small seed,<br>a mighty tree grows.</span>
+      <span data-en>From a small seed,<br>a mighty tree grows.</span><span data-ja>小さな種から、<br>大きな木が育ちます。</span><span data-zh>从一粒小小的种子，<br>长成参天大树。</span><span data-fr>D'une petite graine,<br>naît un grand arbre.</span><span data-es>De una pequeña semilla,<br>nace un gran árbol.</span>
     </div>
     <div class="twelve-sub">
       <span data-ko>R2B는 단 12명<br>깊이가 넓이를 이깁니다<br>작은 시작, 진짜 관계, 진짜 변화</span>
-      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span>
+      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span><span data-ja>R2B。たった12人。<br>広さより深さ。<br>小さな始まり、本物の関係、本物の変化。</span><span data-zh>R2B。仅限12人。<br>深度胜于广度。<br>小小开始，真实关系，真实改变。</span><span data-fr>R2B. Seulement 12.<br>La profondeur avant la largeur.<br>Petit début. Vraies relations. Vrai changement.</span><span data-es>R2B. Solo 12.<br>Profundidad sobre amplitud.<br>Pequeño comienzo. Relaciones reales. Cambio real.</span>
       <br><em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
     </div>
   </div>
@@ -1009,18 +1018,18 @@
     <div class="who-grid">
       <div class="who-card">
         <div class="flag">🌏</div>
-        <h4><span data-ko>영어 또는 한국어 가능 외국인 청년</span><span data-en>International Youth (English or Korean OK)</span></h4>
-        <p><span data-ko>일본·러시아·중국·유럽·아프리카 어디서 왔든 OK.<br>영어 못해도 괜찮아요.<br>한국어는 여기서 배우면 됩니다.<br>더 나은 한국어도 가능하죠 — 토종 한국인처럼 잘 하면 되죠.</span><span data-en>From Japan, Russia, Europe, Africa — anywhere is welcome.<br>English not perfect? No problem.<br>Korean? Learn it here.<br>Even get better than a native — why not?</span></p>
+        <h4><span data-ko>영어 또는 한국어 가능 외국인 청년</span><span data-en>International Youth (English or Korean OK)</span><span data-ja>外国人の若者（英語・韓国語OK）</span><span data-zh>外国青年（英语或韩语均可）</span><span data-fr>Jeunes étrangers (anglais ou coréen OK)</span><span data-es>Jóvenes extranjeros (inglés o coreano OK)</span></h4>
+        <p><span data-ko>일본·러시아·중국·유럽·아프리카 어디서 왔든 OK.<br>영어 못해도 괜찮아요.<br>한국어는 여기서 배우면 됩니다.<br>더 나은 한국어도 가능하죠 — 토종 한국인처럼 잘 하면 되죠.</span><span data-en>From Japan, Russia, Europe, Africa — anywhere is welcome.<br>English not perfect? No problem.<br>Korean? Learn it here.<br>Even get better than a native — why not?</span><span data-ja>日本・ロシア・ヨーロッパ・アフリカ、どこからでもOK。<br>英語が完璧じゃなくても大丈夫。<br>韓国語はここで学べます。<br>ネイティブより上手になれるかも！</span><span data-zh>来自日本、俄罗斯、欧洲、非洲——哪里都欢迎。<br>英语不完美？没关系。<br>韩语？在这里学吧。<br>甚至可以比母语者说得更好！</span><span data-fr>Du Japon, Russie, Europe, Afrique — tout le monde est bienvenu.<br>L'anglais pas parfait ? Pas de problème.<br>Le coréen ? Apprends-le ici.<br>Deviens même meilleur qu'un natif !</span><span data-es>De Japón, Rusia, Europa, África — todos son bienvenidos.<br>¿Inglés no perfecto? No hay problema.<br>¿Coreano? Aprende aquí.<br>¡Incluso puedes ser mejor que un nativo!</span></p>
       </div>
       <div class="who-card">
         <div class="flag">✈️</div>
-        <h4><span data-ko>워킹홀리데이 · 유학생 · 길잡이 필요한 분</span><span data-en>Working Holiday · Students · Way Finders</span></h4>
-        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.<br>이유는 몰라도 서울에서 뭔가를 찾고 있는 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. Maybe you're not sure why you're here. R2B is your home base.</span></p>
+        <h4><span data-ko>워킹홀리데이 · 유학생 · 길잡이 필요한 분</span><span data-en>Working Holiday · Students · Way Finders</span><span data-ja>ワーキングホリデー・留学生・方向を探している人</span><span data-zh>打工度假·留学生·寻找方向的人</span><span data-fr>Vacances-Travail · Étudiants · Chercheurs de voie</span><span data-es>Vacaciones-Trabajo · Estudiantes · Buscadores de camino</span></h4>
+        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.<br>이유는 몰라도 서울에서 뭔가를 찾고 있는 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. Maybe you're not sure why you're here. R2B is your home base.</span><span data-ja>しばらく韓国にいる — 観光じゃなく、本物のつながりが欲しい。なぜここにいるかよくわからなくても大丈夫。R2Bがあなたのホームです。</span><span data-zh>你在这里待一段时间——想要真实的连接，不只是旅游。也许还不确定为什么来这里。R2B就是你的家。</span><span data-fr>Tu es là pour un moment — et tu veux de vraies connexions, pas juste du tourisme. Peut-être tu ne sais pas exactement pourquoi tu es là. R2B est ton point d'ancrage.</span><span data-es>Estás aquí por un tiempo — y quieres conexiones reales, no solo turismo. Quizás no sabes exactamente por qué estás aquí. R2B es tu base.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">📸</div>
-        <h4><span data-ko>예술 · 기술 · 학문 · 크리에이터</span><span data-en>Arts · Tech · Academia · Creators</span></h4>
-        <p><span data-ko>연기·글쓰기·코딩·AI·데이터·연구 —<br>자신만의 방향으로 전문가로 자립하고 싶은 청년.<br>씨앗마다 다른 나무가 됩니다.</span><span data-en>Acting · writing · coding · AI · data · research —<br>whatever your direction, R2B helps you grow into your own kind of professional.<br>Every seed becomes a different tree.</span></p>
+        <h4><span data-ko>예술 · 기술 · 학문 · 크리에이터</span><span data-en>Arts · Tech · Academia · Creators</span><span data-ja>アート・テック・学術・クリエイター</span><span data-zh>艺术·科技·学术·创作者</span><span data-fr>Arts · Tech · Académie · Créateurs</span><span data-es>Arte · Tech · Academia · Creadores</span></h4>
+        <p><span data-ko>연기·글쓰기·코딩·AI·데이터·연구 —<br>자신만의 방향으로 전문가로 자립하고 싶은 청년.<br>씨앗마다 다른 나무가 됩니다.</span><span data-en>Acting · writing · coding · AI · data · research —<br>whatever your direction, R2B helps you grow into your own kind of professional.<br>Every seed becomes a different tree.</span><span data-ja>演技・執筆・コーディング・AI・データ・研究 —<br>どんな方向でも、R2Bはあなたが自分らしいプロに成長するのを助けます。<br>種それぞれが違う木になります。</span><span data-zh>表演·写作·编程·AI·数据·研究 —<br>无论你的方向，R2B帮助你成为独特的专业人士。<br>每颗种子都会成为不同的树。</span><span data-fr>Théâtre · écriture · codage · IA · données · recherche —<br>quelle que soit ta direction, R2B t'aide à devenir un professionnel à ta façon.<br>Chaque graine devient un arbre différent.</span><span data-es>Actuación · escritura · código · IA · datos · investigación —<br>cualquiera que sea tu dirección, R2B te ayuda a crecer como profesional.<br>Cada semilla se convierte en un árbol diferente.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">🌱</div>
