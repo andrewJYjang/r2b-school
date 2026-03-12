@@ -60,9 +60,8 @@
     border: 1px solid var(--line);
     overflow: hidden;
     border-radius: 2px;
-    margin-bottom: 16px;
     width: fit-content;
-    margin-left: auto;
+    background: var(--paper);
   }
 
   .lang-btn {
@@ -87,9 +86,15 @@
     background: var(--line);
   }
 
-  [data-ko], [data-en] { transition: opacity 0.2s; }
-  .en-mode [data-ko] { display: none; }
-  .ko-mode [data-en] { display: none; }
+  [data-ko],[data-en],[data-ja],[data-zh],[data-fr],[data-es] { transition: opacity 0.2s; }
+  body.en-mode [data-ko],body.en-mode [data-ja],body.en-mode [data-zh],body.en-mode [data-fr],body.en-mode [data-es] { display: none; }
+  body.ko-mode [data-en],body.ko-mode [data-ja],body.ko-mode [data-zh],body.ko-mode [data-fr],body.ko-mode [data-es] { display: none; }
+  body.ja-mode [data-ko],body.ja-mode [data-en],body.ja-mode [data-zh],body.ja-mode [data-fr],body.ja-mode [data-es] { display: none; }
+  body.zh-mode [data-ko],body.zh-mode [data-en],body.zh-mode [data-ja],body.zh-mode [data-fr],body.zh-mode [data-es] { display: none; }
+  body.fr-mode [data-ko],body.fr-mode [data-en],body.fr-mode [data-ja],body.fr-mode [data-zh],body.fr-mode [data-es] { display: none; }
+  body.es-mode [data-ko],body.es-mode [data-en],body.es-mode [data-ja],body.es-mode [data-zh],body.es-mode [data-fr] { display: none; }
+  /* 초기 깜빡임 방지 */
+  [data-en],[data-ja],[data-zh],[data-fr],[data-es] { display: none; }
 
   /* ── NOISE TEXTURE OVERLAY ── */
   /* body::before noise texture removed — too prominent on mobile */
@@ -127,6 +132,10 @@
     letter-spacing: 0.1em;
     color: var(--muted);
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
   }
 
   /* ── HERO ── */
@@ -951,16 +960,19 @@
 <div class="page">
 
   <!-- MASTHEAD -->
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('ko')">KO</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-  </div>
-
   <div class="masthead">
     <div class="masthead-left">
       R2B School &nbsp;·&nbsp; Seoul, Korea
     </div>
     <div class="masthead-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">JA</button>
+        <button class="lang-btn" data-lang="zh">ZH</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
       1st Cohort · 2026<br>
       Reborn. Reconnected. Real.
     </div>
@@ -977,11 +989,11 @@
     <div class="hero-divider"><span>✦</span></div>
 
     <div class="hero-tagline">
-      <span data-en>You came to Korea for a reason.<br>Let's find it — <em>together.</em></span><span data-ko>한국에 온 데는 이유가 있어요.<br><em>함께</em> 찾아가요.</span>
+      <span data-en>You came to Korea for a reason.<br>Let's find it — <em>together.</em></span><span data-ja>韓国に来たのには理由がある。<br><em>一緒に</em>見つけよう。</span><span data-zh>你来韩国是有原因的。<br>让我们<em>一起</em>去发现吧。</span><span data-fr>Tu es venu en Corée pour une raison.<br>Trouvons-la — <em>ensemble.</em></span><span data-es>Viniste a Corea por una razón.<br>Encontrémosla — <em>juntos.</em></span><span data-ko>한국에 온 데는 이유가 있어요.<br><em>함께</em> 찾아가요.</span>
     </div>
 
     <div class="arbor-badge">
-      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span><span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span>
+      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span><span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span><span data-ja>🌱 2026年4月5日 植樹の日 — 12粒の種を植えます</span><span data-zh>🌱 2026年4月5日 植树节 — 我们种下12颗种子</span><span data-fr>🌱 5 Avril 2026 — Jour de l'Arbre. Nous plantons 12 graines.</span><span data-es>🌱 5 de Abril 2026 — Día del Árbol. Plantamos 12 semillas.</span>
     </div>
   </div>
 
@@ -990,11 +1002,11 @@
     <div class="twelve-label">Why 12?</div>
     <div class="twelve-text">
       <span data-ko>작은 씨앗이<br>아름드리 큰 나무가 됩니다.</span>
-      <span data-en>From a small seed,<br>a mighty tree grows.</span>
+      <span data-en>From a small seed,<br>a mighty tree grows.</span><span data-ja>小さな種から、<br>大きな木が育ちます。</span><span data-zh>从一粒小小的种子，<br>长成参天大树。</span><span data-fr>D'une petite graine,<br>naît un grand arbre.</span><span data-es>De una pequeña semilla,<br>nace un gran árbol.</span>
     </div>
     <div class="twelve-sub">
       <span data-ko>R2B는 단 12명<br>깊이가 넓이를 이깁니다<br>작은 시작, 진짜 관계, 진짜 변화</span>
-      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span>
+      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span><span data-ja>R2B。たった12人。<br>広さより深さ。<br>小さな始まり、本物の関係、本物の変化。</span><span data-zh>R2B。仅限12人。<br>深度胜于广度。<br>小小开始，真实关系，真实改变。</span><span data-fr>R2B. Seulement 12.<br>La profondeur avant la largeur.<br>Petit début. Vraies relations. Vrai changement.</span><span data-es>R2B. Solo 12.<br>Profundidad sobre amplitud.<br>Pequeño comienzo. Relaciones reales. Cambio real.</span>
       <br><em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
     </div>
   </div>
@@ -1005,30 +1017,30 @@
     <div class="who-grid">
       <div class="who-card">
         <div class="flag">🌏</div>
-        <h4><span data-ko>영어 또는 한국어 가능 외국인 청년</span><span data-en>International Youth (English or Korean OK)</span></h4>
-        <p><span data-ko>일본·러시아·중국·유럽·아프리카 어디서 왔든 OK.<br>영어 못해도 괜찮아요.<br>한국어는 여기서 배우면 됩니다.<br>더 나은 한국어도 가능하죠 — 토종 한국인처럼 잘 하면 되죠.</span><span data-en>From Japan, Russia, Europe, Africa — anywhere is welcome.<br>English not perfect? No problem.<br>Korean? Learn it here.<br>Even get better than a native — why not?</span></p>
+        <h4><span data-ko>영어 또는 한국어 가능 외국인 청년</span><span data-en>International Youth (English or Korean OK)</span><span data-ja>外国人の若者（英語・韓国語OK）</span><span data-zh>外国青年（英语或韩语均可）</span><span data-fr>Jeunes étrangers (anglais ou coréen OK)</span><span data-es>Jóvenes extranjeros (inglés o coreano OK)</span></h4>
+        <p><span data-ko>일본·러시아·중국·유럽·아프리카 어디서 왔든 OK.<br>영어 못해도 괜찮아요.<br>한국어는 여기서 배우면 됩니다.<br>더 나은 한국어도 가능하죠 — 토종 한국인처럼 잘 하면 되죠.</span><span data-en>From Japan, Russia, Europe, Africa — anywhere is welcome.<br>English not perfect? No problem.<br>Korean? Learn it here.<br>Even get better than a native — why not?</span><span data-ja>日本・ロシア・ヨーロッパ・アフリカ、どこからでもOK。<br>英語が完璧じゃなくても大丈夫。<br>韓国語はここで学べます。<br>ネイティブより上手になれるかも！</span><span data-zh>来自日本、俄罗斯、欧洲、非洲——哪里都欢迎。<br>英语不完美？没关系。<br>韩语？在这里学吧。<br>甚至可以比母语者说得更好！</span><span data-fr>Du Japon, Russie, Europe, Afrique — tout le monde est bienvenu.<br>L'anglais pas parfait ? Pas de problème.<br>Le coréen ? Apprends-le ici.<br>Deviens même meilleur qu'un natif !</span><span data-es>De Japón, Rusia, Europa, África — todos son bienvenidos.<br>¿Inglés no perfecto? No hay problema.<br>¿Coreano? Aprende aquí.<br>¡Incluso puedes ser mejor que un nativo!</span></p>
       </div>
       <div class="who-card">
         <div class="flag">✈️</div>
-        <h4><span data-ko>워킹홀리데이 · 유학생 · 길잡이 필요한 분</span><span data-en>Working Holiday · Students · Way Finders</span></h4>
-        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.<br>이유는 몰라도 서울에서 뭔가를 찾고 있는 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. Maybe you're not sure why you're here. R2B is your home base.</span></p>
+        <h4><span data-ko>워킹홀리데이 · 유학생 · 길잡이 필요한 분</span><span data-en>Working Holiday · Students · Way Finders</span><span data-ja>ワーキングホリデー・留学生・方向を探している人</span><span data-zh>打工度假·留学生·寻找方向的人</span><span data-fr>Vacances-Travail · Étudiants · Chercheurs de voie</span><span data-es>Vacaciones-Trabajo · Estudiantes · Buscadores de camino</span></h4>
+        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.<br>이유는 몰라도 서울에서 뭔가를 찾고 있는 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. Maybe you're not sure why you're here. R2B is your home base.</span><span data-ja>しばらく韓国にいる — 観光じゃなく、本物のつながりが欲しい。なぜここにいるかよくわからなくても大丈夫。R2Bがあなたのホームです。</span><span data-zh>你在这里待一段时间——想要真实的连接，不只是旅游。也许还不确定为什么来这里。R2B就是你的家。</span><span data-fr>Tu es là pour un moment — et tu veux de vraies connexions, pas juste du tourisme. Peut-être tu ne sais pas exactement pourquoi tu es là. R2B est ton point d'ancrage.</span><span data-es>Estás aquí por un tiempo — y quieres conexiones reales, no solo turismo. Quizás no sabes exactamente por qué estás aquí. R2B es tu base.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">📸</div>
-        <h4><span data-ko>예술 · 기술 · 학문 · 크리에이터</span><span data-en>Arts · Tech · Academia · Creators</span></h4>
-        <p><span data-ko>연기·글쓰기·코딩·AI·데이터·연구 —<br>자신만의 방향으로 전문가로 자립하고 싶은 청년.<br>씨앗마다 다른 나무가 됩니다.</span><span data-en>Acting · writing · coding · AI · data · research —<br>whatever your direction, R2B helps you grow into your own kind of professional.<br>Every seed becomes a different tree.</span></p>
+        <h4><span data-ko>예술 · 기술 · 학문 · 크리에이터</span><span data-en>Arts · Tech · Academia · Creators</span><span data-ja>アート・テック・学術・クリエイター</span><span data-zh>艺术·科技·学术·创作者</span><span data-fr>Arts · Tech · Académie · Créateurs</span><span data-es>Arte · Tech · Academia · Creadores</span></h4>
+        <p><span data-ko>연기·글쓰기·코딩·AI·데이터·연구 —<br>자신만의 방향으로 전문가로 자립하고 싶은 청년.<br>씨앗마다 다른 나무가 됩니다.</span><span data-en>Acting · writing · coding · AI · data · research —<br>whatever your direction, R2B helps you grow into your own kind of professional.<br>Every seed becomes a different tree.</span><span data-ja>演技・執筆・コーディング・AI・データ・研究 —<br>どんな方向でも、R2Bはあなたが自分らしいプロに成長するのを助けます。<br>種それぞれが違う木になります。</span><span data-zh>表演·写作·编程·AI·数据·研究 —<br>无论你的方向，R2B帮助你成为独特的专业人士。<br>每颗种子都会成为不同的树。</span><span data-fr>Théâtre · écriture · codage · IA · données · recherche —<br>quelle que soit ta direction, R2B t'aide à devenir un professionnel à ta façon.<br>Chaque graine devient un arbre différent.</span><span data-es>Actuación · escritura · código · IA · datos · investigación —<br>cualquiera que sea tu dirección, R2B te ayuda a crecer como profesional.<br>Cada semilla se convierte en un árbol diferente.</span></p>
       </div>
       <div class="who-card">
         <div class="flag">🌱</div>
-        <h4><span data-ko>내면을 찾는 청년</span><span data-en>Seeking Inner Direction</span></h4>
-        <p><span data-ko>고민·삶의 방향 —<br>혼자 감당하지 않아도 됩니다.<br>나도 몰랐던 나를 발견해갑니다.</span><span data-en>Questions · life direction —<br>you don't have to carry it alone.<br>Discover the you, you never knew existed.</span></p>
+        <h4><span data-ko>내면을 찾는 청년</span><span data-en>Seeking Inner Direction</span><span data-ja>内なる方向を探している</span><span data-zh>寻找内心方向</span><span data-fr>En Quête de Direction Intérieure</span><span data-es>Buscando Dirección Interior</span></h4>
+        <p><span data-ko>고민·삶의 방향 —<br>혼자 감당하지 않아도 됩니다.<br>나도 몰랐던 나를 발견해갑니다.</span><span data-en>Questions · life direction —<br>you don't have to carry it alone.<br>Discover the you, you never knew existed.</span><span data-ja>悩み・人生の方向 —<br>一人で抱え込まなくていい。<br>知らなかった自分を発見しよう。</span><span data-zh>困惑·人生方向 —<br>不必一个人承担。<br>发现从未认识的自己。</span><span data-fr>Questions · direction de vie —<br>tu n'as pas à le porter seul.<br>Découvre le toi que tu ne connaissais pas.</span><span data-es>Preguntas · dirección de vida —<br>no tienes que cargarlo solo.<br>Descubre el tú que nunca supiste que existía.</span></p>
       </div>
     </div>
   </div>
 
   <!-- WHY R2B -->
   <div class="section">
-    <div class="section-label"><span data-ko>왜 R2B인가</span><span data-en>Why R2B</span></div>
+    <div class="section-label"><span data-ko>왜 R2B인가</span><span data-en>Why R2B</span><span data-ja>なぜR2Bなのか</span><span data-zh>为什么选择R2B</span><span data-fr>Pourquoi R2B</span><span data-es>¿Por qué R2B?</span></div>
     <div style="max-width:620px; margin:0 auto;">
 
       <!-- 문제 제기 -->
@@ -1048,7 +1060,7 @@
 
         <div style="background:rgba(0,0,0,0.03); border:1px solid var(--border); border-radius:8px; padding:20px;">
           <div style="font-size:11px; letter-spacing:0.15em; color:var(--muted); margin-bottom:12px; font-family:'Courier Prime',monospace;">
-            <span data-ko>다른 곳</span><span data-en>Elsewhere</span>
+            <span data-ko>다른 곳</span><span data-en>Elsewhere</span><span data-ja>他の場所</span><span data-zh>其他地方</span><span data-fr>Ailleurs</span><span data-es>En Otro Lugar</span>
           </div>
           <div style="font-size:12px; color:var(--muted); line-height:2.2;">
             <span data-ko>
@@ -1094,7 +1106,7 @@
       <div style="border-left:2px solid var(--accent); padding:14px 20px; background:rgba(212,175,55,0.04); margin-bottom:28px;">
         <div style="font-size:11px; letter-spacing:0.15em; color:var(--accent); margin-bottom:10px; font-family:'Courier Prime',monospace;">
           <span data-ko>세계 폴리글랏들이 증명했어요</span>
-          <span data-en>World polyglots already proved it</span>
+          <span data-en>World polyglots already proved it</span><span data-ja>世界のポリグロットたちが証明済み</span><span data-zh>世界多语达人已经证明</span><span data-fr>Les polyglotes du monde l'ont déjà prouvé</span><span data-es>Los políglotas del mundo ya lo demostraron</span>
         </div>
         <div style="font-size:12px; color:var(--muted); line-height:2.2;">
           <span data-ko>
@@ -1116,7 +1128,7 @@
       <div style="text-align:center;">
         <div style="font-size:16px; color:var(--ink); line-height:2; font-weight:700;">
           <span data-ko>"무대가 있으면<br>몰입은 자동입니다"</span>
-          <span data-en>"When there's a stage,<br>immersion takes care of itself"</span>
+          <span data-en>"When there's a stage,<br>immersion takes care of itself"</span><span data-ja>「舞台があれば、<br>没入は自然についてくる」</span><span data-zh>「有了舞台，<br>沉浸自然而然」</span><span data-fr>« Quand il y a une scène,<br>l'immersion s'occupe d'elle-même »</span><span data-es>«Cuando hay un escenario,<br>la inmersión se cuida sola»</span>
         </div>
       </div>
 
@@ -1125,7 +1137,7 @@
 
   <!-- CURRICULUM -->
   <div class="section">
-    <div class="section-label"><span data-ko>3개월 커리큘럼</span><span data-en>3-Month Curriculum</span></div>
+    <div class="section-label"><span data-ko>3개월 커리큘럼</span><span data-en>3-Month Curriculum</span><span data-ja>3ヶ月カリキュラム</span><span data-zh>3个月课程</span><span data-fr>Programme de 3 Mois</span><span data-es>Currículo de 3 Meses</span></div>
     <div class="curriculum">
       <div class="month-row">
         <div class="month-num">
@@ -1205,7 +1217,7 @@
 
   <!-- PRICE -->
   <div class="section">
-    <div class="section-label"><span data-ko>참가 비용</span><span data-en>Pricing</span></div>
+    <div class="section-label"><span data-ko>참가 비용</span><span data-en>Pricing</span><span data-ja>料金</span><span data-zh>费用</span><span data-fr>Tarifs</span><span data-es>Precios</span></div>
 
     <div style="text-align:center; margin-bottom:20px; padding:14px 20px; background:rgba(212,175,55,0.12); border:1px solid rgba(212,175,55,0.5); border-radius:8px;">
       <div style="font-size:12px; letter-spacing:0.15em; color:#8B6914; font-weight:700; margin-bottom:6px;">
@@ -1260,7 +1272,7 @@
     <div style="text-align:center; margin-top:16px; padding:12px 20px; background:rgba(212,175,55,0.06); border:1px solid rgba(212,175,55,0.2); border-radius:8px;">
       <div style="font-size:12px; color:#666666; line-height:1.8;">
         🌱 <span data-ko>친구와 함께 등록하면 추가 할인 — 신청 후 안내</span>
-        <span data-en>Bring a friend for extra discount — details after apply</span>
+        <span data-en>Bring a friend for extra discount — details after apply</span><span data-ja>友達と一緒に登録すると追加割引 — 申請後に案内</span><span data-zh>与朋友一起报名可享额外折扣 — 申请后通知</span><span data-fr>Amène un ami pour une remise supplémentaire — détails après inscription</span><span data-es>Trae un amigo para descuento extra — detalles después de aplicar</span>
       </div>
     </div>
   </div>
@@ -1423,13 +1435,13 @@
 
   <!-- SUPPORT -->
   <div class="section" style="text-align:center;">
-    <div class="section-label"><span data-ko>💛 R2B 후원하기</span><span data-en>💛 Support R2B</span></div>
+    <div class="section-label"><span data-ko>💛 R2B 후원하기</span><span data-en>💛 Support R2B</span><span data-ja>💛 R2Bを応援する</span><span data-zh>💛 支持R2B</span><span data-fr>💛 Soutenir R2B</span><span data-es>💛 Apoyar R2B</span></div>
 
     <div style="max-width:560px; margin:0 auto;">
 
       <p style="font-size:14px; color:var(--muted); line-height:2; margin-bottom:32px;">
         <span data-ko>함께하면 혼자보다 더 멀리 갑니다</span>
-        <span data-en>Together, we go further than alone</span>
+        <span data-en>Together, we go further than alone</span><span data-ja>一緒なら、一人より遠くへ行ける</span><span data-zh>携手同行，比独行走得更远</span><span data-fr>Ensemble, on va plus loin que seul</span><span data-es>Juntos, llegamos más lejos que solos</span>
       </p>
 
       <!-- 3가지 지원 방법 -->
@@ -1438,37 +1450,37 @@
         <div style="background:rgba(212,175,55,0.06); border:1px solid rgba(212,175,55,0.3); border-radius:8px; padding:20px;">
           <div style="font-size:20px; margin-bottom:10px;">💰</div>
           <div style="font-weight:700; font-size:13px; color:var(--ink); margin-bottom:6px;">
-            <span data-ko>후원하기</span><span data-en>Donate</span>
+            <span data-ko>후원하기</span><span data-en>Donate</span><span data-ja>寄付する</span><span data-zh>捐款</span><span data-fr>Faire un Don</span><span data-es>Donar</span>
           </div>
           <div style="font-size:11px; color:var(--muted); line-height:1.8; margin-bottom:14px;">
             <span data-ko>소액 · 물품 모두 OK<br>한 사람의 3개월을<br>함께 지원해주세요</span>
-            <span data-en>Money or goods welcome<br>Support someone's<br>3-month journey</span>
+            <span data-en>Money or goods welcome<br>Support someone's<br>3-month journey</span><span data-ja>金銭・物品どちらもOK<br>誰かの3ヶ月を<br>一緒に支えてください</span><span data-zh>金钱或物品均可<br>支持某人的<br>3个月旅程</span><span data-fr>Argent ou biens bienvenus<br>Soutenez le voyage<br>de 3 mois de quelqu'un</span><span data-es>Dinero o bienes bienvenidos<br>Apoya el viaje<br>de 3 meses de alguien</span>
           </div>
           <a href="https://forms.gle/Fv3PMp4Xx8yuEjjj6" target="_blank"
              style="display:inline-block; padding:8px 16px; background:var(--accent); color:#1a1a1a; font-size:11px; font-weight:700; letter-spacing:0.08em; text-decoration:none; border-radius:2px;">
-            <span data-ko>💛 후원 신청</span><span data-en>💛 Donate Now</span>
+            <span data-ko>💛 후원 신청</span><span data-en>💛 Donate Now</span><span data-ja>💛 寄付する</span><span data-zh>💛 立即捐款</span><span data-fr>💛 Faire un Don</span><span data-es>💛 Donar Ahora</span>
           </a>
         </div>
 
         <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:20px;">
           <div style="font-size:20px; margin-bottom:10px;">🙌</div>
           <div style="font-weight:700; font-size:13px; color:var(--ink); margin-bottom:6px;">
-            <span data-ko>함께하기</span><span data-en>Get Involved</span>
+            <span data-ko>함께하기</span><span data-en>Get Involved</span><span data-ja>参加する</span><span data-zh>参与其中</span><span data-fr>S'Impliquer</span><span data-es>Participar</span>
           </div>
           <div style="font-size:11px; color:var(--muted); line-height:1.8;">
             <span data-ko>자원봉사 · 멘토링<br>한국어 · 요리 · 코딩 · 진로<br>당신의 재능이 길이 됩니다</span>
-            <span data-en>Volunteer · Mentoring<br>Korean · Cooking · Coding<br>Your talent becomes someone's path</span>
+            <span data-en>Volunteer · Mentoring<br>Korean · Cooking · Coding<br>Your talent becomes someone's path</span><span data-ja>ボランティア・メンタリング<br>韓国語・料理・コーディング<br>あなたの才能が誰かの道になる</span><span data-zh>志愿者·导师<br>韩语·烹饪·编程<br>你的才能成为别人的道路</span><span data-fr>Bénévolat · Mentorat<br>Coréen · Cuisine · Codage<br>Ton talent devient le chemin de quelqu'un</span><span data-es>Voluntariado · Mentoría<br>Coreano · Cocina · Código<br>Tu talento se convierte en el camino de alguien</span>
           </div>
         </div>
 
         <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:20px;">
           <div style="font-size:20px; margin-bottom:10px;">📢</div>
           <div style="font-weight:700; font-size:13px; color:var(--ink); margin-bottom:6px;">
-            <span data-ko>알리기</span><span data-en>Spread the Word</span>
+            <span data-ko>알리기</span><span data-en>Spread the Word</span><span data-ja>広める</span><span data-zh>传播消息</span><span data-fr>Faire Passer le Mot</span><span data-es>Difundir</span>
           </div>
           <div style="font-size:11px; color:var(--muted); line-height:1.8;">
             <span data-ko>주변에 R2B를 알려주세요<br>가장 쉽고<br>가장 강력한 지원</span>
-            <span data-en>Tell someone about R2B<br>The easiest and<br>most powerful support</span>
+            <span data-en>Tell someone about R2B<br>The easiest and<br>most powerful support</span><span data-ja>誰かにR2Bを伝えてください<br>最も簡単で<br>最も力強いサポート</span><span data-zh>告诉别人关于R2B<br>最简单也是<br>最有力的支持</span><span data-fr>Parle de R2B à quelqu'un<br>Le soutien le plus simple<br>et le plus puissant</span><span data-es>Cuéntale a alguien sobre R2B<br>El apoyo más simple<br>y más poderoso</span>
           </div>
         </div>
 
@@ -1604,23 +1616,63 @@
   const formScreen = document.getElementById('formScreen');
   const successScreen = document.getElementById('successScreen');
 
-  // Language toggle
-  function setLang(lang) {
-    const page = document.querySelector('.page');
-    const btns = document.querySelectorAll('.lang-btn');
-    if (lang === 'en') {
-      page.classList.remove('ko-mode');
-      page.classList.add('en-mode');
-    } else {
-      page.classList.remove('en-mode');
-      page.classList.add('ko-mode');
-    }
-    btns.forEach(b => b.classList.remove('active'));
-    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  // ── 브라우저 언어 → R2B 언어코드 매핑
+  function detectLang() {
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (nav.startsWith('ko')) return 'ko';
+    if (nav.startsWith('ja')) return 'ja';
+    if (nav.startsWith('zh')) return 'zh';
+    if (nav.startsWith('fr')) return 'fr';
+    if (nav.startsWith('es')) return 'es';
+    return 'en'; // 기본값
   }
 
-  // Default KO
-  document.querySelector('.page').classList.add('ko-mode');
+  // ── 언어 전환 + EN 폴백 처리
+  function setLang(lang) {
+    document.body.classList.remove('ko-mode','en-mode','ja-mode','zh-mode','fr-mode','es-mode');
+    document.body.classList.add(lang + '-mode');
+
+    // 버튼 active 표시
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // ── EN 폴백: 번역 없는 섹션은 EN으로 대체
+    // (KO는 항상 있으므로 KO 폴백 불필요, EN이 기준)
+    if (lang !== 'ko' && lang !== 'en') {
+      document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+        // 이미 번역 있으면 skip
+      });
+      // 해당 언어 span이 없는 부모에서 EN span 보이기
+      document.querySelectorAll('[data-en]').forEach(enEl => {
+        const parent = enEl.parentElement;
+        const hasLang = parent.querySelector(`[data-${lang}]`);
+        if (!hasLang) {
+          enEl.style.display = ''; // EN 폴백 표시
+        }
+      });
+    }
+
+    try { localStorage.setItem('r2b_lang', lang); } catch(e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 버튼 이벤트
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 폴백 초기화 후 전환
+        document.querySelectorAll('[data-en]').forEach(el => el.style.display = '');
+        setLang(btn.dataset.lang);
+        // CSS가 다시 적용되도록 잠깐 후 정리
+        requestAnimationFrame(() => setLang(btn.dataset.lang));
+      });
+    });
+
+    // 언어 결정: 저장값 → 브라우저 감지 → EN
+    let lang = 'en';
+    try { lang = localStorage.getItem('r2b_lang') || detectLang(); } catch(e) { lang = detectLang(); }
+    setLang(lang);
+  });
 
   // Open Google Form
   document.querySelector('.apply-btn').addEventListener('click', () => {
@@ -1653,3 +1705,17 @@
       });
 
       if (res.ok) {
+        formScreen.style.display = 'none';
+        successScreen.style.display = 'block';
+      } else {
+        btn.textContent = '다시 시도해주세요';
+        btn.disabled = false;
+      }
+    } catch(err) {
+      btn.textContent = '오류 발생 · Try Again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
