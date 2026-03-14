@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R2B Events — K-Culture Meetups in Seoul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest-deep: #1a2e1e;
+    --forest-mid: #2d4a32;
+    --forest-light: #3d6142;
+    --moss: #6b8c52;
+    --sage: #9eb882;
+    --cream: #f4f0e6;
+    --warm-white: #faf8f3;
+    --bark: #8b7355;
+    --amber: #c8a96e;
+    --mist: #d4dcc8;
+    --text-main: #1a1a16;
+    --text-sub: #4a5240;
+
+    /* Event category colors */
+    --kpop:    #c084fc;
+    --kbeauty: #f9a8d4;
+    --kfilm:   #fb923c;
+    --kfood:   #4ade80;
+    --ktech:   #60a5fa;
+    --kart:    #f472b6;
+    --klang:   var(--amber);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-main);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.4rem 5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(26,46,30,0.96);
+    backdrop-filter: blur(12px);
+  }
+  .nav-brand {
+    font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 300;
+    color: var(--cream); text-decoration: none; letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.15em; color: var(--sage); text-decoration: none;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-links .nav-cta {
+    background: var(--moss); color: var(--cream) !important;
+    padding: 0.45rem 1rem;
+  }
+  .nav-links .nav-cta:hover { background: var(--forest-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 72vh;
+    background: var(--forest-deep);
+    position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 5rem 5rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 90% 10%, rgba(200,90,200,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 70% at 5% 90%, rgba(107,140,82,0.2) 0%, transparent 55%),
+      radial-gradient(ellipse 80% 40% at 50% 110%, rgba(45,74,50,0.7) 0%, transparent 60%);
+  }
+
+  /* Animated dots grid background */
+  .dots-bg {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: radial-gradient(circle, var(--sage) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .hero-tag {
+    position: relative; z-index: 2;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.3em; color: var(--sage); text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero h1 {
+    position: relative; z-index: 2;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300; line-height: 1.0;
+    color: var(--cream); letter-spacing: -0.02em;
+    opacity: 0; animation: fadeUp 0.8s ease 0.35s forwards;
+  }
+  .hero h1 em { font-style: italic; color: var(--kpop); }
+
+  .hero-sub {
+    position: relative; z-index: 2;
+    margin-top: 1.8rem; font-size: 1.05rem; font-weight: 300;
+    color: var(--mist); max-width: 560px; line-height: 1.75;
+    opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  /* Category filter pills */
+  .filter-bar {
+    position: relative; z-index: 2;
+    margin-top: 2.5rem;
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
+  }
+
+  .filter-pill {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.45rem 1rem; border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(244,240,230,0.6); background: transparent;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-pill:hover, .filter-pill.active {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.4);
+    color: var(--cream);
+  }
+  .filter-pill[data-cat="kpop"].active   { border-color: var(--kpop);   color: var(--kpop); }
+  .filter-pill[data-cat="kbeauty"].active{ border-color: var(--kbeauty);color: var(--kbeauty); }
+  .filter-pill[data-cat="kfilm"].active  { border-color: var(--kfilm);  color: var(--kfilm); }
+  .filter-pill[data-cat="kfood"].active  { border-color: var(--kfood);  color: var(--kfood); }
+  .filter-pill[data-cat="ktech"].active  { border-color: var(--ktech);  color: var(--ktech); }
+  .filter-pill[data-cat="klang"].active  { border-color: var(--klang);  color: var(--klang); }
+
+  /* MAIN CONTENT */
+  .main { padding: 5rem; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--moss);
+    margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 50px; height: 1px;
+    background: var(--moss); opacity: 0.4;
+  }
+
+  /* FEATURED EVENT (BTS) */
+  .featured {
+    margin-bottom: 5rem;
+  }
+
+  .featured-card {
+    background: var(--forest-deep);
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    min-height: 480px; overflow: hidden; position: relative;
+  }
+
+  .featured-visual {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1a4a 40%, #1a2e1e 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Animated concert light beams */
+  .light-beams {
+    position: absolute; inset: 0;
+    background:
+      conic-gradient(from 200deg at 30% 110%, transparent 0deg, rgba(192,132,252,0.15) 10deg, transparent 20deg),
+      conic-gradient(from 160deg at 50% 110%, transparent 0deg, rgba(192,132,252,0.1) 8deg, transparent 16deg),
+      conic-gradient(from 220deg at 70% 110%, transparent 0deg, rgba(249,168,212,0.12) 8deg, transparent 16deg);
+  }
+
+  .featured-visual-inner {
+    position: relative; z-index: 1;
+    text-align: center; padding: 3rem;
+  }
+
+  .concert-emoji {
+    font-size: 5rem; display: block; margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .concert-date-display {
+    font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 300;
+    color: var(--kpop); line-height: 1; margin-bottom: 0.5rem;
+  }
+  .concert-date-sub {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.2em; color: rgba(192,132,252,0.6); text-transform: uppercase;
+  }
+
+  .featured-content {
+    padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between;
+  }
+
+  .featured-meta {
+    display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap;
+  }
+
+  .event-cat-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.7rem;
+  }
+  .cat-kpop   { border: 1px solid var(--kpop);   color: var(--kpop); }
+  .cat-kbeauty{ border: 1px solid var(--kbeauty); color: var(--kbeauty); }
+  .cat-kfilm  { border: 1px solid var(--kfilm);   color: var(--kfilm); }
+  .cat-kfood  { border: 1px solid var(--kfood);   color: var(--kfood); }
+  .cat-ktech  { border: 1px solid var(--ktech);   color: var(--ktech); }
+  .cat-klang  { border: 1px solid var(--klang);   color: var(--klang); }
+  .cat-kart   { border: 1px solid var(--kart);    color: var(--kart); }
+
+  .status-live {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.1em; color: #4ade80; text-transform: uppercase;
+  }
+  .live-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #4ade80;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .featured-content h2 {
+    font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 300;
+    color: var(--cream); line-height: 1.2; margin-bottom: 1rem;
+  }
+  .featured-content h2 em { font-style: italic; color: var(--kpop); }
+
+  .featured-content p {
+    font-size: 0.95rem; color: var(--mist); line-height: 1.8;
+    font-weight: 300; margin-bottom: 1.2rem;
+  }
+
+  .event-info-row {
+    display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;
+  }
+  .info-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.88rem; color: var(--sage); font-weight: 300;
+  }
+  .info-item strong { color: var(--cream); font-weight: 400; }
+
+  .featured-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+  .btn-event {
+    padding: 0.75rem 1.8rem; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    text-decoration: none; display: inline-block; transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-kpop { background: var(--kpop); color: white; border: none; }
+  .btn-kpop:hover { background: #a855f7; transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent; color: var(--cream);
+    border: 1px solid rgba(244,240,230,0.25);
+  }
+  .btn-ghost:hover { border-color: var(--sage); color: var(--sage); transform: translateY(-2px); }
+
+  /* UPCOMING EVENTS GRID */
+  .events-section { margin-top: 1rem; }
+
+  .events-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+  }
+
+  .event-card {
+    background: var(--cream); padding: 2.2rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    position: relative; overflow: hidden; cursor: pointer;
+    display: flex; flex-direction: column;
+  }
+  .event-card:hover { background: white; transform: translateY(-3px); }
+  .event-card[data-cat="kpop"]:hover    { border-bottom-color: var(--kpop); }
+  .event-card[data-cat="kbeauty"]:hover { border-bottom-color: var(--kbeauty); }
+  .event-card[data-cat="kfilm"]:hover   { border-bottom-color: var(--kfilm); }
+  .event-card[data-cat="kfood"]:hover   { border-bottom-color: var(--kfood); }
+  .event-card[data-cat="ktech"]:hover   { border-bottom-color: var(--ktech); }
+  .event-card[data-cat="klang"]:hover   { border-bottom-color: var(--klang); }
+  .event-card[data-cat="kart"]:hover    { border-bottom-color: var(--kart); }
+
+  .card-top {
+    display: flex; justify-content: space-between; align-items: start;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-emoji { font-size: 2.2rem; }
+
+  .card-date {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.15em; color: var(--text-sub); text-transform: uppercase;
+    text-align: right;
+  }
+  .card-date .month { font-size: 0.55rem; opacity: 0.7; display: block; }
+  .card-date .day   { font-size: 1.4rem; font-family: 'Fraunces', serif;
+                      font-weight: 300; color: var(--forest-deep); line-height: 1; }
+
+  .card-cat { margin-bottom: 0.8rem; }
+
+  .card-title {
+    font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 300;
+    color: var(--forest-deep); line-height: 1.25; margin-bottom: 0.75rem;
+  }
+
+  .card-desc {
+    font-size: 0.875rem; color: var(--text-sub); line-height: 1.7;
+    font-weight: 300; flex: 1;
+  }
+
+  .card-footer {
+    margin-top: 1.5rem; padding-top: 1.2rem;
+    border-top: 1px solid rgba(107,140,82,0.15);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .card-location {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.1em; color: var(--moss); text-transform: uppercase;
+  }
+
+  .card-spots {
+    font-size: 0.78rem; color: var(--text-sub); font-weight: 300;
+  }
+
+  /* PAST / UPCOMING toggle */
+  .timeline-nav {
+    display: flex; gap: 0; margin-bottom: 2rem; border: 1px solid var(--mist);
+    width: fit-content;
+  }
+  .t-btn {
+    padding: 0.6rem 1.5rem; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    background: transparent; color: var(--text-sub); border: none; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .t-btn.active { background: var(--forest-deep); color: var(--cream); }
+
+  /* HOW IT WORKS */
+  .how-section {
+    margin-top: 5rem; padding: 4rem; background: var(--forest-deep);
+  }
+
+  .how-section h2 {
+    font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 3rem; line-height: 1.3;
+  }
+  .how-section h2 em { font-style: italic; color: var(--sage); }
+
+  .how-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+  }
+
+  .how-step {
+    background: rgba(255,255,255,0.04); padding: 2rem; position: relative;
+  }
+
+  .step-num {
+    font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 300;
+    color: rgba(158,184,130,0.2); line-height: 1; margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 300;
+    color: var(--cream); margin-bottom: 0.75rem; line-height: 1.3;
+  }
+
+  .step-desc {
+    font-size: 0.85rem; color: var(--mist); line-height: 1.7; font-weight: 300;
+  }
+
+  /* PROGRAMS TEASER */
+  .programs-teaser {
+    margin-top: 5rem; padding: 4rem; background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+
+  .programs-teaser h2 {
+    font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 300;
+    color: var(--forest-deep); line-height: 1.25; margin-bottom: 1.2rem;
+  }
+  .programs-teaser h2 em { font-style: italic; color: var(--moss); }
+
+  .programs-teaser p {
+    font-size: 0.95rem; color: var(--text-sub); line-height: 1.8;
+    font-weight: 300; margin-bottom: 1.5rem;
+  }
+
+  .program-tracks {
+    display: flex; flex-direction: column; gap: 1px;
+  }
+
+  .track {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.2rem 1.5rem; background: var(--warm-white);
+    border-left: 3px solid transparent; transition: all 0.2s;
+  }
+  .track:hover { background: white; }
+  .track.lang:hover  { border-left-color: var(--klang); }
+  .track.art:hover   { border-left-color: var(--kart); }
+  .track.tech:hover  { border-left-color: var(--ktech); }
+
+  .track-icon { font-size: 1.6rem; }
+
+  .track-info strong {
+    display: block; font-size: 0.95rem; color: var(--forest-deep);
+    margin-bottom: 0.2rem; font-weight: 500;
+  }
+  .track-info span {
+    font-size: 0.82rem; color: var(--text-sub); font-weight: 300;
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    margin-top: 5rem; padding: 5rem; background: var(--forest-mid);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(107,140,82,0.15) 0%, transparent 70%);
+  }
+  .cta-banner h2 {
+    position: relative; z-index: 1;
+    font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 300;
+    color: var(--cream); line-height: 1.2; margin-bottom: 1rem;
+  }
+  .cta-banner h2 em { font-style: italic; color: var(--amber); }
+  .cta-banner p {
+    position: relative; z-index: 1;
+    font-size: 1rem; color: var(--mist); font-weight: 300;
+    max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7;
+  }
+  .cta-btns {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--moss); color: var(--cream);
+    padding: 0.85rem 2rem; border: none;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: all 0.2s; letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: var(--forest-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent; color: var(--cream);
+    padding: 0.85rem 2rem; border: 1px solid rgba(244,240,230,0.25);
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 400;
+    cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--sage); color: var(--sage); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--forest-deep); padding: 2.5rem 5rem;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif; font-size: 1.3rem;
+    font-weight: 300; color: var(--cream);
+  }
+  .footer-nav { display: flex; gap: 2rem; list-style: none; }
+  .footer-nav a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.15em; color: var(--sage); text-decoration: none;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .footer-nav a:hover { color: var(--cream); }
+  footer p { font-size: 0.78rem; color: rgba(244,240,230,0.3); font-weight: 300; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.85); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* HIDDEN for filter */
+  .event-card.hidden { display: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero { padding: 0 2rem 4rem; }
+    .main { padding: 3rem 2rem; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-visual { min-height: 220px; }
+    .how-section, .programs-teaser, .cta-banner { padding: 3rem 2rem; }
+    .programs-teaser { grid-template-columns: 1fr; gap: 2rem; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/index.html" class="nav-brand">R2B</a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Community</a></li>
+    <li><a href="/events/index.html">Events</a></li>
+    <li><a href="/programs/index.html">Programs</a></li>
+    <li><a href="/cohort1/index.html" class="nav-cta">Cohort 1 →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="dots-bg"></div>
+
+  <p class="hero-tag">R2B International Community · Seoul Events</p>
+  <h1>K-Culture<br>meets <em>real people.</em></h1>
+  <p class="hero-sub">
+    Every concert, film premiere, beauty drop, and cultural moment is a chance
+    to meet someone new. R2B Events turn K-culture into community —
+    one gathering at a time.
+  </p>
+
+  <div class="filter-bar">
+    <button class="filter-pill active" data-cat="all">All</button>
+    <button class="filter-pill" data-cat="kpop">K-Pop</button>
+    <button class="filter-pill" data-cat="kfilm">K-Film</button>
+    <button class="filter-pill" data-cat="kbeauty">K-Beauty</button>
+    <button class="filter-pill" data-cat="kfood">K-Food</button>
+    <button class="filter-pill" data-cat="ktech">K-Tech</button>
+    <button class="filter-pill" data-cat="klang">Language</button>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- FEATURED: BTS -->
+  <div class="featured">
+    <div class="section-label">Featured · This Week</div>
+    <div class="featured-card reveal">
+      <div class="featured-visual">
+        <div class="light-beams"></div>
+        <div class="featured-visual-inner">
+          <span class="concert-emoji">🎤</span>
+          <div class="concert-date-display">MAR 21</div>
+          <div class="concert-date-sub">Gwanghwamun · Free Concert</div>
+        </div>
+      </div>
+      <div class="featured-content">
+        <div>
+          <div class="featured-meta">
+            <span class="event-cat-badge cat-kpop">K-Pop</span>
+            <div class="status-live">
+              <div class="live-dot"></div>
+              <span>Happening This Week</span>
+            </div>
+          </div>
+          <h2>R2B Circle<br>Pop-up · <em>BTS Night</em></h2>
+          <p>
+            BTS returns to Gwanghwamun with a free outdoor concert —
+            and 260,000 people are expected. Before the crowd fills the square,
+            we gather for coffee and real conversation.
+          </p>
+          <p>
+            No tickets needed for our meetup. Just show up, introduce yourself,
+            and meet the international friends who are also in Seoul for this moment.
+          </p>
+          <div class="event-info-row">
+            <div class="info-item">📅 <span><strong>March 21, 2026 (Sat)</strong> · 16:30 – 18:00</span></div>
+            <div class="info-item">📍 <span><strong>Gwanghwamun</strong> · Café near the square (DM for exact location)</span></div>
+            <div class="info-item">👥 <span><strong>Small group</strong> · 5–15 people · Free</span></div>
+            <div class="info-item">🌏 <span><strong>English spoken</strong> · All nationalities welcome</span></div>
+          </div>
+        </div>
+        <div class="featured-cta">
+          <a href="https://r2b.kr/cohort1" class="btn-event btn-kpop">I'm joining →</a>
+          <a href="https://r2b.kr" class="btn-event btn-ghost">Learn about R2B</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPCOMING EVENTS -->
+  <div class="events-section">
+    <div class="section-label">Upcoming Events</div>
+
+    <div class="timeline-nav">
+      <button class="t-btn active">Upcoming</button>
+      <button class="t-btn">Past</button>
+    </div>
+
+    <div class="events-grid" id="eventsGrid">
+
+      <!-- Apr 5 Arbor Day -->
+      <div class="event-card reveal" data-cat="klang">
+        <div class="card-top">
+          <div class="card-emoji">🌳</div>
+          <div class="card-date">
+            <span class="month">April</span>
+            <span class="day">5</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-klang">R2B School</span></div>
+        <div class="card-title">Cohort 1 Begins<br>on Arbor Day</div>
+        <div class="card-desc">
+          The first seeds of R2B School are planted on Korea's tree-planting day.
+          A 3-month small group for books, AI, careers, and finding direction together.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Korea University</span>
+          <span class="card-spots">5–10 people · Free</span>
+        </div>
+      </div>
+
+      <!-- K-Drama Watch Party -->
+      <div class="event-card reveal" data-cat="kfilm">
+        <div class="card-top">
+          <div class="card-emoji">📺</div>
+          <div class="card-date">
+            <span class="month">April</span>
+            <span class="day">TBA</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-kfilm">K-Film / Drama</span></div>
+        <div class="card-title">K-Drama<br>Watch & Talk</div>
+        <div class="card-desc">
+          Pick an episode together. Watch. Then discuss — the Korean culture,
+          the language, the storyline. A great entry point if you're new to K-drama.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Gwanghwamun</span>
+          <span class="card-spots">Open · Free</span>
+        </div>
+      </div>
+
+      <!-- K-Beauty -->
+      <div class="event-card reveal" data-cat="kbeauty">
+        <div class="card-top">
+          <div class="card-emoji">✨</div>
+          <div class="card-date">
+            <span class="month">May</span>
+            <span class="day">TBA</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-kbeauty">K-Beauty</span></div>
+        <div class="card-title">K-Beauty<br>Discovery Walk</div>
+        <div class="card-desc">
+          Explore Myeongdong or Hongdae together — the brands, the skincare
+          philosophy, the culture behind the products. With a community coffee after.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Myeongdong / Hongdae</span>
+          <span class="card-spots">Open · Free</span>
+        </div>
+      </div>
+
+      <!-- Language Exchange -->
+      <div class="event-card reveal" data-cat="klang">
+        <div class="card-top">
+          <div class="card-emoji">💬</div>
+          <div class="card-date">
+            <span class="month">Weekly</span>
+            <span class="day">EVE</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-klang">Language</span></div>
+        <div class="card-title">Korean ↔ English<br>Language Exchange</div>
+        <div class="card-desc">
+          Weekday evenings near Korea University and Jamsil.
+          Casual conversation, not a class. Real language, real people,
+          real connections.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Korea Univ · Jamsil</span>
+          <span class="card-spots">Ongoing · Free</span>
+        </div>
+      </div>
+
+      <!-- K-Food -->
+      <div class="event-card reveal" data-cat="kfood">
+        <div class="card-top">
+          <div class="card-emoji">🍜</div>
+          <div class="card-date">
+            <span class="month">May</span>
+            <span class="day">TBA</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-kfood">K-Food</span></div>
+        <div class="card-title">Seoul Street Food<br>Walk Together</div>
+        <div class="card-desc">
+          Tteokbokki, gimbap, hotteok — explore a Seoul market or street
+          together. Food is the easiest way to start a conversation across cultures.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Gwangjang / Tongin</span>
+          <span class="card-spots">Open · ~₩10,000</span>
+        </div>
+      </div>
+
+      <!-- AI + K-Tech -->
+      <div class="event-card reveal" data-cat="ktech">
+        <div class="card-top">
+          <div class="card-emoji">🤖</div>
+          <div class="card-date">
+            <span class="month">Every</span>
+            <span class="day">SAT</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-ktech">K-Tech · AI</span></div>
+        <div class="card-title">AI & Robotics<br>Research Meetup</div>
+        <div class="card-desc">
+          Weekly Saturday sessions in Gangnam. Paper reading, Physical AI,
+          humanoid robotics discussion. Open to researchers, engineers,
+          and curious minds.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Gangnam</span>
+          <span class="card-spots">Ongoing · Free</span>
+        </div>
+      </div>
+
+      <!-- K-Art / Performance -->
+      <div class="event-card reveal" data-cat="kfilm">
+        <div class="card-top">
+          <div class="card-emoji">🎭</div>
+          <div class="card-date">
+            <span class="month">June</span>
+            <span class="day">TBA</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-kart">K-Art</span></div>
+        <div class="card-title">Korean Theater<br>& Performance</div>
+        <div class="card-desc">
+          Attend a play reading or performance together, followed by
+          a discussion circle. Art opens conversations that coffee alone cannot.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Daehangno</span>
+          <span class="card-spots">Small group · TBA</span>
+        </div>
+      </div>
+
+      <!-- K-Pop next -->
+      <div class="event-card reveal" data-cat="kpop">
+        <div class="card-top">
+          <div class="card-emoji">🎵</div>
+          <div class="card-date">
+            <span class="month">Coming</span>
+            <span class="day">Soon</span>
+          </div>
+        </div>
+        <div class="card-cat"><span class="event-cat-badge cat-kpop">K-Pop</span></div>
+        <div class="card-title">Next K-Pop<br>Event · TBA</div>
+        <div class="card-desc">
+          When the next major K-pop concert or event is announced,
+          R2B Circle will gather before or after. Follow us to stay updated.
+        </div>
+        <div class="card-footer">
+          <span class="card-location">📍 Seoul</span>
+          <span class="card-spots">Announce soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section reveal">
+    <h2>Every event is a<br><em>community entry point.</em></h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Find an event<br>you care about</div>
+        <div class="step-desc">BTS concert, K-drama night, beauty walk — start with what you already love.</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div class="step-title">We meet before<br>or after</div>
+        <div class="step-desc">A small R2B Circle pop-up around the event. Coffee, introductions, real conversation.</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div class="step-title">Keep the<br>connection going</div>
+        <div class="step-desc">After the event ends, the friendships don't. The next meetup is already planned.</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">→</div>
+        <div class="step-title">Join R2B<br>programs</div>
+        <div class="step-desc">If you want to go deeper — language, arts, or tech — R2B School cohorts run every season.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMS TEASER -->
+  <div class="programs-teaser reveal">
+    <div>
+      <div class="section-label">Beyond Events</div>
+      <h2>Events bring you in.<br><em>Programs</em> take you deeper.</h2>
+      <p>
+        R2B runs three long-term program tracks alongside the event meetups.
+        These run each season as cohort groups — small, committed, and free.
+      </p>
+      <a href="/programs/index.html" class="btn-primary" style="margin-top: 0.5rem;">See Programs →</a>
+    </div>
+    <div class="program-tracks">
+      <div class="track lang">
+        <div class="track-icon">💬</div>
+        <div class="track-info">
+          <strong>Language Track</strong>
+          <span>Korean ↔ English · Conversation · Culture</span>
+        </div>
+      </div>
+      <div class="track art">
+        <div class="track-icon">🎨</div>
+        <div class="track-info">
+          <strong>Arts Track</strong>
+          <span>Theater · Music · Film · Creative community</span>
+        </div>
+      </div>
+      <div class="track tech">
+        <div class="track-icon">🤖</div>
+        <div class="track-info">
+          <strong>Technology Track</strong>
+          <span>AI · Robotics · Coding · Startups</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner reveal">
+    <h2>Your next <em>Seoul story</em><br>starts with one meetup.</h2>
+    <p>
+      Join R2B Circle — no application, no fees.
+      Just show up for the event you care about,
+      and meet the community waiting on the other side.
+    </p>
+    <div class="cta-btns">
+      <a href="/cohort1/index.html" class="btn-primary">Join Cohort 1 →</a>
+      <a href="https://r2b.kr" class="btn-outline">Back to Community</a>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">R2B International Community</div>
+  </div>
+  <ul class="footer-nav">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/events/index.html">Events</a></li>
+    <li><a href="/programs/index.html">Programs</a></li>
+    <li><a href="/cohort1/index.html">Cohort 1</a></li>
+  </ul>
+  <p>© 2026 R2B · Seoul · All roots connected.</p>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Category filter
+  const pills = document.querySelectorAll('.filter-pill');
+  const cards = document.querySelectorAll('#eventsGrid .event-card');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const cat = pill.dataset.cat;
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
