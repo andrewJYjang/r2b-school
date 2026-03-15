@@ -1,110 +1,183 @@
-# R2B School 🌱
+# R2B — International Community in Seoul 🌱
 
-> **"Born — Creative Changer — Dead"**
-> 태어남과 죽음 사이, 당신은 무엇을 남길 것인가?
+> **"Real people. Real conversations. Reborn in Seoul."**
+> 진짜 사람. 진짜 대화. 서울에서 다시 태어나다. 
 
 ---
 
-## 12 People. Real Relationships. Reborn.
+## Where Roots Connect Below the Surface
 
-R2B is a community program in Seoul, Korea for international youth who want more than language —  
-**language, culture, skills, and real human connection.**
+R2B is a small international community in Seoul — for coffee, conversation, books, and ideas.
+A place where curious people meet, grow, and sometimes find their mission.
 
-📍 Seoul, Korea (near Korea University)  
-🌱 First Cohort: **April 5, 2026 (Arbor Day)**  
+📍 Seoul, Korea (near Korea University)
+🌱 First Cohort: **April 5, 2026 (Arbor Day)**
 🌐 [r2b.kr](https://r2b.kr)
 
 ---
 
-## Who We Are
+## Structure
 
-R2B is not a language school.  
-R2B is not a career program.  
-R2B is a place where people **discover who they are, grow together, and become who they were meant to be.**
-
-We believe:
-- 🌱 A seed becomes a forest
-- 🤝 Real relationships change lives
-- ✝️ The greatest model of life is Jesus Christ
-- 🔥 Technology is a tool — **people are the answer**
+```
+r2b.kr (Community Main)
+├── R2B Circle — Open coffee meetups, language exchange
+├── R2B School — 3-month cohort program
+│   ├── Cohort 1 — April 5, 2026
+│   ├── Cohort 2 — August 2026 (Waitlist)
+│   └── Cohort 3 — December 2026 (Waitlist)
+├── R2B Residency — (Future)
+└── Global Network — (Future)
+```
 
 ---
 
-## What Happens at R2B
+## R2B Circle
+
+Open to everyone. No application. Just show up.
+
+**Language Exchange — Meet Us First**
+
+```
+Every Wed · Fri at 7PM
+커피빈 고대 안암역점 · Coffeebean Korea Univ. Anam
+안암역 2번 출구 도보 1분
+```
+
+- Small group · First 5 only · English speakers welcome
+- Pay your own drink · No entry fee
+- 💬 [Join via KakaoTalk](https://open.kakao.com/o/g2dHItli)
+
+---
+
+## R2B School — Cohort 1
+
+**12 People. Real Relationships. Reborn.**
+
+On Korea's Arbor Day — the day the country plants trees —
+R2B School Cohort 1 begins.
 
 | | |
 |---|---|
-| 📖 | Classic book reading — East, West & Bible |
-| 🎭 | Drama workshop with professional actors |
-| 🍳 | Korean cooking classes (authentic home recipes) |
-| 🌏 | Global network & career support |
-| 💻 | AI tools & portfolio building |
-| ✍️ | Write your own play (Month 03) |
-| 🙏 | Life mentoring & spiritual growth |
+| 📅 Start | April 5, 2026 (Arbor Day) |
+| 👥 Capacity | 12 people |
+| ⏱ Duration | 3 months |
+| 📍 Location | Seoul, Anam-dong · Anam UBF |
+| 🌐 Languages | EN · ES · KO |
+
+---
+
+## Who Is This For
+
+- 🌏 **English-speaking International Youth** — US · UK · Canada · Australia · Africa · Europe — all welcome
+- ✈️ **Working Holiday · Students · Way Finders** — Real connections, not just tourism
+- 📸 **Arts · Tech · Academia · Creators** — Every seed becomes a different tree
+- 🌱 **Seeking Inner Direction** — You don't have to carry it alone
+
+---
+
+## 3-Month Curriculum
+
+### Month 01 — Play + Open
+
+```
+Survival Korean · Seoul Exploration · Korean Cooking Class 1
+Camping Trip · Getting to Know Each Other
+🎭 Script Reading — with professional actors
+📖 Apology of Socrates + Gospel of John
+"Who am I?"
+```
+
+### Month 02 — Korea + Real
+
+```
+Korean Cooking Class 2 · Outdoor Cook Camping
+🎖️ Visit Korean War Veterans
+🌏 Conversation with North Korean Defectors
+🏛️ Seodaemun Prison History Museum
+✦ IP Basics (Premium)
+🎭 Advanced Play Reading
+📖 Demian + Psalms
+"How shall I live?"
+```
+
+### Month 03 — Build + Launch
+
+```
+Lean Startup Basics
+✦ Vibe Coding · Claude MVP (Premium)
+🌱 Build One Small Win
+📖 The Stranger + Sermon on the Mount
+"What will I leave behind?"
+🎤 Busking · Graduation Show
+🎭 Theater Performance
+Samgyeopsal Graduation Party 🎉
+```
+
+---
+
+## Pricing
+
+🌱 **Founding Member Special Price** — Cohort 1 only
+
+| Tier | Price | Includes |
+|------|-------|----------|
+| Basic | FREE | Korean class · Community access |
+| Standard ★ | ₩30,000/mo | + Cooking · Culture · Camping · 🧭 Inner Compass Basic |
+| Premium | ₩70,000/mo | + IP · Vibe Coding · Claude MVP · 1:1 Mentoring · 🧭 Inner Compass Deep |
+
+**🧭 Inner Compass** — Life direction support integrated into Standard and Premium tiers.
+- Basic: Group reflection on life questions
+- Deep: One-on-one · Personal direction · Confidential
 
 ---
 
 ## Our Philosophy — 우리의 철학
 
----
-
 ### 작은 시작, 깊은 뿌리
 
-We don't build big churches.  
-We don't chase big numbers.  
+We don't build big churches.
+We don't chase big numbers.
 We build **healthy people.**
 
 ```
-건강한 사람
-→ 건강한 가정
-→ 건강한 기업
-→ 건강한 공동체
-→ 건강한 세상
+건강한 사람 → 건강한 가정 → 건강한 기업 → 건강한 공동체 → 건강한 세상
 ```
 
-This is how Jesus started.  
-12 people. No building. No budget.  
+This is how Jesus started.
+12 people. No building. No budget.
 **Just truth, relationship, and love.**
-
----
 
 ### 영육간의 자립 — Body, Soul & Self-Reliance
 
-R2B believes in the whole person.
-
 ```
-예수님을 닮는 삶
-건강하게 사는 삶
-스스로 서는 삶
+영 (Spirit)   → 예수님을 닮는 삶
+육 (Body)     → 건강하게 사는 삶
+자립 (Self)   → 스스로 서는 삶
 ```
 
-We don't create dependency.  
-We create people who **stand on their own**  
+We don't create dependency.
+We create people who **stand on their own**
 — and then reach back to lift others up.
-
----
 
 ### 텐트메이커 DNA — Tentmaker Spirit
 
-Rooted in UBF since 1961,  
+Rooted in UBF since 1961,
 we carry the spirit of **Paul the Tentmaker.**
 
 ```
 일하면서 선교하고
-겸손하게 배우고
-함께 성장한다
+벌면서 나누고
+살면서 가르치고
+성장하면서 파송한다
 ```
 
-No one is paid to be here.  
-Everyone is here because they **chose to be.**  
-That is the difference.
-
----
+No one is paid to be here.
+Everyone is here because they **chose to be.**
 
 ### Born — Creative Changer — Dead
 
-Every person is born.  
-Every person dies.  
+Every person is born.
+Every person dies.
 **What you do in between is everything.**
 
 ```
@@ -123,38 +196,7 @@ R2B exists for that middle part.
 
 ---
 
-### 우리가 하지 않는 것
-
-```
-❌ 숫자로 성공을 측정하지 않아요
-❌ 화려한 프로그램으로 유혹하지 않아요
-❌ 의존하게 만들지 않아요
-❌ 한쪽만 좋아지게 하지 않아요
-```
-
----
-
-### 우리가 하는 것
-
-```
-✅ 작게 시작해요 — 12명
-✅ 깊게 뿌리내려요 — 4년
-✅ 건강하게 자립시켜요
-```
-
----
-
-> *"We don't want your money.*  
-> *We want your growth.*  
-> *We want you to become*  
-> *someone who changes the world."*
-
----
-
-
-
-R2B is not a 3-month program.  
-**R2B is a lifetime.**
+## Long-term Vision
 
 ```
 🌱 3 Months — SEED
@@ -170,7 +212,6 @@ R2B is not a 3-month program.
 🌳 4 Years — TREE
    "What will I leave behind?"
    Discipleship · Tentmaking · Mission
-   Following Jesus · Body & Soul
    → Give yourself
 
 🌍 Sending — FOREST
@@ -181,177 +222,65 @@ R2B is not a 3-month program.
 
 ---
 
-## Why This Exists
-
-In a world of AI, algorithms, and automation —  
-**Claude cannot hold your hand when you fall.**  
-**ChatGPT cannot come running when you're broken.**
-
-R2B raises people who **actually show up.**  
-People who run to each other.  
-People who stay.
-
-This is what Jesus did with 12 people.  
-This is what we do.
-
----
-
-## Our Team & Expert Support
-
-R2B is backed by a team you cannot replicate.  
-Each person brings **decades of real-life mastery.**
-
----
+## Our Team
 
 ### 🎭 Drama & Arts Expert — 30+ Years on Stage
-
-- Started performing since university · Now in his 60s
 - Seoul Mayor Award recipient
-- Leads drama workshops: voice, expression, presence
 - Classic play-reading group leader for 20+ years
-- *"He doesn't just teach acting. He teaches how to be human."*
-
----
 
 ### 🍲 Korean Culinary Expert — 40+ Years of Korean Soul Food
+- Authentic home recipes passed through generations
 
-- A lifetime dedicated to authentic Korean cuisine
-- Teaches authentic home recipes passed through generations
-- Monthly Korean cooking classes at R2B
-- *"Food is the first language of relationship."*
-
----
-
-### 💡 Andrew Jang — Co-Founder · AI/Robotics · Patent · IT
-
+### 💡 Andrew Jang — Founder · AI/Robotics · Patent · IT
 - Author of *Coding Era* (세종도서 선정)
-- Patent professional (trademarks, designs, inventions)
-- 20+ years in IT: search engines, information security, AI/robotics
-- LeRobot SO-ARM101 ACT model trainer (50,000 steps)
-- Developing "Robo" — a programming language for Physical AI
-- Founder: Genius Network · LTLABS · A3Group · AJX Strategic Partners
-- *"Technology is a tool. People are the answer."*
-
----
-
-### 🌍 Global Network Support
-
-- 91+ country diplomatic & community network
-- Fluent in Korean · English · Chinese · Japanese
-- Connections to C-level executives across Korean IT industry
-- Startup mentoring · patent strategy · career placement support
-- *"Your next opportunity is one introduction away."*
-
----
+- Patent professional (~4 years in IP; 10 years as CEO/founder; 10 years in search engines, infosec, IT)
+- LeRobot SO-ARM101 ACT model trainer
+- Physical AI team leader (DR4R)
+- Multilingual: Korean · English · Chinese · Japanese
+- 80+ country network
 
 ### ✝️ Rooted in UBF — Since 1961
-
-**University Bible Fellowship** is Korea's most unique mission movement:
-- Founded 1961, right after the Korean War
-- Self-supporting **tentmaker** missionaries — working professionals who serve
+- Self-supporting tentmaker missionaries
 - Active in 91+ countries worldwide
 - 65+ years of raising Korean youth through faith, study, and community
-- Intergenerational collaboration: senior wisdom meets young energy
-
-*R2B carries this DNA — faith, self-reliance, and genuine care for people.*
 
 ---
 
-## Professional Advisory Network
+## R2B Fund
 
-R2B is quietly supported by an informal network of professionals  
-who volunteer their expertise for R2B members.
+A portion of R2B fees goes to two places:
 
-```
-🏥 Medicine & Healthcare
-   Medical professors · Health professionals
+- ❤️ **Giving** — For those facing hardship
+- 🌱 **Seeds** — A shared fund for future entrepreneurs
 
-⚙️ Engineering & Technology
-   Engineering professors · IT executives (C-level)
-   AI · Robotics · Software specialists
-
-📊 Business & Management
-   Business school professors · Startup mentors
-   Entrepreneurship advisors
-
-⚖️ Law & Intellectual Property
-   Attorneys · Patent attorneys
-   IP strategy consultants
-
-🎓 Academia & Research
-   University professors across disciplines
-   Researchers & scholars
-
-🎬 Arts · Performance · Literature · Media
-   Professional stage & screen actors
-   Film & broadcast industry veterans
-   Published authors & literary figures
-   Directors · Producers · Content creators
-   Korean drama & entertainment network
-```
-
-These advisors do not advertise.  
-They show up when you need them.  
-**That is the R2B difference.**
-
-> *"The most valuable network is the one*  
-> *you didn't know you needed —*  
-> *until the moment you did."*
-
----
-
-## Who Should Apply
-
-- International youth in Seoul (working holiday, study, career)
-- Those who want real relationships, not just language exchange
-- Creators, artists, builders, seekers
-- Anyone asking: *"What am I doing with my life?"*
-
----
-
-## Tracks After R2B
-
-Depending on your gifts and calling:
-
-```
-🎨 Arts & Media    → YouTube, performance, 1-person media, Korean arts scene
-💻 Tech & Startup  → Korean IT companies, startup founding, AI career
-🌍 Mission         → Tentmaker missionary, global creative changer
-🧠 Counseling      → Community care, health support
-```
+What we receive, we pass on — that is R2B.
 
 ---
 
 ## Apply
 
 | Cohort | Status | Link |
-|---|---|---|
-| 1기 (April 5th 2026) | 🔴 Open | [Apply Now](https://forms.gle/Q8z41Q3WnUBBMFvd6) |
-| 2기 (Details coming soon) | 🟡 Waitlist | [Join Waitlist](https://forms.gle/U7EQwWAtmjLnmENK7) |
+|--------|--------|------|
+| 1기 (April 2026) | 🔴 Open | [Apply Now](https://forms.gle/otpQ7oxew2G2p56C9) |
+| 2기 (August 2026) | 🟡 Waitlist | [Join Waitlist](https://forms.gle/FaK7exsnRXVbmKxJ7) |
 
 ---
 
 ## Contact
 
 - 🌐 Website: [r2b.kr](https://r2b.kr)
-- 👤 Co-Founder: [Andrew Jang, Email addr] andrewjangs@kakao.com
+- 💬 KakaoTalk: [Open Chat](https://open.kakao.com/o/g2dHItli)
+- 📷 Instagram: [@r2binternational](https://instagram.com/r2binternational)
+- 📧 Email: andrewjangs@kakao.com
+- 👤 Founder: [Andrew Jang](https://github.com/andrewJYjang)
 
 ---
 
-> **"A seed becomes a tree.**  
-> **A tree becomes a forest.**  
+> **"A seed becomes a tree.**
+> **A tree becomes a forest.**
 > **April 5, 2026 — Plant your seed."**
 
 ---
 
-*R2B School · Seoul, Korea · 2026*  
+*R2B International Community · Seoul, Korea · 2026*
 *"사람으로, 사람과 함께, 사람이 되는 곳"*
-
-<img src="images/Korean_class_activities.jpg" width="49%">
-<img src="images/Korean_class_students.jpg" width="49%">
-<img src="images/Newyorker_Artist.jpg" width="49%">
-<img src="images/Preparing_some.jpg" width="49%">
-<img src="images/Women_professionals.jpg" width="49%">
-<img src="images/Seattle_developers.jpg" width="49%">
-<img src="images/after_pycon.jpg" width="49%">
-<img src="images/Developers.jpg" width="49%">
