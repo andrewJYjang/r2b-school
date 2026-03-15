@@ -75,12 +75,22 @@
   .lang-btn:hover:not(.active) { background: var(--line); }
 
   [data-ko],[data-en],[data-ja],[data-zh],[data-fr],[data-es] { transition: opacity 0.2s; }
-  body.en-mode [data-ko],body.en-mode [data-ja],body.en-mode [data-fr],body.en-mode [data-es] { display: none; }
-  body.ko-mode [data-en],body.ko-mode [data-ja],body.ko-mode [data-fr],body.ko-mode [data-es] { display: none; }
-  body.ja-mode [data-ko],body.ja-mode [data-en],body.ja-mode [data-fr],body.ja-mode [data-es] { display: none; }
-  body.fr-mode [data-ko],body.fr-mode [data-en],body.fr-mode [data-ja],body.fr-mode [data-es] { display: none; }
-  body.es-mode [data-ko],body.es-mode [data-en],body.es-mode [data-ja],body.es-mode [data-fr] { display: none; }
-  [data-ko],[data-ja],[data-fr],[data-es] { display: none; }
+  [data-ko],[data-ja],[data-fr],[data-es],[data-zh] { display: none; }
+
+  body.en-mode [data-ko],body.en-mode [data-ja],body.en-mode [data-fr],body.en-mode [data-es],body.en-mode [data-zh] { display: none; }
+  body.en-mode [data-en] { display: inline; }
+
+  body.ko-mode [data-en],body.ko-mode [data-ja],body.ko-mode [data-fr],body.ko-mode [data-es],body.ko-mode [data-zh] { display: none; }
+  body.ko-mode [data-ko] { display: inline; }
+
+  body.ja-mode [data-ko],body.ja-mode [data-en],body.ja-mode [data-fr],body.ja-mode [data-es],body.ja-mode [data-zh] { display: none; }
+  body.ja-mode [data-ja] { display: inline; }
+
+  body.fr-mode [data-ko],body.fr-mode [data-en],body.fr-mode [data-ja],body.fr-mode [data-es],body.fr-mode [data-zh] { display: none; }
+  body.fr-mode [data-fr] { display: inline; }
+
+  body.es-mode [data-ko],body.es-mode [data-en],body.es-mode [data-ja],body.es-mode [data-fr],body.es-mode [data-zh] { display: none; }
+  body.es-mode [data-es] { display: inline; }
 
   .page {
     max-width: 780px;
