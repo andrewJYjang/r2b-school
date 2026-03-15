@@ -1,1020 +1,1385 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R2B School — 1기 모집</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Serif+KR:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>R2B Circle & R2B School — International Community in Seoul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ink: #0e0e0e;
-    --paper: #f5f0e8;
-    --red: #c8392b;
-    --gold: #b8860b;
-    --muted: #6b6357;
-    --line: #d4cfc6;
+    --forest-deep: #1a2e1e;
+    --forest-mid: #2d4a32;
+    --forest-light: #3d6142;
+    --moss: #6b8c52;
+    --sage: #9eb882;
+    --cream: #f4f0e6;
+    --warm-white: #faf8f3;
+    --bark: #8b7355;
+    --amber: #c8a96e;
+    --mist: #d4dcc8;
+    --text-main: #1a1a16;
+    --text-sub: #4a5240;
   }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
   body {
-    background: var(--paper);
-    color: var(--ink);
     font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
+    background: var(--warm-white);
+    color: var(--text-main);
     overflow-x: hidden;
   }
 
-  .arbor-badge {
-    margin-top: 32px;
-    display: inline-block;
-    background: transparent;
-    border: 1px solid rgba(245,240,232,0.4);
-    color: rgba(245,240,232,0.9);
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    padding: 12px 28px;
-    font-style: italic;
-    animation: fadeUp 1.2s ease both;
-    animation-delay: 0.6s;
-    cursor: default;
-    transition: all 0.3s ease;
-  }
-  .arbor-badge:hover {
-    background: rgba(245,240,232,0.95);
-    color: #0e0e0e;
-    border-color: rgba(245,240,232,0.95);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    font-style: normal;
-    font-weight: 600;
-  }
-
-  .lang-toggle {
-    display: flex;
-    gap: 0;
-    border: 1px solid var(--line);
-    overflow: hidden;
-    border-radius: 2px;
-    width: fit-content;
-    background: var(--paper);
-  }
-  .lang-btn {
-    background: transparent;
-    border: none;
-    padding: 5px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    cursor: pointer;
-    color: var(--muted);
-    transition: all 0.2s;
-    font-family: "DM Sans", sans-serif;
-  }
-  .lang-btn.active { background: var(--ink); color: var(--paper); }
-  .lang-btn:hover:not(.active) { background: var(--line); }
-
-  [data-ko],[data-en],[data-ja],[data-zh],[data-fr],[data-es] { transition: opacity 0.2s; }
-  [data-ko],[data-ja],[data-fr],[data-es],[data-zh] { display: none; }
-
-  body.en-mode [data-ko],body.en-mode [data-ja],body.en-mode [data-fr],body.en-mode [data-es],body.en-mode [data-zh] { display: none; }
-  body.en-mode [data-en] { display: inline; }
-
-  body.ko-mode [data-en],body.ko-mode [data-ja],body.ko-mode [data-fr],body.ko-mode [data-es],body.ko-mode [data-zh] { display: none; }
-  body.ko-mode [data-ko] { display: inline; }
-
-  body.ja-mode [data-ko],body.ja-mode [data-en],body.ja-mode [data-fr],body.ja-mode [data-es],body.ja-mode [data-zh] { display: none; }
-  body.ja-mode [data-ja] { display: inline; }
-
-  body.fr-mode [data-ko],body.fr-mode [data-en],body.fr-mode [data-ja],body.fr-mode [data-es],body.fr-mode [data-zh] { display: none; }
-  body.fr-mode [data-fr] { display: inline; }
-
-  body.es-mode [data-ko],body.es-mode [data-en],body.es-mode [data-ja],body.es-mode [data-fr],body.es-mode [data-zh] { display: none; }
-  body.es-mode [data-es] { display: inline; }
-
-  .page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 60px 40px 80px;
-  }
-
-  .masthead {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-top: 3px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 16px 0;
-    margin-bottom: 60px;
-    animation: fadeDown 0.8s ease both;
-  }
-  .masthead-left {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .masthead-right {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-
+  /* ── HERO ── */
   .hero {
-    text-align: center;
-    margin-bottom: 70px;
-    animation: fadeUp 1s ease 0.2s both;
-  }
-  .hero-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-  }
-  .hero-eyebrow::before,.hero-eyebrow::after {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: var(--red);
-  }
-  .hero-title {
-    font-family: 'Playfair Display', 'Noto Serif KR', serif;
-    font-size: clamp(72px, 14vw, 120px);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-  }
-  .hero-title .r { color: var(--red); }
-  .hero-title .two { color: var(--muted); font-size: 0.6em; vertical-align: middle; }
-  .hero-title .b { color: var(--ink); }
-  .hero-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(14px, 2.5vw, 20px);
-    font-style: italic;
-    color: var(--muted);
-    margin-top: 16px;
-    letter-spacing: 0.02em;
-  }
-  .hero-divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 32px auto;
-    max-width: 400px;
-  }
-  .hero-divider::before,.hero-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--line);
-  }
-  .hero-divider span { font-size: 18px; color: var(--gold); }
-  .hero-tagline {
-    font-family: 'Noto Serif KR', serif;
-    font-size: clamp(18px, 3vw, 26px);
-    font-weight: 700;
-    line-height: 1.5;
-    color: var(--ink);
-  }
-  .hero-tagline em { font-style: normal; color: var(--red); border-bottom: 2px solid var(--red); }
-
-  .twelve-block {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 48px 48px;
-    margin: 60px 0;
+    min-height: 100vh;
+    background: var(--forest-deep);
     position: relative;
-    overflow: hidden;
-    animation: fadeUp 1s ease 0.4s both;
-  }
-  .twelve-block::before {
-    content: '12';
-    position: absolute;
-    right: -20px;
-    top: -40px;
-    font-family: 'Playfair Display', serif;
-    font-size: 220px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.04);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .twelve-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  .twelve-text {
-    font-family: 'Playfair Display', 'Noto Serif KR', serif;
-    font-size: clamp(20px, 3.5vw, 28px);
-    font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-  .twelve-sub { font-size: 14px; color: rgba(245,240,232,0.6); font-style: italic; line-height: 1.7; }
-
-  .section { margin: 60px 0; animation: fadeUp 1s ease 0.5s both; }
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-
-  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .who-card {
-    background: white;
-    padding: 28px 24px;
-    border-left: 3px solid transparent;
-    transition: border-color 0.3s;
-  }
-  .who-card:hover { border-color: var(--red); }
-  .who-card .flag { font-size: 28px; margin-bottom: 12px; }
-  .who-card h4 { font-family: 'Noto Serif KR', serif; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-  .who-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-  .curriculum { display: flex; flex-direction: column; gap: 2px; }
-  .month-row { display: grid; grid-template-columns: 80px 1fr; gap: 0; transition: all 0.3s ease; }
-  .month-num {
-    background: var(--ink);
-    color: var(--paper);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 24px 12px;
-  }
-  .month-row:hover .month-num span:last-child { color: var(--red); }
-  .month-num span:first-child { font-size: 10px; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
-  .month-num span:last-child { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1; }
-  .month-content { background: white; padding: 24px 28px; border-bottom: 1px solid var(--line); }
-  .month-theme { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--red); }
-  .month-items { display: flex; flex-wrap: wrap; gap: 8px; }
-
-  .tag {
-    font-size: 12px;
-    background: var(--paper);
-    border: 1px solid var(--line);
-    padding: 6px 14px;
-    border-radius: 2px;
-    color: var(--ink);
-    cursor: default;
-    transition: all 0.25s ease;
-    display: inline-block;
-  }
-  .tag:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14,14,14,0.15); }
-  .highlight-tag { background: var(--ink); color: var(--paper) !important; border-color: var(--ink) !important; font-weight: 600; }
-  .highlight-tag:hover { background: var(--red) !important; border-color: var(--red) !important; transform: translateY(-2px); }
-  .classics-tag { background: #1a1a2e; color: #e8d5b0 !important; border-color: #2d2d4e !important; font-size: 11px; font-style: italic; }
-  .classics-question { background: transparent; color: var(--gold) !important; border-color: var(--gold) !important; font-style: italic; font-size: 12px; font-weight: 600; }
-  .premium-tag { background: linear-gradient(135deg, #c8392b, #b8860b); color: white !important; border-color: transparent !important; font-weight: 700; letter-spacing: 0.05em; }
-
-  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-  .price-card { padding: 32px 24px; background: white; text-align: center; position: relative; }
-  .price-card.featured { background: var(--ink); color: var(--paper); }
-  .price-card.featured .price-amount { color: var(--gold); }
-  .price-card.featured .price-desc { color: rgba(245,240,232,0.6); }
-  .price-tier { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-  .price-card.featured .price-tier { color: var(--gold); }
-  .price-amount { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--red); line-height: 1; margin-bottom: 4px; }
-  .price-period { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
-  .price-card.featured .price-period { color: rgba(245,240,232,0.5); }
-  .price-desc { font-size: 12px; color: var(--muted); line-height: 1.7; }
-
-  .promise {
-    border: 1px solid var(--ink);
-    padding: 40px 48px;
-    margin: 60px 0;
-    text-align: center;
-    position: relative;
-    animation: fadeUp 1s ease 0.6s both;
-  }
-  .promise::before {
-    content: '✦';
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--paper);
-    padding: 0 12px;
-    font-size: 16px;
-    color: var(--gold);
-  }
-  .promise blockquote { font-family: 'Playfair Display', 'Noto Serif KR', serif; font-size: clamp(16px, 2.5vw, 22px); font-style: italic; line-height: 1.6; color: var(--ink); margin-bottom: 20px; }
-  .promise cite { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); font-style: normal; }
-
-  .apply-section {
-    background: var(--red);
-    color: white;
-    padding: 56px 48px;
-    text-align: center;
-    animation: fadeUp 1s ease 0.7s both;
-  }
-  .apply-section h3 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
-  .apply-section p { font-size: 15px; opacity: 0.85; margin-bottom: 36px; line-height: 1.7; }
-  .apply-details { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
-  .apply-detail { text-align: center; }
-  .apply-detail .label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 6px; }
-  .apply-detail .value { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
-  .apply-btn {
-    display: inline-block;
-    background: white;
-    color: var(--red);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 16px 48px;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
-    border: none;
-  }
-  .apply-btn:hover { background: var(--ink); color: white; transform: translateY(-2px); }
-  .apply-btn-wait {
-    display: inline-block;
-    background: transparent;
-    color: rgba(245,240,232,0.8);
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    padding: 12px 40px;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
-    border: 1px solid rgba(245,240,232,0.3);
-    width: 100%;
-    max-width: 360px;
-  }
-  .apply-btn-wait:hover { background: rgba(245,240,232,0.1); border-color: rgba(245,240,232,0.6); }
-
-  .footer {
-    margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--line);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-  .footer-brand { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); }
-  .footer-brand span { color: var(--red); }
-
-  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
-  @media (max-width: 600px) {
-    .page { padding: 40px 24px 60px; }
-    .who-grid { grid-template-columns: 1fr; }
-    .price-grid { grid-template-columns: 1fr; }
-    .apply-details { gap: 24px; }
-    .twelve-block { padding: 36px 28px; }
-    .promise { padding: 32px 24px; }
-    .apply-section { padding: 40px 28px; }
-    .footer { flex-direction: column; gap: 16px; }
-  }
-
-  /* ── MEETUP CARDS ── */
-  .meetup-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-bottom: 28px;
-  }
-
-  .meetup-card {
-    background: white;
-    padding: 20px;
-    border-top: 3px solid var(--ink);
-    text-align: center;
-    transition: border-color 0.2s;
-  }
-  .meetup-card:hover { border-top-color: var(--red); }
-
-  .meetup-day {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-
-  .meetup-date {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .meetup-time {
-    font-size: 12px;
-    color: var(--red);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-  }
-
-  /* BTS 이벤트 카드 */
-  .bts-card {
-    background: #1a0a2e;
-    color: var(--paper);
-    padding: 32px 36px;
-    margin-bottom: 28px;
-    position: relative;
     overflow: hidden;
-    border-left: 4px solid #c084fc;
   }
-  .bts-card::before {
-    content: '🎤';
+
+  .hero-bg {
     position: absolute;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(61,97,66,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(107,140,82,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 40% at 50% 100%, rgba(45,74,50,0.6) 0%, transparent 60%);
+  }
+
+  /* Animated tree silhouettes */
+  .tree-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
     opacity: 0.15;
   }
-  .bts-label {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #c084fc;
-    margin-bottom: 10px;
-  }
-  .bts-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--paper);
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-  .bts-desc {
-    font-size: 13px;
-    color: rgba(245,240,232,0.7);
-    line-height: 1.7;
-    max-width: 480px;
-  }
-  .bts-meta {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-  }
-  .bts-meta span {
-    font-family: 'DM Sans', monospace;
-    font-size: 11px;
-    color: rgba(192,132,252,0.8);
-    letter-spacing: 0.05em;
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 8rem 6rem 4rem;
+    max-width: 1100px;
   }
 
-  /* 소그룹 강조 배지 */
-  .small-group-badge {
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .hero-sub {
+    margin-top: 2rem;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--mist);
+    max-width: 520px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.6s forwards;
+  }
+
+  .hero-mission {
+    margin-top: 3rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--amber);
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.8s forwards;
+  }
+
+  .hero-cta {
+    margin-top: 3.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 1s forwards;
+  }
+
+  .btn-primary {
+    background: var(--moss);
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--forest-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(244,240,230,0.3);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--sage); color: var(--sage); transform: translateY(-2px); }
+
+  .hero-date-badge {
+    position: absolute;
+    top: 2.5rem;
+    right: 4rem;
+    text-align: right;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+  }
+  .hero-date-badge .date-num {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(158,184,130,0.25);
+    line-height: 1;
+  }
+  .hero-date-badge .date-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(158,184,130,0.5);
+    text-transform: uppercase;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+  .scroll-hint span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--moss);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--moss);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { width: 40px; opacity: 0.5; }
+    50% { width: 60px; opacity: 1; }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 6rem; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.5;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .philosophy-text h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--forest-deep);
+    margin-bottom: 2rem;
+  }
+
+  .philosophy-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-sub);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .philosophy-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .tree-diagram {
+    background: var(--forest-deep);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tree-diagram::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(61,97,66,0.4) 0%, transparent 70%);
+  }
+
+  .tree-node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .tree-node:not(:last-child) {
+    border-bottom: 1px solid rgba(158,184,130,0.15);
+  }
+
+  .node-icon {
+    width: 40px; height: 40px;
+    background: rgba(107,140,82,0.2);
+    border: 1px solid rgba(107,140,82,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .node-text {
+    flex: 1;
+  }
+
+  .node-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .node-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--cream);
+  }
+
+  .node-arrow {
+    color: var(--moss);
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+
+  /* ── EVENTS ── */
+  .events {
+    background: var(--forest-deep);
+  }
+
+  .events h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    line-height: 1.3;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+  }
+
+  .event-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(158,184,130,0.1);
+    padding: 2.5rem;
+    transition: background 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .event-card:hover {
+    background: rgba(107,140,82,0.1);
+    border-color: rgba(107,140,82,0.3);
+  }
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--sage);
+    transition: height 0.3s;
+  }
+  .event-card:hover::before { height: 100%; }
+
+  .event-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .event-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .event-desc {
+    font-size: 0.9rem;
+    color: var(--mist);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .event-tags {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(158,184,130,0.25);
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  /* ── CIRCLE SECTION ── */
+  .circle-section {
+    background: var(--warm-white);
+  }
+
+  .circle-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .circle-intro h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--forest-deep);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .circle-intro p {
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .intro-format {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .format-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.5rem;
+    background: var(--cream);
+    border-left: 3px solid var(--mist);
+    transition: border-color 0.2s;
+  }
+  .format-item:hover { border-color: var(--moss); }
+
+  .format-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--moss);
+    padding-top: 0.2rem;
+  }
+
+  .format-content strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--forest-deep);
+    margin-bottom: 0.3rem;
+  }
+
+  .format-content span {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    font-weight: 300;
+  }
+
+  /* ── COHORT 1 ── */
+  .cohort {
+    background: var(--forest-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cohort::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(107,140,82,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 80% at 100% 100%, rgba(29,46,30,0.5) 0%, transparent 60%);
+  }
+
+  .cohort-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .cohort h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .cohort h2 em {
+    font-style: italic;
+    color: var(--amber);
+  }
+
+  .cohort p {
+    font-size: 1rem;
+    color: var(--mist);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+  }
+
+  .cohort-details {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: start;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(158,184,130,0.15);
+  }
+  .detail-row:last-child { border-bottom: none; }
+
+  .detail-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .detail-info {}
+  .detail-info strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+  .detail-info span {
+    font-size: 0.88rem;
+    color: var(--sage);
+    font-weight: 300;
+  }
+
+  /* ── LOCATIONS ── */
+  .locations {
+    background: var(--cream);
+  }
+
+  .locations h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--forest-deep);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+  }
+
+  .location-card {
+    background: var(--warm-white);
+    padding: 2rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .location-card:hover {
+    background: white;
+    border-bottom-color: var(--moss);
+  }
+
+  .loc-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+
+  .loc-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--forest-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .loc-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--moss);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .loc-desc {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── INTRO FORMAT ── */
+  .intro-method {
+    background: var(--forest-deep);
+    padding: 6rem;
+  }
+
+  .method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .method-card {
+    background: rgba(255,255,255,0.04);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .method-num {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(158,184,130,0.15);
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    line-height: 1;
+  }
+
+  .method-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .method-card p {
+    font-size: 0.9rem;
+    color: var(--mist);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .method-quote {
+    margin-top: 1.2rem;
+    padding: 0.75rem 1rem;
+    border-left: 2px solid var(--moss);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--sage);
+    font-weight: 300;
+  }
+
+  /* ── JOIN ── */
+  .join {
+    background: var(--warm-white);
+    text-align: center;
+    padding: 8rem 6rem;
+  }
+
+  .join h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--forest-deep);
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .join h2 em {
+    font-style: italic;
+    color: var(--moss);
+  }
+
+  .join p {
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .join-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .contact-item .c-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--moss);
+    text-transform: uppercase;
+  }
+
+  .contact-item .c-value {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    font-weight: 300;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest-deep);
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: rgba(244,240,230,0.3);
+    font-weight: 300;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: background 0.4s, backdrop-filter 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(26,46,30,0.95);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    section { padding: 4rem 2rem; }
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero-content { padding: 8rem 2rem 4rem; }
+    .hero-date-badge { display: none; }
+    .scroll-hint { left: 2rem; }
+    .philosophy, .circle-intro, .cohort-inner, .method-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .intro-method { padding: 4rem 2rem; }
+    .join { padding: 5rem 2rem; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+  }
+
+  /* ARBOR DAY HIGHLIGHT */
+  .arbor-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: var(--ink);
-    color: var(--paper);
-    padding: 8px 16px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    gap: 0.6rem;
+    background: rgba(107,140,82,0.15);
+    border: 1px solid rgba(107,140,82,0.3);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
   }
-  .small-group-badge .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--red);
+  .arbor-badge span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-transform: uppercase;
+  }
+
+  .quote-block {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-left: 3px solid var(--moss);
+    background: rgba(107,140,82,0.07);
+  }
+  .quote-block p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--forest-deep) !important;
+    line-height: 1.6;
+    margin: 0 !important;
+  }
+  .quote-block cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--moss);
+    font-style: normal;
+    text-transform: uppercase;
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- MASTHEAD -->
-  <div class="masthead">
-    <div class="masthead-left">
-      R2B School &nbsp;·&nbsp; Seoul, Korea
-    </div>
-    <div class="masthead-right">
-      <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="es">ES</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-        <button class="lang-btn" data-lang="ja">JA</button>
-        <button class="lang-btn" data-lang="ko">KO</button>
-      </div>
-      1st Cohort · 2026<br>
-      Reborn. Reconnected. Real.
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-brand">R2B</a>
+  <ul class="nav-links">
+    <li><a href="#circle">Circle</a></li>
+    <li><a href="#cohort">Cohort 1</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#join">Join</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+
+  <svg class="tree-layer" viewBox="0 0 1400 300" preserveAspectRatio="none">
+    <g fill="none" stroke="rgba(158,184,130,0.6)" stroke-width="1.5">
+      <!-- Metasequoia silhouettes -->
+      <line x1="120" y1="300" x2="120" y2="60"/>
+      <line x1="120" y1="60" x2="80" y2="120"/> <line x1="120" y1="60" x2="160" y2="120"/>
+      <line x1="120" y1="90" x2="70" y2="140"/> <line x1="120" y1="90" x2="170" y2="140"/>
+      <line x1="120" y1="120" x2="60" y2="160"/> <line x1="120" y1="120" x2="180" y2="160"/>
+      <line x1="120" y1="150" x2="50" y2="185"/> <line x1="120" y1="150" x2="190" y2="185"/>
+      <line x1="120" y1="180" x2="45" y2="210"/> <line x1="120" y1="180" x2="195" y2="210"/>
+      <line x1="120" y1="210" x2="40" y2="240"/> <line x1="120" y1="210" x2="200" y2="240"/>
+
+      <line x1="350" y1="300" x2="350" y2="20"/>
+      <line x1="350" y1="20" x2="300" y2="90"/> <line x1="350" y1="20" x2="400" y2="90"/>
+      <line x1="350" y1="55" x2="290" y2="110"/> <line x1="350" y1="55" x2="410" y2="110"/>
+      <line x1="350" y1="90" x2="280" y2="135"/> <line x1="350" y1="90" x2="420" y2="135"/>
+      <line x1="350" y1="120" x2="270" y2="160"/> <line x1="350" y1="120" x2="430" y2="160"/>
+      <line x1="350" y1="155" x2="260" y2="190"/> <line x1="350" y1="155" x2="440" y2="190"/>
+      <line x1="350" y1="185" x2="255" y2="218"/> <line x1="350" y1="185" x2="445" y2="218"/>
+      <line x1="350" y1="215" x2="250" y2="245"/> <line x1="350" y1="215" x2="450" y2="245"/>
+
+      <line x1="620" y1="300" x2="620" y2="80"/>
+      <line x1="620" y1="80" x2="580" y2="140"/> <line x1="620" y1="80" x2="660" y2="140"/>
+      <line x1="620" y1="110" x2="570" y2="160"/> <line x1="620" y1="110" x2="670" y2="160"/>
+      <line x1="620" y1="145" x2="560" y2="185"/> <line x1="620" y1="145" x2="680" y2="185"/>
+      <line x1="620" y1="175" x2="550" y2="210"/> <line x1="620" y1="175" x2="690" y2="210"/>
+      <line x1="620" y1="205" x2="545" y2="238"/> <line x1="620" y1="205" x2="695" y2="238"/>
+
+      <line x1="850" y1="300" x2="850" y2="40"/>
+      <line x1="850" y1="40" x2="800" y2="105"/> <line x1="850" y1="40" x2="900" y2="105"/>
+      <line x1="850" y1="75" x2="790" y2="128"/> <line x1="850" y1="75" x2="910" y2="128"/>
+      <line x1="850" y1="110" x2="780" y2="152"/> <line x1="850" y1="110" x2="920" y2="152"/>
+      <line x1="850" y1="142" x2="770" y2="175"/> <line x1="850" y1="142" x2="930" y2="175"/>
+      <line x1="850" y1="172" x2="765" y2="200"/> <line x1="850" y1="172" x2="935" y2="200"/>
+      <line x1="850" y1="200" x2="760" y2="228"/> <line x1="850" y1="200" x2="940" y2="228"/>
+
+      <line x1="1080" y1="300" x2="1080" y2="70"/>
+      <line x1="1080" y1="70" x2="1040" y2="125"/> <line x1="1080" y1="70" x2="1120" y2="125"/>
+      <line x1="1080" y1="100" x2="1030" y2="148"/> <line x1="1080" y1="100" x2="1130" y2="148"/>
+      <line x1="1080" y1="130" x2="1020" y2="170"/> <line x1="1080" y1="130" x2="1140" y2="170"/>
+      <line x1="1080" y1="162" x2="1015" y2="195"/> <line x1="1080" y1="162" x2="1145" y2="195"/>
+      <line x1="1080" y1="192" x2="1010" y2="222"/> <line x1="1080" y1="192" x2="1150" y2="222"/>
+
+      <line x1="1300" y1="300" x2="1300" y2="90"/>
+      <line x1="1300" y1="90" x2="1255" y2="145"/> <line x1="1300" y1="90" x2="1345" y2="145"/>
+      <line x1="1300" y1="118" x2="1245" y2="165"/> <line x1="1300" y1="118" x2="1355" y2="165"/>
+      <line x1="1300" y1="150" x2="1238" y2="188"/> <line x1="1300" y1="150" x2="1362" y2="188"/>
+      <line x1="1300" y1="180" x2="1232" y2="212"/> <line x1="1300" y1="180" x2="1368" y2="212"/>
+    </g>
+    <!-- root connections underground -->
+    <path d="M120,290 C200,310 280,305 350,298 C430,290 520,308 620,295 C710,284 780,302 850,294 C940,284 1010,302 1080,296 C1170,288 1240,302 1300,296" 
+          stroke="rgba(107,140,82,0.3)" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="eyebrow">Seoul · International Community · Est. 2026</p>
+    <h1>Where <em>roots</em><br>connect below<br>the surface</h1>
+    <p class="hero-sub">
+      R2B Circle is a small international community in Seoul — for coffee, 
+      conversation, books, and ideas. A place where curious people meet, 
+      grow, and sometimes find their mission.
+    </p>
+    <p class="hero-mission">"I found my mission here."</p>
+    <div class="hero-cta">
+      <a href="https://r2b.kr/cohort1" class="btn-primary">Join Cohort 1 →</a>
+      <a href="#circle" class="btn-outline">What is R2B Circle?</a>
     </div>
   </div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-eyebrow">First Cohort Open</div>
-    <div class="hero-title">
-      <span class="r">R</span><span class="two">2</span><span class="b">B</span>
-    </div>
-    <div class="hero-subtitle">Reborn · Reconnected · Real</div>
-    <div class="hero-divider"><span>✦</span></div>
-    <div class="hero-tagline">
-      <span data-ko>한국에 온 데는 이유가 있어요.<br><em>함께</em> 찾아가요.</span>
-      <span data-en>You came to Korea for a reason.<br>Let's find it — <em>together.</em></span>
-      <span data-ja>韓国に来たのには理由がある。<br><em>一緒に</em>見つけよう。</span>
-      <span data-zh>你来韩国是有原因的。<br>让我们<em>一起</em>去发现吧。</span>
-      <span data-fr>Tu es venu en Corée pour une raison.<br>Trouvons-la — <em>ensemble.</em></span>
-      <span data-es>Viniste a Corea por una razón.<br>Encontrémosla — <em>juntos.</em></span>
-    </div>
-    <div class="arbor-badge">
-      <span data-ko>🌱 2026년 4월 5일 식목일 — 12개의 씨앗을 심습니다</span>
-      <span data-en>🌱 April 5th, 2026 — Arbor Day. We plant 12 seeds.</span>
-      <span data-ja>🌱 2026年4月5日 植樹の日 — 12粒の種を植えます</span>
-      <span data-zh>🌱 2026年4月5日 植树节 — 我们种下12颗种子</span>
-      <span data-fr>🌱 5 Avril 2026 — Jour de l'Arbre. Nous plantons 12 graines.</span>
-      <span data-es>🌱 5 de Abril 2026 — Día del Árbol. Plantamos 12 semillas.</span>
-    </div>
+  <div class="hero-date-badge">
+    <div class="date-num">Apr 5</div>
+    <div class="date-text">Arbor Day<br>Cohort Begins</div>
   </div>
 
-  <!-- TWELVE BLOCK -->
-  <div class="twelve-block">
-    <div class="twelve-label">Why 12?</div>
-    <div class="twelve-text">
-      <span data-ko>작은 씨앗이<br>아름드리 큰 나무가 됩니다.</span>
-      <span data-en>From a small seed,<br>a mighty tree grows.</span>
-      <span data-ja>小さな種から、<br>大きな木が育ちます。</span>
-      <span data-zh>从一粒小小的种子，<br>长成参天大树。</span>
-      <span data-fr>D'une petite graine,<br>naît un grand arbre.</span>
-      <span data-es>De una pequeña semilla,<br>nace un gran árbol.</span>
-    </div>
-    <div class="twelve-sub">
-      <span data-ko>R2B는 단 12명<br>깊이가 넓이를 이깁니다<br>작은 시작, 진짜 관계, 진짜 변화</span>
-      <span data-en>R2B. Only 12.<br>Depth over breadth.<br>Small beginning. Real relationships. Real change.</span>
-      <span data-ja>R2B。たった12人。広さより深さ。小さな始まり、本物の関係、本物の変化。</span>
-      <span data-zh>R2B。仅限12人。深度胜于广度。小小开始，真实关系，真实改变。</span>
-      <span data-fr>R2B. Seulement 12. La profondeur avant la largeur.</span>
-      <span data-es>R2B. Solo 12. Profundidad sobre amplitud.</span>
-      <br><em style="color: rgba(245,240,232,0.85)">12 People. Real Relationships. Reborn.</em>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="about">
+  <div class="philosophy-text reveal">
+    <div class="section-label">Philosophy</div>
+    <h2>People are like trees.<br>We grow stronger<br>when roots connect.</h2>
+    <p>
+      Metasequoia trees — tall, enduring, ancient — thrive not alone 
+      but as a forest. Their roots intertwine underground, sharing 
+      nutrients and stability across the whole grove.
+    </p>
+    <p>
+      R2B International Community was built on this same idea. 
+      People come and go. But the connections stay. 
+      A passing traveler, a visiting researcher, a friend you met over coffee — 
+      these roots remain long after you leave Seoul.
+    </p>
+    <div class="quote-block">
+      <p>"Stop browsing. Start committing.<br>Real growth begins when we choose a door and step inside."</p>
+      <cite>Inspired by Pete Davis — Dedicated</cite>
     </div>
   </div>
-
-  <!-- WHO -->
-  <div class="section">
-    <div class="section-label">함께할 사람들</div>
-    <div class="who-grid">
-      <div class="who-card">
-        <div class="flag">🌏</div>
-        <h4><span data-ko>영어권 외국인 청년</span><span data-en>English-speaking International Youth</span><span data-ja>英語圏の外国人の若者</span><span data-zh>英语圈外国青年</span><span data-fr>Jeunes étrangers anglophones</span><span data-es>Jóvenes extranjeros anglófonos</span></h4>
-        <p><span data-ko>영어가 편한 외국인 청년 우선입니다.<br>미국·영국·캐나다·호주·아프리카·유럽 어디서 왔든 OK.<br>한국어는 여기서 함께 배우면 됩니다.</span><span data-en>English-comfortable internationals come first.<br>US · UK · Canada · Australia · Africa · Europe — all welcome.<br>Korean? We learn it here, together.</span><span data-ja>英語が得意な外国人優先。<br>韓国語はここで一緒に学べます。</span><span data-zh>英语流利的外国青年优先。<br>韩语在这里一起学。</span><span data-fr>Priorité aux jeunes à l'aise en anglais.<br>Le coréen, on l'apprend ensemble ici.</span><span data-es>Prioridad para jóvenes cómodos en inglés.<br>El coreano lo aprendemos aquí juntos.</span></p>
+  <div class="philosophy-visual reveal">
+    <div class="tree-diagram">
+      <div class="tree-node">
+        <div class="node-icon">🌱</div>
+        <div class="node-text">
+          <div class="node-label">Entry</div>
+          <div class="node-title">R2B Circle</div>
+        </div>
+        <div class="node-arrow">↓</div>
       </div>
-      <div class="who-card">
-        <div class="flag">✈️</div>
-        <h4><span data-ko>워킹홀리데이 · 유학생 · 길잡이 필요한 분</span><span data-en>Working Holiday · Students · Way Finders</span><span data-ja>ワーキングホリデー・留学生・方向を探している人</span><span data-zh>打工度假·留学生·寻找方向的人</span><span data-fr>Vacances-Travail · Étudiants · Chercheurs de voie</span><span data-es>Vacaciones-Trabajo · Estudiantes · Buscadores de camino</span></h4>
-        <p><span data-ko>한국에 잠깐 왔지만 진짜 관계를 원하는 사람.<br>관광이 아닌 삶으로 한국을 경험하고 싶은 사람.<br>이유는 몰라도 서울에서 뭔가를 찾고 있는 사람.</span><span data-en>You're here for a while — and you want real connections, not just tourism. R2B is your home base in Seoul.</span><span data-ja>観光じゃなく、本物のつながりが欲しい。R2Bがホームです。</span><span data-zh>想要真实的连接，不只是旅游。R2B就是你的家。</span><span data-fr>Tu veux de vraies connexions, pas juste du tourisme. R2B est ton ancrage.</span><span data-es>Quieres conexiones reales, no solo turismo. R2B es tu base.</span></p>
+      <div class="tree-node">
+        <div class="node-icon">📚</div>
+        <div class="node-text">
+          <div class="node-label">Learning</div>
+          <div class="node-title">R2B School</div>
+        </div>
+        <div class="node-arrow">↓</div>
       </div>
-      <div class="who-card">
-        <div class="flag">📸</div>
-        <h4><span data-ko>예술 · 기술 · 학문 · 크리에이터</span><span data-en>Arts · Tech · Academia · Creators</span><span data-ja>アート・テック・学術・クリエイター</span><span data-zh>艺术·科技·学术·创作者</span><span data-fr>Arts · Tech · Académie · Créateurs</span><span data-es>Arte · Tech · Academia · Creadores</span></h4>
-        <p><span data-ko>연기·글쓰기·코딩·AI·데이터·연구 —<br>씨앗마다 다른 나무가 됩니다.</span><span data-en>Acting · writing · coding · AI · data · research —<br>Every seed becomes a different tree.</span><span data-ja>演技・執筆・コーディング・AI —<br>種それぞれが違う木になります。</span><span data-zh>表演·写作·编程·AI —<br>每颗种子都会成为不同的树。</span><span data-fr>Théâtre · écriture · codage · IA —<br>Chaque graine devient un arbre différent.</span><span data-es>Actuación · escritura · código · IA —<br>Cada semilla se convierte en un árbol diferente.</span></p>
+      <div class="tree-node">
+        <div class="node-icon">🏡</div>
+        <div class="node-text">
+          <div class="node-label">Deeper</div>
+          <div class="node-title">R2B Residency</div>
+        </div>
+        <div class="node-arrow">↓</div>
       </div>
-      <div class="who-card">
-        <div class="flag">🌱</div>
-        <h4><span data-ko>내면을 찾는 청년</span><span data-en>Seeking Inner Direction</span><span data-ja>内なる方向を探している</span><span data-zh>寻找内心方向</span><span data-fr>En Quête de Direction Intérieure</span><span data-es>Buscando Dirección Interior</span></h4>
-        <p><span data-ko>고민·삶의 방향 —<br>혼자 감당하지 않아도 됩니다.<br>나도 몰랐던 나를 발견해갑니다.</span><span data-en>Questions · life direction —<br>you don't have to carry it alone.<br>Discover the you, you never knew existed.</span><span data-ja>悩み・人生の方向 — 一人で抱え込まなくていい。</span><span data-zh>困惑·人生方向 — 不必一个人承担。</span><span data-fr>Questions · direction de vie — tu n'as pas à le porter seul.</span><span data-es>Preguntas · dirección de vida — no tienes que cargarlo solo.</span></p>
+      <div class="tree-node">
+        <div class="node-icon">🌏</div>
+        <div class="node-text">
+          <div class="node-label">Long-term</div>
+          <div class="node-title">Global Network</div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- LANGUAGE EXCHANGE MEETUP -->
-  <div class="section">
-    <div class="section-label">
-      <span data-ko>🗣️ 언어교환 모임 — 먼저 만나요</span>
-      <span data-en>🗣️ Language Exchange — Meet Us First</span>
-      <span data-ja>🗣️ 言語交換 — まず会いましょう</span>
-      <span data-zh>🗣️ 语言交流 — 先来见面</span>
-      <span data-fr>🗣️ Échange Linguistique — Rencontrons-nous d'abord</span>
-      <span data-es>🗣️ Intercambio de Idiomas — Conócenos Primero</span>
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="section-label" style="color: var(--sage);">Upcoming</div>
+  <h2 class="reveal">Two seeds.<br>One forest beginning.</h2>
+  <div class="events-grid">
+    <div class="event-card reveal">
+      <div class="event-date">March 21, 2026 · Gwanghwamun</div>
+      <div class="event-title">R2B Circle<br>Pop-up Gathering</div>
+      <div class="event-desc">
+        Before the BTS concert fills Gwanghwamun Square, we gather for 
+        coffee and conversation. Meet global friends. Share where you're from 
+        and where you're going. No agenda — just real talk.
+      </div>
+      <div class="event-tags">
+        <span class="tag">Coffee</span>
+        <span class="tag">Free</span>
+        <span class="tag">International</span>
+        <span class="tag">3–8 people</span>
+      </div>
     </div>
-
-    <!-- 소그룹 강조 배지 -->
-    <div class="small-group-badge">
-      <div class="dot"></div>
-      <span data-ko>소그룹 · 선착순 5명 · 영어권 우선</span>
-      <span data-en>Small Group · First 5 Only · English Speakers Welcome</span>
-      <span data-ja>少人数・先着5名・英語話者優先</span>
-      <span data-zh>小组・先到先得5名・英语优先</span>
-      <span data-fr>Petit Groupe · 5 Premiers · Anglophones Bienvenus</span>
-      <span data-es>Grupo Pequeño · Solo 5 · Angloparlantes Bienvenidos</span>
+    <div class="event-card reveal">
+      <div class="event-date">April 5, 2026 · Arbor Day 🌳</div>
+      <div class="event-title">R2B School<br>Cohort 1 Begins</div>
+      <div class="event-desc">
+        On Korea's Arbor Day, we plant the first seeds of R2B School. 
+        A 3-month small-group program: books, ideas, AI, career conversations, 
+        and finding direction together.
+      </div>
+      <div class="event-tags">
+        <span class="tag">Books</span>
+        <span class="tag">AI</span>
+        <span class="tag">Career</span>
+        <span class="tag">Cohort 1</span>
+      </div>
     </div>
+    <div class="event-card reveal">
+      <div class="event-date">Every Saturday · Gangnam</div>
+      <div class="event-title">R2B Tech<br>Research Meetup</div>
+      <div class="event-desc">
+        Weekly study group on AI, humanoid robotics, and Physical AI. 
+        Paper reading, discussion, and sharing ideas at the frontier 
+        of technology.
+      </div>
+      <div class="event-tags">
+        <span class="tag">AI</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Research</span>
+        <span class="tag">Weekly</span>
+      </div>
+    </div>
+    <div class="event-card reveal">
+      <div class="event-date">Weekday Evenings · Seoul</div>
+      <div class="event-title">Language &<br>Coffee Exchange</div>
+      <div class="event-desc">
+        Korean and English, rotating between Korea University and Jamsil. 
+        Start with introductions. Move naturally to real life stories. 
+        No formal curriculum — just honest conversation.
+      </div>
+      <div class="event-tags">
+        <span class="tag">Korean</span>
+        <span class="tag">English</span>
+        <span class="tag">Evening</span>
+        <span class="tag">Open</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div style="max-width:620px; margin:0 auto 28px;">
-      <p style="font-size:14px; color:var(--muted); line-height:2; text-align:center;">
-        <span data-ko>4월 5일 1기 시작 전, 먼저 만나요.<br>
-        커피 한 잔 · 한국어 ↔ 영어 대화 · 진짜 이야기<br>
-        <strong style="color:var(--ink)">매주 월 · 수 · 금 저녁 7시</strong></span>
-        <span data-en>Before Cohort 1 begins on April 5 — come meet us.<br>
-        One coffee · Korean ↔ English conversation · Real talk<br>
-        <strong style="color:var(--ink)">Every Mon · Wed · Fri at 7PM</strong></span>
-        <span data-ja>4月5日の開始前に、まず会いましょう。<br>
-        コーヒー1杯・韓国語↔英語会話・本物の話<br>
-        <strong style="color:var(--ink)">毎週月・水・金 午後7時</strong></span>
-        <span data-zh>4月5日第一期开始前，先来见面。<br>
-        一杯咖啡·韩语↔英语对话·真实交流<br>
-        <strong style="color:var(--ink)">每周一·三·五晚上7点</strong></span>
-        <span data-fr>Avant le début de la 1ère cohorte le 5 avril — venez nous rencontrer.<br>
-        Un café · Conversation coréen ↔ anglais · Vraie discussion<br>
-        <strong style="color:var(--ink)">Chaque Lun · Mer · Ven à 19h</strong></span>
-        <span data-es>Antes de que comience la 1ª cohorte el 5 de abril — ven a conocernos.<br>
-        Un café · Conversación coreano ↔ inglés · Charla real<br>
-        <strong style="color:var(--ink)">Cada Lun · Mié · Vie a las 7PM</strong></span>
+<!-- CIRCLE -->
+<section class="circle-section" id="circle">
+  <div class="circle-intro">
+    <div class="reveal">
+      <div class="section-label">R2B Circle</div>
+      <h2>A small circle for coffee, ideas, and real talk.</h2>
+      <p>
+        Unlike most language exchange meetups that stay on the surface, 
+        R2B Circle is designed to go somewhere — gently, naturally, over time.
+      </p>
+      <p>
+        We start light. Introductions. Coffee. Where are you from? 
+        Then, if the moment feels right, we go deeper. What are you building? 
+        What are you searching for? Why are you in Seoul?
+      </p>
+      <p>
+        No pressure. No agenda. Just curious people in a room, 
+        letting the conversation find its own direction.
       </p>
     </div>
-
-    <!-- 요일 카드 -->
-    <div class="meetup-grid">
-      <div class="meetup-card">
-        <div class="meetup-day">
-          <span data-ko>월요일 · Monday</span>
-          <span data-en>Monday · 월요일</span>
-          <span data-ja>月曜日</span><span data-zh>星期一</span>
-          <span data-fr>Lundi</span><span data-es>Lunes</span>
-        </div>
-        <div class="meetup-date">MON</div>
-        <div class="meetup-time">19:00 — 20:30</div>
-      </div>
-      <div class="meetup-card">
-        <div class="meetup-day">
-          <span data-ko>수요일 · Wednesday</span>
-          <span data-en>Wednesday · 수요일</span>
-          <span data-ja>水曜日</span><span data-zh>星期三</span>
-          <span data-fr>Mercredi</span><span data-es>Miércoles</span>
-        </div>
-        <div class="meetup-date">WED</div>
-        <div class="meetup-time">19:00 — 20:30</div>
-      </div>
-      <div class="meetup-card">
-        <div class="meetup-day">
-          <span data-ko>금요일 · Friday</span>
-          <span data-en>Friday · 금요일</span>
-          <span data-ja>金曜日</span><span data-zh>星期五</span>
-          <span data-fr>Vendredi</span><span data-es>Viernes</span>
-        </div>
-        <div class="meetup-date">FRI</div>
-        <div class="meetup-time">19:00 — 20:30</div>
-      </div>
-    </div>
-
-    <!-- 장소 정보 -->
-    <div style="background:white; border-left:3px solid var(--ink); padding:20px 24px; margin-bottom:20px;">
-      <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">
-        <span data-ko>📍 장소</span><span data-en>📍 Location</span>
-        <span data-ja>📍 場所</span><span data-zh>📍 地点</span>
-        <span data-fr>📍 Lieu</span><span data-es>📍 Lugar</span>
-      </div>
-      <div style="font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px;">
-        커피빈 고대 안암역점 · Coffeebean Korea Univ. Anam
-      </div>
-      <div style="font-size:12px; color:var(--muted); margin-bottom:12px;">
-        <span data-ko>안암역 2번 출구 도보 1분</span>
-        <span data-en>1 min walk from Anam Station Exit 2</span>
-        <span data-ja>安岩駅2番出口から徒歩1分</span>
-        <span data-zh>安岩站2号出口步行1分钟</span>
-        <span data-fr>1 min à pied de la sortie 2 de la station Anam</span>
-        <span data-es>1 min a pie de la salida 2 de la estación Anam</span>
-      </div>
-      <a href="https://naver.me/xprA3T4u" target="_blank"
-         style="display:inline-block; font-size:11px; color:var(--red); text-decoration:none; letter-spacing:0.05em; border-bottom:1px solid var(--red); padding-bottom:1px;">
-        🗺 <span data-ko>네이버 지도에서 보기</span>
-        <span data-en>View on Naver Maps</span>
-        <span data-ja>Naverマップで見る</span>
-        <span data-zh>在Naver地图查看</span>
-        <span data-fr>Voir sur Naver Maps</span>
-        <span data-es>Ver en Naver Maps</span>
-      </a>
-    </div>
-
-    <!-- 비용 안내 -->
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:24px;">
-      <div style="background:var(--paper); border:1px solid var(--line); padding:10px 18px; font-size:12px; color:var(--ink);">
-        ☕ <span data-ko>각자 음료값만 · No entry fee</span>
-        <span data-en>Pay your own drink · No entry fee</span>
-        <span data-ja>各自飲み物代のみ</span><span data-zh>各自饮料费用</span>
-        <span data-fr>Juste ta boisson</span><span data-es>Solo tu bebida</span>
-      </div>
-      <div style="background:var(--ink); color:var(--paper); padding:10px 18px; font-size:12px;">
-        👥 <span data-ko>선착순 5명 · 영어권 우선</span>
-        <span data-en>First 5 only · English speakers priority</span>
-        <span data-ja>先着5名・英語話者優先</span><span data-zh>先到先得5名</span>
-        <span data-fr>5 premiers · Anglophones en priorité</span>
-        <span data-es>Solo 5 · Inglés prioritario</span>
-      </div>
-    </div>
-
-    <!-- 신청 버튼 -->
-    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-      <a href="https://open.kakao.com/o/gSEwSzki" target="_blank"
-         style="display:inline-block; padding:14px 40px; background:#FEE500; color:#1a1a1a; font-size:13px; letter-spacing:0.1em; text-decoration:none; font-weight:700; transition:opacity 0.3s;"
-         onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-        💬 <span data-ko>카카오톡으로 신청하기</span>
-        <span data-en>Join via KakaoTalk</span>
-        <span data-ja>カカオトークで申し込む</span>
-        <span data-zh>通过KakaoTalk申请</span>
-        <span data-fr>Rejoindre via KakaoTalk</span>
-        <span data-es>Unirse via KakaoTalk</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- BTS 이벤트 -->
-  <div class="section">
-    <div class="section-label">
-      <span data-ko>🎤 특별 이벤트 · 3월 21일</span>
-      <span data-en>🎤 Special Event · March 21</span>
-      <span data-ja>🎤 特別イベント · 3月21日</span>
-      <span data-zh>🎤 特别活动 · 3月21日</span>
-      <span data-fr>🎤 Événement Spécial · 21 Mars</span>
-      <span data-es>🎤 Evento Especial · 21 de Marzo</span>
-    </div>
-
-    <div class="bts-card">
-      <div class="bts-label">BTS · Gwanghwamun · Free Concert</div>
-      <div class="bts-title">
-        <span data-ko>R2B Circle 팝업 — BTS 광화문 공연 전</span>
-        <span data-en>R2B Circle Pop-up — Before the BTS Gwanghwamun Concert</span>
-        <span data-ja>R2B Circle ポップアップ — BTS光化門コンサート前</span>
-        <span data-zh>R2B Circle 快闪 — BTS光化门演唱会前</span>
-        <span data-fr>R2B Circle Pop-up — Avant le Concert BTS Gwanghwamun</span>
-        <span data-es>R2B Circle Pop-up — Antes del Concierto BTS Gwanghwamun</span>
-      </div>
-      <div class="bts-desc">
-        <span data-ko>BTS가 광화문광장으로 돌아옵니다.<br>
-        공연 전, 우리는 근처 카페에서 먼저 만납니다.<br>
-        어디서 왔는지, 왜 여기 있는지 — 짧고 진짜 대화.</span>
-        <span data-en>BTS returns to Gwanghwamun Square.<br>
-        Before the crowd fills the plaza, we meet at a nearby café.<br>
-        Where you're from, why you're here — short and real.</span>
-        <span data-ja>BTSが光化門広場に帰ってきます。<br>
-        公演前、近くのカフェで会いましょう。</span>
-        <span data-zh>BTS回到光化门广场。<br>
-        演出前，我们在附近的咖啡馆见面。</span>
-        <span data-fr>BTS revient à Gwanghwamun.<br>
-        Avant la foule, on se retrouve dans un café proche.</span>
-        <span data-es>BTS regresa a Gwanghwamun.<br>
-        Antes de la multitud, nos encontramos en un café cercano.</span>
-      </div>
-      <div class="bts-meta">
-        <span>📅 <span data-ko>3월 21일 (토) 오후 4시</span><span data-en>March 21 (Sat) 4PM</span><span data-ja>3月21日（土）午後4時</span><span data-zh>3月21日（六）下午4时</span><span data-fr>21 Mars (Sam) 16h</span><span data-es>21 Marzo (Sáb) 4PM</span></span>
-        <span>📍 <span data-ko>광화문 근처 카페 (DM으로 안내)</span><span data-en>Café near Gwanghwamun (DM for location)</span><span data-ja>光化門近くのカフェ（DMで案内）</span><span data-zh>光化门附近咖啡馆（私信告知）</span><span data-fr>Café près de Gwanghwamun (DM pour lieu)</span><span data-es>Café cerca Gwanghwamun (DM para ubicación)</span></span>
-        <span>👥 <span data-ko>소그룹 · 무료</span><span data-en>Small group · Free</span><span data-ja>少人数・無料</span><span data-zh>小组·免费</span><span data-fr>Petit groupe · Gratuit</span><span data-es>Grupo pequeño · Gratis</span></span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CURRICULUM -->
-  <div class="section">
-    <div class="section-label">
-      <span data-ko>3개월 커리큘럼</span><span data-en>3-Month Curriculum</span>
-      <span data-ja>3ヶ月カリキュラム</span><span data-zh>3个月课程</span>
-      <span data-fr>Programme de 3 Mois</span><span data-es>Currículo de 3 Meses</span>
-    </div>
-    <div class="curriculum">
-      <div class="month-row">
-        <div class="month-num"><span>Month</span><span>01</span></div>
-        <div class="month-content">
-          <div class="month-theme">Play + Open — 함께 놀며 마음을 열어요</div>
-          <div class="month-items">
-            <span class="tag">한국어 생존회화</span>
-            <span class="tag">서울 탐방</span>
-            <span class="tag">한국 요리 Class 1</span>
-            <span class="tag">캠핑 1회</span>
-            <span class="tag highlight-tag">✦ Getting to Know Each Other</span>
-            <span class="tag highlight-tag">🎭 대본 읽기 — 전문 배우와 함께</span>
-            <span class="tag classics-tag">📖 소크라테스의 변명 + 요한복음</span>
-            <span class="tag classics-question">"나는 누구인가?"</span>
-          </div>
+    <div class="intro-format reveal">
+      <div class="format-item">
+        <div class="format-time">20 min</div>
+        <div class="format-content">
+          <strong>Activity & Coffee</strong>
+          <span>Book share, culture talk, or just arriving together. BTS, K-drama, travel stories — anything goes.</span>
         </div>
       </div>
-      <div class="month-row">
-        <div class="month-num"><span>Month</span><span>02</span></div>
-        <div class="month-content">
-          <div class="month-theme">Korea + Real — 진짜 한국을 만나다</div>
-          <div class="month-items">
-            <span class="tag">한국 요리 Class 2</span>
-            <span class="tag">야외 쿡 캠핑</span>
-            <span class="tag highlight-tag">🎖️ 참전 어르신 방문</span>
-            <span class="tag highlight-tag">🌏 탈북 청년과 대화</span>
-            <span class="tag highlight-tag">🏛️ 서대문형무소 탐방</span>
-            <span class="tag premium-tag">✦ 지적재산권 기초 (Premium)</span>
-            <span class="tag highlight-tag">🎭 희곡 읽기 심화</span>
-            <span class="tag classics-tag">📖 데미안 + 시편</span>
-            <span class="tag classics-question">"어떻게 살 것인가?"</span>
-          </div>
+      <div class="format-item">
+        <div class="format-time">30 min</div>
+        <div class="format-content">
+          <strong>R2B Circle Intro</strong>
+          <span>3 sentences: your name, why you're in Korea, what you're curious about right now.</span>
         </div>
       </div>
-      <div class="month-row">
-        <div class="month-num"><span>Month</span><span>03</span></div>
-        <div class="month-content">
-          <div class="month-theme">Build + Launch — 만들고 내보내다</div>
-          <div class="month-items">
-            <span class="tag">Lean Startup 기초</span>
-            <span class="tag premium-tag">✦ 바이브코딩 · Claude MVP</span>
-            <span class="tag highlight-tag">🌱 작은 성공 1개 만들기</span>
-            <span class="tag classics-tag">📖 이방인 + 산상수훈</span>
-            <span class="tag classics-question">"나는 무엇을 남길 것인가?"</span>
-            <span class="tag highlight-tag">🎤 버스킹 · 수료 공연</span>
-            <span class="tag highlight-tag">🎭 연극 무대 공연</span>
-            <span class="tag">삼겹살 수료 파티 🎉</span>
-          </div>
+      <div class="format-item">
+        <div class="format-time">30 min</div>
+        <div class="format-content">
+          <strong>Conversation</strong>
+          <span>Unstructured but focused. Usually we ask: "What do you want to learn or build in your life?"</span>
+        </div>
+      </div>
+      <div class="format-item">
+        <div class="format-time">10 min</div>
+        <div class="format-content">
+          <strong>Connection</strong>
+          <span>Exchange contacts. Plan the next meetup. Sometimes a project or friendship starts here.</span>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- PRICE -->
-  <div class="section">
-    <div class="section-label">
-      <span data-ko>참가 비용</span><span data-en>Pricing</span>
-      <span data-ja>料金</span><span data-zh>费用</span>
-      <span data-fr>Tarifs</span><span data-es>Precios</span>
+<!-- INTRO METHOD -->
+<section class="intro-method">
+  <div class="section-label" style="color: var(--sage);">How We Introduce Ourselves</div>
+  <div class="method-grid">
+    <div class="method-card reveal">
+      <div class="method-num">1</div>
+      <h3>Name & where<br>you're from</h3>
+      <p>Simple. We come from everywhere — India, Spain, Nigeria, Japan, the US. Each name carries a whole world with it.</p>
+      <div class="method-quote">"Hi, I'm Priya from Mumbai. I'm a postdoc researcher at Korea University."</div>
     </div>
-    <div style="text-align:center; margin-bottom:20px; padding:14px 20px; background:rgba(184,134,11,0.12); border:1px solid rgba(184,134,11,0.5);">
-      <div style="font-size:12px; letter-spacing:0.15em; color:#8B6914; font-weight:700; margin-bottom:6px;">🌱 1기 창립멤버 특별가</div>
-      <div style="font-size:13px; color:#444; line-height:1.8;">
-        <span data-ko>함께 시작하는 사람에게 드리는 감사의 마음입니다</span>
-        <span data-en>A special thank-you to those who begin with us</span>
+    <div class="method-card reveal">
+      <div class="method-num">2</div>
+      <h3>Why you're<br>in Korea</h3>
+      <p>Research, language, work, love, curiosity — every reason is interesting. This is where the real story starts.</p>
+      <div class="method-quote">"I came for a one-year fellowship, and somehow I've been here three years."</div>
+    </div>
+    <div class="method-card reveal">
+      <div class="method-num">3</div>
+      <h3>What you're<br>curious about</h3>
+      <p>Not your job title. Not your credentials. What actually lights up your mind these days? AI, art, food, startups, faith?</p>
+      <div class="method-quote">"I've been obsessed with humanoid robots and what they mean for healthcare."</div>
+    </div>
+    <div class="method-card reveal">
+      <div class="method-num">→</div>
+      <h3>Then we<br>just talk</h3>
+      <p>No moderator. No slides. Coffee in hand, we follow the curiosity wherever it leads. This is the R2B Circle.</p>
+      <div class="method-quote">"What do you want to learn or build in your life?"</div>
+    </div>
+  </div>
+</section>
+
+<!-- COHORT 1 -->
+<section class="cohort" id="cohort">
+  <div class="cohort-inner">
+    <div class="reveal">
+      <div class="section-label" style="color: var(--sage);">R2B School · Cohort 1</div>
+      <div class="arbor-badge">
+        <span>🌳 April 5 — Arbor Day — Seoul</span>
+      </div>
+      <h2>On Arbor Day,<br>we plant the first<br><em>seeds.</em></h2>
+      <p>
+        On Korea's Arbor Day — the day the country plants trees — 
+        R2B School Cohort 1 begins. Symbolic? Yes. 
+        Intentional? Absolutely.
+      </p>
+      <p>
+        A 3-month small-group program for international students, 
+        researchers, and builders in Seoul. We read books, 
+        discuss AI and careers, share life stories, and help 
+        each other find direction in the age of intelligent machines.
+      </p>
+      <p>
+        Cohort 1 is small — by design. 5 to 10 people. 
+        Real conversations. Free to join.
+      </p>
+      <div style="margin-top: 2rem;">
+        <a href="https://r2b.kr/cohort1" class="btn-primary">Apply for Cohort 1 →</a>
       </div>
     </div>
-    <div class="price-grid">
-      <div class="price-card">
-        <div class="price-tier">Basic</div>
-        <div class="price-amount">FREE</div>
-        <div class="price-period">무료</div>
-        <div class="price-desc">한국어 수업<br>커뮤니티 참여<br>Getting to Know</div>
+    <div class="cohort-details reveal">
+      <div class="detail-row">
+        <div class="detail-icon">📅</div>
+        <div class="detail-info">
+          <strong>April 5, 2026</strong>
+          <span>Begins on Arbor Day (식목일) · 3 months</span>
+        </div>
       </div>
-      <div class="price-card featured">
-        <div class="price-tier">Standard ★</div>
-        <div style="font-size:11px; color:rgba(245,240,232,0.5); text-decoration:line-through; margin-top:8px;">₩60,000</div>
-        <div class="price-amount">₩30,000</div>
-        <div class="price-period">/ 월 · 1기 한정</div>
-        <div class="price-desc">Basic 전체 포함<br>한국 요리 Class<br>문화체험 · 캠핑<br><br>🧭 Inner Compass Basic<br><span style="font-size:11px; opacity:0.7;">Life questions · Group reflection</span></div>
+      <div class="detail-row">
+        <div class="detail-icon">👥</div>
+        <div class="detail-info">
+          <strong>5 – 10 people</strong>
+          <span>Founding cohort · Intimate by design</span>
+        </div>
       </div>
-      <div class="price-card">
-        <div class="price-tier">Premium</div>
-        <div style="font-size:11px; color:rgba(0,0,0,0.35); text-decoration:line-through; margin-top:8px;">₩140,000</div>
-        <div class="price-amount">₩70,000</div>
-        <div class="price-period">/ 월 · 1기 한정</div>
-        <div class="price-desc">Standard 전체 포함<br>지적재산권 · 비즈니스<br>바이브코딩 · Claude MVP<br>1:1 멘토링<br><br>🧭 Inner Compass Deep<br><span style="font-size:11px; opacity:0.7;">One-on-one · Personal direction · Confidential</span></div>
+
+      <div class="detail-row">
+        <div class="detail-icon">📚</div>
+        <div class="detail-info">
+          <strong>Books · AI · Career · Life</strong>
+          <span>Weekly discussions · No formal curriculum</span>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">🌏</div>
+        <div class="detail-info">
+          <strong>International & Open</strong>
+          <span>Near Korea University · English spoken</span>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- PROMISE -->
-  <div class="promise">
-    <blockquote>
-      "이곳은 교실이 되기도 하고,<br>
-      식탁이 되기도 하고,<br>
-      무대가 되기도 합니다.<br><br>
-      하지만 변하지 않는 것은 하나입니다.<br>
-      오늘, 바로 지금, 당신 곁에 있다는 것."
-    </blockquote>
-    <cite>— Andrew Jang · R2B Founder</cite>
-    <div style="margin-top:20px; font-size:11px; color:var(--muted); letter-spacing:0.12em; opacity:0.6; line-height:2.2;">
-      <span data-ko>"너는 복이 될지라" — 창세기 12:3</span>
-      <span data-en>"You will be a blessing" — Genesis 12:3</span>
-    </div>
-  </div>
-
-  <!-- APPLY -->
-  <div class="apply-section">
-    <h3>
-      <span data-ko>지금 신청하세요</span>
-      <span data-en>Apply Now</span>
-      <span data-ja>今すぐ申し込む</span>
-      <span data-zh>立即申请</span>
-      <span data-fr>Postulez Maintenant</span>
-      <span data-es>Aplica Ahora</span>
-    </h3>
-    <p>
-      <span data-ko>1기는 단 12명입니다.<br>지원서 제출 → 간단한 인터뷰 → 최종 선발</span>
-      <span data-en>Only 12 spots. Submit → Short interview → Final selection</span>
-    </p>
-    <div class="apply-details">
-      <div class="apply-detail">
-        <div class="label">정원</div>
-        <div class="value">12명</div>
-      </div>
-      <div class="apply-detail">
-        <div class="label">시작일</div>
-        <div class="value">4월 5일 🌱</div>
-      </div>
-      <div class="apply-detail">
-        <div class="label">기간</div>
-        <div class="value">3개월</div>
-      </div>
-      <div class="apply-detail">
-        <div class="label">장소</div>
-        <div class="value">서울 안암동<br><small style="font-size:11px;opacity:0.7">안암UBF · Anam UBF</small></div>
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="section-label">Where We Meet</div>
+  <h2 class="reveal">Four roots.<br>One Seoul forest.</h2>
+  <div class="locations-grid">
+    <div class="location-card reveal">
+      <div class="loc-icon">🎓</div>
+      <div class="loc-name">Korea University</div>
+      <div class="loc-type">Language · Books · Students</div>
+      <div class="loc-desc">
+        The heart of R2B. Near our founder's alma mater. 
+        Weekday evening language exchange and Sunday community coffee. 
+        International researchers, grad students, curious minds.
       </div>
     </div>
-    <button class="apply-btn" onclick="window.open('https://forms.gle/otpQ7oxew2G2p56C9','_blank')">
-      🔴 🌱 1기 지원하기 · April 5th
-    </button>
-    <div style="height:12px"></div>
-    <button class="apply-btn-wait" onclick="window.open('https://forms.gle/FaK7exsnRXVbmKxJ7','_blank')">
-      ⚪ 2기 대기자 등록
-    </button>
-  </div>
-
-  <!-- R2B FUND -->
-  <div class="section" style="text-align:center;">
-    <div class="section-label">R2B Fund</div>
-    <div style="max-width:520px; margin:0 auto; line-height:2; font-size:13px; color:var(--muted);">
-      <span data-ko>R2B 참가비의 일부는 두 곳으로 향합니다<br><br>
-        ❤️ <strong>나눔</strong> — 어려운 환경의 이웃을 위해<br>
-        🌱 <strong>씨앗</strong> — 미래 창업가를 위한 공동 예비 저축<br>
-        받은 것을 흘려보내는 것, 그것이 R2B입니다</span>
-      <span data-en>A portion of R2B fees goes to two places<br><br>
-        ❤️ <strong>Giving</strong> — For those facing hardship<br>
-        🌱 <strong>Seeds</strong> — A shared fund for future entrepreneurs<br>
-        What we receive, we pass on — that is R2B</span>
+    <div class="location-card reveal">
+      <div class="loc-icon">🏛️</div>
+      <div class="loc-name">Gwanghwamun</div>
+      <div class="loc-type">Global · Culture · Sunday</div>
+      <div class="loc-desc">
+        Central Seoul. Open to the city and the world. 
+        Sunday meetups for travelers, expats, and anyone drawn to 
+        conversation in the middle of the capital.
+      </div>
+    </div>
+    <div class="location-card reveal">
+      <div class="loc-icon">🤖</div>
+      <div class="loc-name">Gangnam</div>
+      <div class="loc-type">AI · Tech · Saturday</div>
+      <div class="loc-desc">
+        Weekly Saturday research sessions on AI, humanoid robotics, 
+        and Physical AI. Paper discussions, project ideas, 
+        and frontier technology conversations.
+      </div>
+    </div>
+    <div class="location-card reveal">
+      <div class="loc-icon">🌆</div>
+      <div class="loc-name">Jamsil</div>
+      <div class="loc-type">Career · Startup · Evening</div>
+      <div class="loc-desc">
+        Weekday after-work meetups. For professionals, 
+        career changers, and startup builders. 
+        Real conversations about work, life, and what comes next.
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div style="display:flex; flex-direction:column; gap:8px;">
-      <div class="footer-brand"><span>R</span>2<span>B</span> School</div>
-      <a href="/" style="color:var(--muted); font-size:12px; text-decoration:none; letter-spacing:0.08em; transition:color 0.3s;"
-         onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">
-        <span data-ko>← R2B 커뮤니티 메인으로</span>
-        <span data-en>← Back to R2B Community</span>
-        <span data-ja>← R2Bコミュニティへ</span>
-        <span data-zh>← 返回R2B社区主页</span>
-        <span data-fr>← Retour à la Communauté R2B</span>
-        <span data-es>← Volver a la Comunidad R2B</span>
-      </a>
-      <a href="https://github.com/andrewJYjang/r2b-school" target="_blank"
-         style="color:var(--muted); font-size:12px; text-decoration:none; letter-spacing:0.08em; transition:color 0.3s;"
-         onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">
-        <span data-ko>우리 이야기 보기 → GitHub</span>
-        <span data-en>Read Our Story → GitHub</span>
-      </a>
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="section-label" style="justify-content: center;">Join Us</div>
+  <h2 class="reveal">Maybe your story<br>begins <em>here.</em></h2>
+  <p class="reveal">
+    R2B Circle is open to everyone — international students, 
+    researchers, travelers, professionals, curious people. 
+    No application. Just show up.
+  </p>
+  <div class="join-cta reveal">
+    <a href="https://r2b.kr/cohort1" class="btn-primary">Join Cohort 1 →</a>
+    <a href="mailto:andrewjangs@kakao.com" class="btn-outline">Send a Message</a>
+  </div>
+  <div class="contact-row reveal">
+    <div class="contact-item">
+      <span class="c-label">Website</span>
+      <span class="c-value">r2b.kr</span>
     </div>
-    <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
-      <div>Seoul, Korea · 2026</div>
-      <div>Reborn. Reconnected. Real.</div>
+    <div class="contact-item">
+      <span class="c-label">Threads</span>
+      <span class="c-value">@r2binternational</span>
+    </div>
+    <div class="contact-item">
+      <span class="c-label">Instagram</span>
+      <span class="c-value">@r2binternational</span>
+    </div>
+    <div class="contact-item">
+      <span class="c-label">Location</span>
+      <span class="c-value">Seoul, Korea</span>
     </div>
   </div>
+</section>
 
-</div>
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">R2B International Community</div>
+    <div class="footer-tagline" style="margin-top: 0.4rem;">Coffee · Books · Ideas · Seoul</div>
+    <a href="https://github.com/andrewJYjang/r2b-school" target="_blank"
+       style="display:inline-block; margin-top:0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:rgba(158,184,130,0.5); text-decoration:none; text-transform:uppercase; transition:color 0.2s;"
+       onmouseover="this.style.color='rgba(158,184,130,1)'" onmouseout="this.style.color='rgba(158,184,130,0.5)'">
+      우리 이야기 보기 → GitHub
+    </a>
+  </div>
+  <p>© 2026 R2B International Community · All roots connected.</p>
+</footer>
 
 <script>
-  function detectLang() {
-    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    if (nav.startsWith('ko')) return 'ko';
-    if (nav.startsWith('ja')) return 'ja';
-    if (nav.startsWith('fr')) return 'fr';
-    if (nav.startsWith('es')) return 'es';
-    return 'en';
-  }
-
-  function setLang(lang) {
-    document.body.classList.remove('ko-mode','en-mode','ja-mode','fr-mode','es-mode');
-    document.body.classList.add(lang + '-mode');
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
-    try { localStorage.setItem('r2b_lang', lang); } catch(e) {}
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.dataset.lang));
-    });
-    let lang = 'en';
-    try { lang = localStorage.getItem('r2b_lang') || detectLang(); } catch(e) { lang = detectLang(); }
-    setLang(lang);
+  // Navbar scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
   });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
