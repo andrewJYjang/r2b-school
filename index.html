@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R2B Circle & R2B School — International Community in Seoul</title>
+<title>R2B — Rebuild something real · Seoul</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -54,7 +54,6 @@
       radial-gradient(ellipse 80% 40% at 50% 100%, rgba(45,74,50,0.6) 0%, transparent 60%);
   }
 
-  /* Animated tree silhouettes */
   .tree-layer {
     position: absolute;
     bottom: 0;
@@ -160,29 +159,6 @@
   }
   .btn-outline:hover { border-color: var(--sage); color: var(--sage); transform: translateY(-2px); }
 
-  .hero-date-badge {
-    position: absolute;
-    top: 2.5rem;
-    right: 4rem;
-    text-align: right;
-    opacity: 0;
-    animation: fadeIn 1s ease 1.2s forwards;
-  }
-  .hero-date-badge .date-num {
-    font-family: 'Fraunces', serif;
-    font-size: 4rem;
-    font-weight: 300;
-    color: rgba(158,184,130,0.25);
-    line-height: 1;
-  }
-  .hero-date-badge .date-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: rgba(158,184,130,0.5);
-    text-transform: uppercase;
-  }
-
   .scroll-hint {
     position: absolute;
     bottom: 2.5rem;
@@ -233,113 +209,28 @@
     opacity: 0.5;
   }
 
-  /* ── PHILOSOPHY ── */
-  .philosophy {
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .philosophy-text h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.2;
-    color: var(--forest-deep);
-    margin-bottom: 2rem;
-  }
-
-  .philosophy-text p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: var(--text-sub);
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-  }
-
-  .philosophy-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
-
-  .tree-diagram {
-    background: var(--forest-deep);
-    padding: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tree-diagram::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 100%, rgba(61,97,66,0.4) 0%, transparent 70%);
-  }
-
-  .tree-node {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-
-  .tree-node:not(:last-child) {
-    border-bottom: 1px solid rgba(158,184,130,0.15);
-  }
-
-  .node-icon {
-    width: 40px; height: 40px;
-    background: rgba(107,140,82,0.2);
-    border: 1px solid rgba(107,140,82,0.3);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-
-  .node-text {
-    flex: 1;
-  }
-
-  .node-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    color: var(--sage);
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
-  }
-
-  .node-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--cream);
-  }
-
-  .node-arrow {
-    color: var(--moss);
-    font-size: 1.2rem;
-    opacity: 0.6;
-  }
-
-  /* ── EVENTS ── */
-  .events {
+  /* ── MEETUPS ── */
+  .meetups {
     background: var(--forest-deep);
   }
 
-  .events h2 {
+  .meetups h2 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 300;
     color: var(--cream);
-    margin-bottom: 3rem;
-    max-width: 500px;
+    margin-bottom: 1rem;
+    max-width: 560px;
     line-height: 1.3;
+  }
+
+  .meetups-note {
+    font-size: 0.95rem;
+    color: var(--mist);
+    font-weight: 300;
+    margin-bottom: 3rem;
+    max-width: 520px;
+    line-height: 1.7;
   }
 
   .events-grid {
@@ -412,6 +303,129 @@
     text-transform: uppercase;
   }
 
+  .coming-soon {
+    margin-top: 3rem;
+    padding: 2rem 2.5rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid rgba(158,184,130,0.3);
+  }
+  .coming-soon .cs-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--moss);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .coming-soon ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .coming-soon li {
+    font-size: 0.92rem;
+    color: var(--mist);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .coming-soon li strong {
+    color: var(--sage);
+    font-weight: 400;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .philosophy-text h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--forest-deep);
+    margin-bottom: 2rem;
+  }
+
+  .philosophy-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-sub);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .philosophy-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .tree-diagram {
+    background: var(--forest-deep);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tree-diagram::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(61,97,66,0.4) 0%, transparent 70%);
+  }
+
+  .tree-node {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .tree-node:not(:last-child) {
+    border-bottom: 1px solid rgba(158,184,130,0.15);
+  }
+
+  .node-icon {
+    width: 40px; height: 40px;
+    background: rgba(107,140,82,0.2);
+    border: 1px solid rgba(107,140,82,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .node-text { flex: 1; }
+
+  .node-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--sage);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .node-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--cream);
+  }
+
+  .node-arrow {
+    color: var(--moss);
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+
   /* ── CIRCLE SECTION ── */
   .circle-section {
     background: var(--warm-white);
@@ -476,88 +490,6 @@
   .format-content span {
     font-size: 0.85rem;
     color: var(--text-sub);
-    font-weight: 300;
-  }
-
-  /* ── COHORT 1 ── */
-  .cohort {
-    background: var(--forest-mid);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cohort::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(107,140,82,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 80% at 100% 100%, rgba(29,46,30,0.5) 0%, transparent 60%);
-  }
-
-  .cohort-inner {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .cohort h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .cohort h2 em {
-    font-style: italic;
-    color: var(--amber);
-  }
-
-  .cohort p {
-    font-size: 1rem;
-    color: var(--mist);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-  }
-
-  .cohort-details {
-    display: grid;
-    gap: 1.5rem;
-  }
-
-  .detail-row {
-    display: flex;
-    align-items: start;
-    gap: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(158,184,130,0.15);
-  }
-  .detail-row:last-child { border-bottom: none; }
-
-  .detail-icon {
-    font-size: 1.4rem;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-
-  .detail-info {}
-  .detail-info strong {
-    display: block;
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
-    font-weight: 300;
-    color: var(--cream);
-    margin-bottom: 0.3rem;
-  }
-  .detail-info span {
-    font-size: 0.88rem;
-    color: var(--sage);
     font-weight: 300;
   }
 
@@ -715,6 +647,13 @@
     margin-bottom: 4rem;
   }
 
+  .join .btn-primary { color: var(--cream); }
+  .join .btn-outline {
+    color: var(--forest-deep);
+    border-color: rgba(26,46,30,0.25);
+  }
+  .join .btn-outline:hover { border-color: var(--moss); color: var(--moss); }
+
   .contact-row {
     display: flex;
     justify-content: center;
@@ -846,30 +785,11 @@
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
     .hero-content { padding: 8rem 2rem 4rem; }
-    .hero-date-badge { display: none; }
     .scroll-hint { left: 2rem; }
-    .philosophy, .circle-intro, .cohort-inner, .method-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .philosophy, .circle-intro, .method-grid { grid-template-columns: 1fr; gap: 3rem; }
     .intro-method { padding: 4rem 2rem; }
     .join { padding: 5rem 2rem; }
     footer { padding: 2rem; flex-direction: column; text-align: center; }
-  }
-
-  /* ARBOR DAY HIGHLIGHT */
-  .arbor-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: rgba(107,140,82,0.15);
-    border: 1px solid rgba(107,140,82,0.3);
-    padding: 0.5rem 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .arbor-badge span {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--sage);
-    text-transform: uppercase;
   }
 
   .quote-block {
@@ -904,9 +824,9 @@
 <nav id="nav">
   <a href="#" class="nav-brand">R2B</a>
   <ul class="nav-links">
+    <li><a href="#meetups">Meetups</a></li>
     <li><a href="#circle">Circle</a></li>
-    <li><a href="#cohort">Cohort 1</a></li>
-    <li><a href="#locations">Locations</a></li>
+    <li><a href="#locations">Where</a></li>
     <li><a href="#join">Join</a></li>
   </ul>
 </nav>
@@ -917,7 +837,6 @@
 
   <svg class="tree-layer" viewBox="0 0 1400 300" preserveAspectRatio="none">
     <g fill="none" stroke="rgba(158,184,130,0.6)" stroke-width="1.5">
-      <!-- Metasequoia silhouettes -->
       <line x1="120" y1="300" x2="120" y2="60"/>
       <line x1="120" y1="60" x2="80" y2="120"/> <line x1="120" y1="60" x2="160" y2="120"/>
       <line x1="120" y1="90" x2="70" y2="140"/> <line x1="120" y1="90" x2="170" y2="140"/>
@@ -963,34 +882,82 @@
       <line x1="1300" y1="150" x2="1238" y2="188"/> <line x1="1300" y1="150" x2="1362" y2="188"/>
       <line x1="1300" y1="180" x2="1232" y2="212"/> <line x1="1300" y1="180" x2="1368" y2="212"/>
     </g>
-    <!-- root connections underground -->
-    <path d="M120,290 C200,310 280,305 350,298 C430,290 520,308 620,295 C710,284 780,302 850,294 C940,284 1010,302 1080,296 C1170,288 1240,302 1300,296" 
+    <path d="M120,290 C200,310 280,305 350,298 C430,290 520,308 620,295 C710,284 780,302 850,294 C940,284 1010,302 1080,296 C1170,288 1240,302 1300,296"
           stroke="rgba(107,140,82,0.3)" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
   </svg>
 
   <div class="hero-content">
-    <p class="eyebrow">Seoul · International Community · Est. 2026</p>
+    <p class="eyebrow">Seoul · Anam · International Community</p>
     <h1>Where <em>roots</em><br>connect below<br>the surface</h1>
     <p class="hero-sub">
-      R2B Circle is a small international community in Seoul — for coffee, 
-      conversation, books, and and figuring it out. A place where curious people meet, 
-      grow, and sometimes find their next step.
+      A small international community in Seoul — English Bible study,
+      conversation, books, and food. Exchange students, international
+      researchers, and anyone curious are welcome. Just show up.
     </p>
-    <p class="hero-mission">"Go deeper. That's where the real catch is."</p>
+    <p class="hero-mission">Rebuild something real.</p>
     <div class="hero-cta">
-      <a href="https://r2b.kr/cohort1" class="btn-primary">Join Cohort 1 →</a>
-      <a href="#circle" class="btn-outline">What is R2B Circle?</a>
+      <a href="#meetups" class="btn-primary">See our meetups →</a>
+      <a href="#circle" class="btn-outline">What is R2B?</a>
     </div>
-  </div>
-
-  <div class="hero-date-badge">
-    <div class="date-num">Apr 5</div>
-    <div class="date-text">Arbor Day<br>Cohort Begins</div>
   </div>
 
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MEETUPS -->
+<section class="meetups" id="meetups">
+  <div class="section-label" style="color: var(--sage);">Every Week</div>
+  <h2 class="reveal">Two gatherings.<br>Open to anyone.</h2>
+  <p class="meetups-note reveal">
+    No application, no fee, no commitment. Come once, come every week —
+    both are fine. English is the working language.
+  </p>
+
+  <div class="events-grid">
+    <div class="event-card reveal">
+      <div class="event-date">Every Saturday · 2:00 PM</div>
+      <div class="event-title">English<br>Bible Study (GBS)</div>
+      <div class="event-desc">
+        A small group reading the Bible together in English, with space for
+        honest questions and real conversation. Running weekly since May 2026.
+        You don't need to be a believer to join.
+      </div>
+      <div class="event-tags">
+        <span class="tag">SK Future Hall</span>
+        <span class="tag">Korea University</span>
+        <span class="tag">In person</span>
+        <span class="tag">Free</span>
+      </div>
+    </div>
+
+    <div class="event-card reveal">
+      <div class="event-date">Every Wednesday · 8:00 PM</div>
+      <div class="event-title">NIV Bible<br>Reading · Online</div>
+      <div class="event-desc">
+        Reading the NIV together over Zoom. Deliberately small — around
+        three to five people — so everyone gets to read aloud and speak.
+        Easy to join from anywhere.
+      </div>
+      <div class="event-tags">
+        <span class="tag">Zoom</span>
+        <span class="tag">Online</span>
+        <span class="tag">Small group</span>
+        <span class="tag">Free</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="coming-soon reveal">
+    <div class="cs-label">Also happening · dates announced as they come</div>
+    <ul>
+      <li><strong>Board game nights</strong> — at a café near Anam. The easiest way to meet everyone.</li>
+      <li><strong>Gyeongdong Market trips</strong> — walk the market, eat well, practice Korean.</li>
+      <li><strong>Right-brain drawing</strong> — with ANNA LEE, in preparation.</li>
+      <li><strong>Book &amp; study circle</strong> — in preparation.</li>
+    </ul>
   </div>
 </section>
 
@@ -1000,18 +967,18 @@
     <div class="section-label">Philosophy</div>
     <h2>People are like trees.<br>We grow stronger<br>when roots connect.</h2>
     <p>
-      Metasequoia trees — tall, enduring, ancient — thrive not alone 
-      but as a forest. Their roots intertwine underground, sharing 
+      Metasequoia trees — tall, enduring, ancient — thrive not alone
+      but as a forest. Their roots intertwine underground, sharing
       nutrients and stability across the whole grove.
     </p>
     <p>
-      R2B International Community was built on this same idea. 
-      People come and go. But the connections stay. 
-      A passing traveler, a visiting researcher, a friend you met over coffee — 
+      R2B International Community was built on this same idea.
+      People come and go. But the connections stay.
+      A passing traveler, a visiting researcher, a friend you met over coffee —
       these roots remain long after you leave Seoul.
     </p>
     <div class="quote-block">
-      <p>"In disorder, we rediscover what matters.<br>That's where real growth begins."</p>      
+      <p>"In disorder, we rediscover what matters.<br>That's where real growth begins."</p>
     </div>
     <div class="quote-block" style="margin-top: 1rem; border-left-color: var(--bark);">
       <p>"Our bodies carry a DNA code. The algorithms of all creation move with us through the astonishing laws of nature. When illness strikes, or when we face disorder and chaos in the midst of disaster — we begin to rediscover the health, order, and happiness we once took for granted."</p>
@@ -1024,100 +991,32 @@
         <div class="node-icon">🌱</div>
         <div class="node-text">
           <div class="node-label">Entry</div>
-          <div class="node-title">R2B Circle</div>
+          <div class="node-title">Come to a meetup</div>
         </div>
         <div class="node-arrow">↓</div>
       </div>
       <div class="tree-node">
         <div class="node-icon">📚</div>
         <div class="node-text">
-          <div class="node-label">Learning</div>
-          <div class="node-title">R2B School</div>
+          <div class="node-label">Together</div>
+          <div class="node-title">Read, talk, learn</div>
         </div>
         <div class="node-arrow">↓</div>
       </div>
       <div class="tree-node">
-        <div class="node-icon">🏡</div>
+        <div class="node-icon">🤝</div>
         <div class="node-text">
           <div class="node-label">Deeper</div>
-          <div class="node-title">R2B Residency</div>
+          <div class="node-title">Friendship &amp; mentorship</div>
         </div>
         <div class="node-arrow">↓</div>
       </div>
       <div class="tree-node">
         <div class="node-icon">🌏</div>
         <div class="node-text">
-          <div class="node-label">Long-term</div>
-          <div class="node-title">Global Network</div>
+          <div class="node-label">After Seoul</div>
+          <div class="node-title">Roots that stay connected</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EVENTS -->
-<section class="events" id="events">
-  <div class="section-label" style="color: var(--sage);">Upcoming</div>
-  <h2 class="reveal">Two seeds.<br>One forest beginning.</h2>
-  <div class="events-grid">
-    <div class="event-card reveal">
-      <div class="event-date">March 21, 2026 · Gwanghwamun</div>
-      <div class="event-title">R2B Circle<br>Pop-up Gathering</div>
-      <div class="event-desc">
-        Before the BTS concert fills Gwanghwamun Square, we gather for 
-        coffee and conversation. Meet global friends. Share where you're from 
-        and where you're going. No agenda — just real talk.
-      </div>
-      <div class="event-tags">
-        <span class="tag">Coffee</span>
-        <span class="tag">Free</span>
-        <span class="tag">International</span>
-        <span class="tag">3–8 people</span>
-      </div>
-    </div>
-    <div class="event-card reveal">
-      <div class="event-date">April 5, 2026 · Arbor Day 🌳</div>
-      <div class="event-title">R2B School<br>Cohort 1 Begins</div>
-      <div class="event-desc">
-        On Korea's Arbor Day, we plant the first seeds of R2B School. 
-        A 3-month small-group program: books, ideas, AI, career conversations, 
-        and finding direction together.
-      </div>
-      <div class="event-tags">
-        <span class="tag">Books</span>
-        <span class="tag">AI</span>
-        <span class="tag">Career</span>
-        <span class="tag">Cohort 1</span>
-      </div>
-    </div>
-    <div class="event-card reveal">
-      <div class="event-date">Every Saturday · Gangnam</div>
-      <div class="event-title">R2B Tech<br>Research Meetup</div>
-      <div class="event-desc">
-        Weekly study group on AI, humanoid robotics, and Physical AI. 
-        Paper reading, discussion, and sharing ideas at the frontier 
-        of technology.
-      </div>
-      <div class="event-tags">
-        <span class="tag">AI</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">Research</span>
-        <span class="tag">Weekly</span>
-      </div>
-    </div>
-    <div class="event-card reveal">
-      <div class="event-date">Weekday Evenings · Seoul</div>
-      <div class="event-title">Language &<br>Coffee Exchange</div>
-      <div class="event-desc">
-        Korean and English, rotating between Korea University and Jamsil. 
-        Start with introductions. Move naturally to real life stories. 
-        No formal curriculum — just honest conversation.
-      </div>
-      <div class="event-tags">
-        <span class="tag">Korean</span>
-        <span class="tag">English</span>
-        <span class="tag">Evening</span>
-        <span class="tag">Open</span>
       </div>
     </div>
   </div>
@@ -1127,49 +1026,49 @@
 <section class="circle-section" id="circle">
   <div class="circle-intro">
     <div class="reveal">
-      <div class="section-label">R2B Circle</div>
+      <div class="section-label">What It's Like</div>
       <h2>A small circle for coffee, ideas, and real talk.</h2>
       <p>
-        Unlike most language exchange meetups that stay on the surface, 
-        R2B Circle is designed to go somewhere — gently, naturally, over time.
+        Unlike most language exchange meetups that stay on the surface,
+        R2B is designed to go somewhere — gently, naturally, over time.
       </p>
       <p>
-        We start light. Introductions. Coffee. Where are you from? 
-        Then, if the moment feels right, we go deeper. What are you building? 
+        We start light. Introductions. Coffee. Where are you from?
+        Then, if the moment feels right, we go deeper. What are you building?
         What are you searching for? Why are you in Seoul?
       </p>
       <p>
-        No pressure. No agenda. Just curious people in a room, 
-        letting the conversation find its own direction.
+        R2B is hosted by a church community in Anam. You're welcome
+        whatever you believe — no pressure, no agenda.
       </p>
     </div>
     <div class="intro-format reveal">
       <div class="format-item">
         <div class="format-time">20 min</div>
         <div class="format-content">
-          <strong>Activity & Coffee</strong>
-          <span>Book share, culture talk, or just arriving together. BTS, K-drama, travel stories — anything goes.</span>
+          <strong>Arriving &amp; coffee</strong>
+          <span>Getting settled, saying hello, catching up with whoever came.</span>
         </div>
       </div>
       <div class="format-item">
         <div class="format-time">30 min</div>
         <div class="format-content">
-          <strong>R2B Circle Intro</strong>
-          <span>3 sentences: your name, why you're in Korea, what you're curious about right now.</span>
+          <strong>Introductions</strong>
+          <span>Three sentences: your name, why you're in Korea, what you're curious about right now.</span>
         </div>
       </div>
       <div class="format-item">
         <div class="format-time">30 min</div>
         <div class="format-content">
-          <strong>Conversation</strong>
-          <span>Unstructured but focused. Usually we ask: "What do you want to learn or build in your life?"</span>
+          <strong>Reading &amp; conversation</strong>
+          <span>We read together, then talk about what it means — for us, here, now.</span>
         </div>
       </div>
       <div class="format-item">
         <div class="format-time">10 min</div>
         <div class="format-content">
           <strong>Connection</strong>
-          <span>Exchange contacts. Plan the next meetup. Sometimes a project or friendship starts here.</span>
+          <span>Exchange contacts. Plan what's next. Sometimes a friendship starts here.</span>
         </div>
       </div>
     </div>
@@ -1182,15 +1081,15 @@
   <div class="method-grid">
     <div class="method-card reveal">
       <div class="method-num">1</div>
-      <h3>Name & where<br>you're from</h3>
+      <h3>Name &amp; where<br>you're from</h3>
       <p>Simple. We come from everywhere — India, Spain, Nigeria, Japan, the US. Each name carries a whole world with it.</p>
       <div class="method-quote">"Hi, I'm Priya from Mumbai. I'm a postdoc researcher at Korea University."</div>
     </div>
     <div class="method-card reveal">
       <div class="method-num">2</div>
       <h3>Why you're<br>in Korea</h3>
-      <p>Research, language, work, love, curiosity — every reason is interesting. This is where the real story starts.</p>
-      <div class="method-quote">"I came for a one-year fellowship, and somehow I've been here three years."</div>
+      <p>Research, language, work, curiosity — every reason is interesting. This is where the real story starts.</p>
+      <div class="method-quote">"I came for one exchange semester, and somehow I'm still here."</div>
     </div>
     <div class="method-card reveal">
       <div class="method-num">3</div>
@@ -1201,70 +1100,8 @@
     <div class="method-card reveal">
       <div class="method-num">→</div>
       <h3>Then we<br>just talk</h3>
-      <p>No moderator. No slides. Coffee in hand, we follow the curiosity wherever it leads. This is the R2B Circle.</p>
+      <p>No moderator. No slides. Coffee in hand, we follow the curiosity wherever it leads.</p>
       <div class="method-quote">"What do you want to learn or build in your life?"</div>
-    </div>
-  </div>
-</section>
-
-<!-- COHORT 1 -->
-<section class="cohort" id="cohort">
-  <div class="cohort-inner">
-    <div class="reveal">
-      <div class="section-label" style="color: var(--sage);">R2B School · Cohort 1</div>
-      <div class="arbor-badge">
-        <span>🌳 April 5 — Arbor Day — Seoul</span>
-      </div>
-      <h2>On Arbor Day,<br>we plant the first<br><em>seeds.</em></h2>
-      <p>
-        On Korea's Arbor Day — the day the country plants trees — 
-        R2B School Cohort 1 begins. Symbolic? Yes. 
-        Intentional? Absolutely.
-      </p>
-      <p>
-        A 3-month small-group program for international students, 
-        researchers, and builders in Seoul. We read books, 
-        discuss AI and careers, share life stories, and help 
-        each other find direction in the age of intelligent machines.
-      </p>
-      <p>
-        Cohort 1 is small — by design. 5 to 10 people. 
-        Real conversations. Free to join.
-      </p>
-      <div style="margin-top: 2rem;">
-        <a href="https://r2b.kr/cohort1" class="btn-primary">Apply for Cohort 1 →</a>
-      </div>
-    </div>
-    <div class="cohort-details reveal">
-      <div class="detail-row">
-        <div class="detail-icon">📅</div>
-        <div class="detail-info">
-          <strong>April 5, 2026</strong>
-          <span>Begins on Arbor Day (식목일) · 3 months</span>
-        </div>
-      </div>
-      <div class="detail-row">
-        <div class="detail-icon">👥</div>
-        <div class="detail-info">
-          <strong>5 – 10 people</strong>
-          <span>Founding cohort · Intimate by design</span>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-icon">📚</div>
-        <div class="detail-info">
-          <strong>Books · AI · Career · Life</strong>
-          <span>Weekly discussions · No formal curriculum</span>
-        </div>
-      </div>
-      <div class="detail-row">
-        <div class="detail-icon">🌏</div>
-        <div class="detail-info">
-          <strong>International & Open</strong>
-          <span>Near Korea University · English spoken</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1272,46 +1109,26 @@
 <!-- LOCATIONS -->
 <section class="locations" id="locations">
   <div class="section-label">Where We Meet</div>
-  <h2 class="reveal">Four roots.<br>One Seoul forest.</h2>
+  <h2 class="reveal">Two roots.<br>One growing forest.</h2>
   <div class="locations-grid">
     <div class="location-card reveal">
       <div class="loc-icon">🎓</div>
       <div class="loc-name">Korea University</div>
-      <div class="loc-type">Language · Books · Students</div>
+      <div class="loc-type">SK Future Hall · Saturday 2 PM</div>
       <div class="loc-desc">
-        The heart of R2B. Near our founder's alma mater. 
-        Weekday evening language exchange and Sunday community coffee. 
-        International researchers, grad students, curious minds.
+        The heart of R2B, in Anam. Saturday afternoon English Bible study,
+        plus board game nights and market trips nearby. Exchange students,
+        international researchers, curious minds.
       </div>
     </div>
     <div class="location-card reveal">
-      <div class="loc-icon">🏛️</div>
-      <div class="loc-name">Gwanghwamun</div>
-      <div class="loc-type">Global · Culture · Sunday</div>
+      <div class="loc-icon">💻</div>
+      <div class="loc-name">Online · Zoom</div>
+      <div class="loc-type">Wednesday 8 PM</div>
       <div class="loc-desc">
-        Central Seoul. Open to the city and the world. 
-        Sunday meetups for travelers, expats, and anyone drawn to 
-        conversation in the middle of the capital.
-      </div>
-    </div>
-    <div class="location-card reveal">
-      <div class="loc-icon">🤖</div>
-      <div class="loc-name">Gangnam</div>
-      <div class="loc-type">AI · Tech · Saturday</div>
-      <div class="loc-desc">
-        Weekly Saturday research sessions on AI, humanoid robotics, 
-        and Physical AI. Paper discussions, project ideas, 
-        and frontier technology conversations.
-      </div>
-    </div>
-    <div class="location-card reveal">
-      <div class="loc-icon">🌆</div>
-      <div class="loc-name">Jamsil</div>
-      <div class="loc-type">Career · Startup · Evening</div>
-      <div class="loc-desc">
-        Weekday after-work meetups. For professionals, 
-        career changers, and startup builders. 
-        Real conversations about work, life, and what comes next.
+        NIV Bible reading, kept small on purpose. Join from your dorm,
+        from another city, or from another country — the link is the same
+        every week.
       </div>
     </div>
   </div>
@@ -1322,35 +1139,26 @@
   <div class="section-label" style="justify-content: center;">Join Us</div>
   <h2 class="reveal">Maybe your story<br>begins <em>here.</em></h2>
   <p class="reveal">
-    R2B Circle is open to everyone — international students, 
-    researchers, travelers, professionals, curious people. 
-    No application. Just show up.
+    R2B is open to everyone — exchange students, international
+    researchers, travelers, and anyone curious.
+    No application. Just show up, or send a message first if you'd rather.
   </p>
   <div class="join-cta reveal">
-    <a href="https://r2b.kr/cohort1" class="btn-primary">Join Cohort 1 →</a>
-    <a href="mailto:andrewjangs@kakao.com" class="btn-outline">Send a Message</a>
+    <a href="mailto:andrewjangs@kakao.com" class="btn-primary">Send a Message</a>
+    <a href="#meetups" class="btn-outline">See the meetups</a>
   </div>
   <div class="contact-row reveal">
     <div class="contact-item">
       <span class="c-label">Website</span>
       <span class="c-value">r2b.kr</span>
-    </div>  
+    </div>
     <div class="contact-item">
-      <span class="c-label">Instagram</span>
-      <span class="c-value">
-       <a href="https://www.instagram.com/r2binternational/" 
-          target="_blank" 
-          rel="noopener"
-          style="color:inherit; text-decoration:none; border-bottom: 1px solid rgba(74,82,64,0.3); transition: border-color 0.2s;"
-          onmouseover="this.style.borderColor='var(--moss)'"
-          onmouseout="this.style.borderColor='rgba(74,82,64,0.3)'">
-         @r2binternational
-       </a>
-     </span>
+      <span class="c-label">Email</span>
+      <span class="c-value">andrewjangs@kakao.com</span>
     </div>
     <div class="contact-item">
       <span class="c-label">Location</span>
-      <span class="c-value">Seoul, Korea</span>
+      <span class="c-value">Anam, Seoul</span>
     </div>
   </div>
 </section>
@@ -1359,7 +1167,7 @@
 <footer>
   <div>
     <div class="footer-brand">R2B International Community</div>
-    <div class="footer-tagline" style="margin-top: 0.4rem;">Coffee · Books · Ideas · Seoul</div>
+    <div class="footer-tagline" style="margin-top: 0.4rem;">Rebuild something real · Seoul</div>
     <a href="https://github.com/andrewJYjang/r2b-school" target="_blank"
        style="display:inline-block; margin-top:0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:rgba(158,184,130,0.5); text-decoration:none; text-transform:uppercase; transition:color 0.2s;"
        onmouseover="this.style.color='rgba(158,184,130,1)'" onmouseout="this.style.color='rgba(158,184,130,0.5)'">
@@ -1370,13 +1178,11 @@
 </footer>
 
 <script>
-  // Navbar scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
