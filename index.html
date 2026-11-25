@@ -682,6 +682,13 @@
     font-weight: 300;
   }
 
+  a.c-value {
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.c-value:hover { color: var(--moss); }
+
   /* ── FOOTER ── */
   footer {
     background: var(--forest-deep);
@@ -714,6 +721,25 @@
     color: rgba(244,240,230,0.3);
     font-weight: 300;
   }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+  }
+
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: rgba(158,184,130,0.5);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(158,184,130,1); }
 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
@@ -790,6 +816,7 @@
     .intro-method { padding: 4rem 2rem; }
     .join { padding: 5rem 2rem; }
     footer { padding: 2rem; flex-direction: column; text-align: center; }
+    .footer-links { justify-content: center; }
   }
 
   .quote-block {
@@ -1176,6 +1203,10 @@
       <span class="c-value">r2b.kr</span>
     </div>
     <div class="contact-item">
+      <span class="c-label">Instagram</span>
+      <a class="c-value" href="https://www.instagram.com/r2binternational/" target="_blank" rel="noopener">@r2binternational</a>
+    </div>
+    <div class="contact-item">
       <span class="c-label">Email</span>
       <span class="c-value">andrewjangs@kakao.com</span>
     </div>
@@ -1191,11 +1222,10 @@
   <div>
     <div class="footer-brand">R2B International Community</div>
     <div class="footer-tagline" style="margin-top: 0.4rem;">Rebuild something real · Seoul</div>
-    <a href="https://github.com/andrewJYjang/r2b-school" target="_blank"
-       style="display:inline-block; margin-top:0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.6rem; letter-spacing:0.15em; color:rgba(158,184,130,0.5); text-decoration:none; text-transform:uppercase; transition:color 0.2s;"
-       onmouseover="this.style.color='rgba(158,184,130,1)'" onmouseout="this.style.color='rgba(158,184,130,0.5)'">
-      우리 이야기 보기 → GitHub
-    </a>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/r2binternational/" target="_blank" rel="noopener">Instagram @r2binternational</a>
+      <a href="https://github.com/andrewJYjang/r2b-school" target="_blank" rel="noopener">우리 이야기 보기 → GitHub</a>
+    </div>
   </div>
   <p>© 2026 R2B International Community · All roots connected.</p>
 </footer>
