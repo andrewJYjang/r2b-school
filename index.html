@@ -741,6 +741,161 @@
 
   .footer-links a:hover { color: rgba(158,184,130,1); }
 
+  /* ── FAQ ── */
+  .faq {
+    background: var(--forest-deep);
+    padding: 8rem 6rem;
+  }
+
+  .faq h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .faq-note {
+    font-size: 1rem;
+    color: rgba(212,220,200,0.8);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .faq-list { max-width: 840px; }
+
+  .faq-item { border-top: 1px solid rgba(158,184,130,0.18); }
+  .faq-item:last-child { border-bottom: 1px solid rgba(158,184,130,0.18); }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 1.4rem 2.5rem 1.4rem 0;
+    font-size: 1.02rem;
+    font-weight: 400;
+    color: var(--cream);
+    transition: color 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--sage); }
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0.3rem;
+    top: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--moss);
+  }
+  .faq-item[open] summary::after { content: '\2212'; }
+
+  .faq-a {
+    padding: 0 2.5rem 1.6rem 0;
+    font-size: 0.93rem;
+    font-weight: 300;
+    color: rgba(212,220,200,0.75);
+    line-height: 1.8;
+  }
+  .faq-a strong { font-weight: 400; color: var(--sage); }
+
+  /* ── INTAKE ── */
+  .intake {
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    padding: 2.5rem;
+    text-align: left;
+    background: var(--cream);
+    border: 1px solid rgba(26,46,30,0.1);
+  }
+
+  .intake-step { margin-bottom: 2rem; }
+
+  .intake-q {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 0.9rem;
+  }
+
+  .intake-opts { display: flex; flex-direction: column; gap: 0.55rem; }
+
+  .intake-opts label,
+  .intake-gate {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+    line-height: 1.55;
+  }
+
+  .intake-opts label {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-main);
+  }
+
+  .intake-opts input,
+  .intake-gate input { margin-top: 0.3rem; accent-color: var(--moss); }
+
+  .intake textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 92px;
+    padding: 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-main);
+    background: var(--warm-white);
+    border: 1px solid rgba(26,46,30,0.15);
+    resize: vertical;
+  }
+  .intake textarea:focus { outline: none; border-color: var(--moss); }
+
+  .intake-notice {
+    display: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--forest-deep);
+    line-height: 1.65;
+    background: rgba(200,169,110,0.18);
+    border-left: 3px solid var(--amber);
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .intake-notice.show { display: block; }
+
+  .intake-gate {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-sub);
+    margin-bottom: 1.5rem;
+  }
+
+  #intakeBtn { width: 100%; }
+  #intakeBtn[disabled] {
+    background: rgba(26,46,30,0.12);
+    color: rgba(26,46,30,0.45);
+    cursor: not-allowed;
+  }
+  #intakeBtn[disabled]:hover { background: rgba(26,46,30,0.12); transform: none; }
+
+  .intake-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(74,82,64,0.7);
+    margin-top: 0.9rem;
+    line-height: 1.8;
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -815,6 +970,8 @@
     .philosophy, .circle-intro, .method-grid { grid-template-columns: 1fr; gap: 3rem; }
     .intro-method { padding: 4rem 2rem; }
     .join { padding: 5rem 2rem; }
+    .faq { padding: 5rem 2rem; }
+    .intake { padding: 1.6rem; }
     footer { padding: 2rem; flex-direction: column; text-align: center; }
     .footer-links { justify-content: center; }
   }
@@ -854,6 +1011,7 @@
     <li><a href="#meetups">Meetups</a></li>
     <li><a href="#circle">Circle</a></li>
     <li><a href="#locations">Where</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#join">Join</a></li>
   </ul>
 </nav>
@@ -1184,6 +1342,80 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-label" style="color: var(--sage);">Before You Write</div>
+  <h2 class="reveal">Read this first.</h2>
+  <p class="faq-note reveal">
+    Almost every email we get is answered somewhere below. R2B is run by
+    volunteers rather than an office, so the more of this you have read,
+    the sooner a real conversation can start.
+  </p>
+
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Can I take part from outside Korea?</summary>
+      <div class="faq-a">
+        One of the three weekly meetings is open from anywhere: the
+        <strong>Wednesday NIV reading on Zoom</strong>, 8:00 PM Korea time.
+        The Saturday English Bible study and the Korean lessons happen in person
+        at Korea University, so those need you to be in Seoul.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you provide visas, invitation letters, scholarships, or financial support?</summary>
+      <div class="faq-a">
+        <strong>No.</strong> R2B is a small volunteer community in Seoul.
+        We do not issue invitation letters, sponsor visas, arrange university
+        admissions or scholarships, find jobs or housing, or send money.
+        If that is what you are looking for, we are not able to help, and
+        writing to us will not change that answer.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is there a fee?</summary>
+      <div class="faq-a">
+        No. The three weekly meetings are free &mdash; no application, no fee,
+        no commitment. Occasional special programs, such as cooking or
+        performance events, are organized separately and announced with their
+        own details.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I have to be a Christian?</summary>
+      <div class="faq-a">
+        No. R2B is hosted by a church community in Seoul and you are welcome
+        whatever you believe &mdash; no pressure, no agenda. What we actually do
+        each week is read the Bible together, so expect that to be at the center
+        of it.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>I only want to practice English or Korean. Is that okay?</summary>
+      <div class="faq-a">
+        Yes, and many people start there. English is the working language at
+        every meeting, and the Korean lessons are taught by a certified Korean
+        language teacher. Just know that the Bible study is a Bible study rather
+        than a language exchange.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens after I write?</summary>
+      <div class="faq-a">
+        One person reads this inbox &mdash; the same person who runs the meetings
+        &mdash; so a reply can take a few days. Please use the short form below
+        rather than a blank email. It carries the two things we would otherwise
+        have to ask first: whether you are in Seoul, and which meeting you mean.
+      </div>
+    </details>
+  </div>
+</section>
+
 <!-- JOIN -->
 <section class="join" id="join">
   <div class="section-label" style="justify-content: center;">Join Us</div>
@@ -1191,10 +1423,46 @@
   <p class="reveal">
     R2B is open to everyone — exchange students, international
     researchers, travelers, and anyone curious.
-    No application. Just show up, or send a message first if you'd rather.
+    No application. Just show up, or write first if you'd rather.
   </p>
+
+  <div class="intake reveal" id="intake">
+    <div class="intake-step">
+      <div class="intake-q">1 · Where you are</div>
+      <div class="intake-opts">
+        <label><input type="radio" name="where" value="In Korea now"><span>I am in Korea now</span></label>
+        <label><input type="radio" name="where" value="Coming to Korea soon"><span>I am coming to Korea soon</span></label>
+        <label><input type="radio" name="where" value="Outside Korea, no plans to come"><span>I am outside Korea and have no plans to come</span></label>
+      </div>
+    </div>
+
+    <div class="intake-step">
+      <div class="intake-q">2 · Which meeting</div>
+      <div class="intake-opts">
+        <label><input type="radio" name="what" value="Saturday English Bible study" data-onsite="1"><span>Saturday English Bible study · in person</span></label>
+        <label><input type="radio" name="what" value="Saturday Korean lessons" data-onsite="1"><span>Saturday Korean lessons · in person</span></label>
+        <label><input type="radio" name="what" value="Wednesday online NIV reading"><span>Wednesday NIV reading · online</span></label>
+      </div>
+    </div>
+
+    <div class="intake-step">
+      <div class="intake-q">3 · Two or three lines about you</div>
+      <textarea id="intakeAbout" placeholder="Who you are, why you are in Seoul or want to be, what you are curious about."></textarea>
+    </div>
+
+    <div class="intake-notice" id="intakeNotice"></div>
+
+    <label class="intake-gate">
+      <input type="checkbox" id="intakeGate">
+      <span>I have read that R2B does not provide visas, invitation letters, scholarships, admissions, jobs, housing, or financial support.</span>
+    </label>
+
+    <button class="btn-primary" id="intakeBtn" disabled>Choose the options above</button>
+    <div class="intake-hint">Opens your own mail app with the message prepared · nothing is sent from this page</div>
+  </div>
+
   <div class="join-cta reveal">
-    <a href="mailto:andrewjangs@kakao.com" class="btn-primary">Send a Message</a>
+    <a href="#faq" class="btn-outline">Read the FAQ</a>
     <a href="#meetups" class="btn-outline">See the meetups</a>
   </div>
   <div class="contact-row reveal">
@@ -1208,7 +1476,7 @@
     </div>
     <div class="contact-item">
       <span class="c-label">Email</span>
-      <span class="c-value">andrewjangs@kakao.com</span>
+      <span class="c-value">through the form above</span>
     </div>
     <div class="contact-item">
       <span class="c-label">Location</span>
@@ -1246,6 +1514,64 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
+
+  /* Intake gate -> prepared email */
+  (function () {
+    const intake = document.getElementById('intake');
+    if (!intake) return;
+    const btn    = document.getElementById('intakeBtn');
+    const notice = document.getElementById('intakeNotice');
+    const gate   = document.getElementById('intakeGate');
+    const about  = document.getElementById('intakeAbout');
+    const wheres = intake.querySelectorAll('input[name="where"]');
+    const whats  = intake.querySelectorAll('input[name="what"]');
+
+    const picked = list => Array.from(list).find(i => i.checked) || null;
+
+    function sync() {
+      const w = picked(wheres), t = picked(whats);
+      const abroad = !!w && w.value.indexOf('no plans') > -1;
+      const onsite = !!t && t.dataset.onsite === '1';
+
+      const msg = (abroad && onsite)
+        ? 'That meeting happens in person in Seoul, so it is not open from abroad. The Wednesday NIV reading on Zoom is \u2014 choose that one if you would like to join from where you are.'
+        : '';
+      notice.textContent = msg;
+      notice.classList.toggle('show', !!msg);
+
+      const ok = !!w && !!t && !msg && gate.checked;
+      btn.disabled = !ok;
+      btn.textContent = ok ? 'Open your email'
+        : (!w || !t) ? 'Choose the options above'
+        : msg ? 'Choose a meeting you can attend'
+        : 'Confirm the line above';
+      return ok ? { where: w.value, what: t.value } : null;
+    }
+
+    intake.addEventListener('change', sync);
+    sync();
+
+    btn.addEventListener('click', function () {
+      const s = sync();
+      if (!s) return;
+      const addr = ['andrewjangs', 'kakao.com'].join('@');
+      const subject = '[R2B] ' + s.what + ' \u00b7 ' + s.where;
+      const body = [
+        'Sent from r2b.kr',
+        '',
+        'Where I am: ' + s.where,
+        'Meeting: ' + s.what,
+        'Confirmed: I am not asking for a visa, invitation letter, scholarship, admission, job, housing, or money.',
+        '',
+        'About me:',
+        (about.value || '').trim(),
+        ''
+      ].join('\n');
+      window.location.href = 'mailto:' + addr +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+    });
+  })();
 </script>
 
 </body>
