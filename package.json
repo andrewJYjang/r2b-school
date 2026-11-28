@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "> **\"Real people. Real conversations. Reborn in Seoul.\"** > 진짜 사람. 진짜 대화. 서울에서 다시 태어나다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewJYjang/r2b-school.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewJYjang/r2b-school/issues"
+  },
+  "homepage": "https://github.com/andrewJYjang/r2b-school#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
